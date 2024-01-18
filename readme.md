@@ -15,9 +15,9 @@ MPLAB® Harmony 3 is an extension of the MPLAB® ecosystem for creating embedded
 
 This repository contains the MPLAB® Harmony 3 Wireless application examples for RNWF02
 
--   [Release Notes](docs/GUID-475CCCE2-4A29-4106-826D-873FBE671DC4.md)
+-   [Release Notes](release_notes.md)
 
--   [MPLAB® Harmony License](docs/GUID-7C9EF151-E183-4F16-9ECC-90A2044AE17A.md)
+-   [MPLAB® Harmony License](Microchip_SLA001.md)
 
 
 To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_rnwf) and then click **Clone** button to clone this repository or download as zip file.<br />This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
@@ -36,7 +36,6 @@ The following applications are provided to demonstrate the typical or interestin
 |Name|Description|
 |----|-----------|
 |[Wi-Fi easy config](apps\Wi-Fi_easy_config\readme.md)| HTTP server / web-page based Wi-Fi provisioning example.|
-|[Wi-Fi easy config_html](https://internal.onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-348944CB-9050-4E5A-A45A-5180B198FFEB.html)| HTTP server / web-page based Wi-Fi provisioning example.|
 |[TCP Client](apps\tcp_client\readme.md)|TCP Client example application|
 |[TCP Server](apps\tcp_server\readme.md)|TCP Server example application|
 |[TLS Client](apps\tls_client\readme.md)|TLS Client example application|
