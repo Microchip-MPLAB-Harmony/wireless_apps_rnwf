@@ -69,7 +69,7 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_IF_TIMEOUT      0x7FFFF
 
 /* Enable to get Debug prints of Interface */
-//#define SYS_RNWF_INTERFACE_DEBUG        1
+#define SYS_RNWF_INTERFACE_DEBUG        1
 
 /* Interface status macros */
 #define SYS_RNWF_IS_INTERFACE_BUSY()      if(g_interfaceState == SYS_RNWF_INTERFACE_BUSY){SYS_CONSOLE_PRINT("IF Busy\n");return SYS_RNWF_INTERFACE_BUSY;}
