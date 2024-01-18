@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="161.32065mm"
+   height="147.55254mm"
+   viewBox="0 0 161.32064 147.55254"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Erased_Flash_Partition.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-bottom="2"
+     fit-margin-right="2"
+     inkscape:zoom="0.7198092"
+     inkscape:cx="265.34809"
+     inkscape:cy="380.65643"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <image
+       width="64"
+       height="64"
+       xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAkACQAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABAAEADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDj6KKK/oM/Lz9g6K/Hyv2Dr8dzbKf7L5Pf5ua/S21vN9z7zA4765ze7a1ut97+QUUUV88eoFfj5X7B0V9DlObf2Xz+5zc1uttr+T7nl47A/XOX3rWv0vvbzCvx8r9g6KMpzb+y+f3Obmt1ttfyfcMdgfrnL71rX6X3t5n4+UUUV+xHwZ+wdFfj5X7B1+O5tlP9l8nv83Nfpba3m+595gcd9c5vdta3W+9/IKKKK+ePUCiiigAr8fK/YOivocpzb+y+f3Obmt1ttfyfc8vHYH65y+9a1+l97eZ+PlFFFfsR8GfsHRX4+V+wdfjubZT/AGXye/zc1+ltreb7n3mBx31zm921rdb738gor8fK/YOjNsp/svk9/m5r9LbW833DA4765ze7a1ut97+QUUUV88eoFfj5X7B0V9DlObf2Xz+5zc1uttr+T7nl47A/XOX3rWv0vvbzPx8ooor9iPgz/9k="
+       preserveAspectRatio="none"
+       id="img0" />
+    <pattern
+       width="64"
+       height="64"
+       patternUnits="userSpaceOnUse"
+       id="pattern1"
+       overflow="hidden"
+       patternTransform="matrix(0.1875 0 0 0.1875 756 360)">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img0"
+         id="use825" />
+    </pattern>
+    <pattern
+       width="64"
+       height="64"
+       patternUnits="userSpaceOnUse"
+       id="pattern2"
+       overflow="hidden"
+       patternTransform="matrix(0.1875 0 0 0.1875 768 684)">
+      <use
+         width="100%"
+         height="100%"
+         xlink:href="#img0"
+         id="use828" />
+    </pattern>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-34.757992,-47.913991)">
+    <g
+       transform="matrix(0.22739267,0,0,0.22739267,-109.68708,26.105524)"
+       id="g899">
+      <path
+         d="M 766.695,105.702 H 1118.15 V 371.223 H 766.695 Z"
+         fill="#4472c4"
+         fill-rule="evenodd"
+         id="path833" />
+      <rect
+         x="766.69501"
+         y="371.702"
+         width="351"
+         height="257"
+         fill="url(#pattern1)"
+         id="rect835" />
+      <path
+         d="M 765.695,371.223 H 1119.15"
+         stroke="#ffffff"
+         stroke-width="6"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         fill="none"
+         fill-rule="evenodd"
+         id="path837" />
+      <path
+         d="M 766.695,104.702 V 630.006"
+         stroke="#ffffff"
+         stroke-width="2"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         fill="none"
+         fill-rule="evenodd"
+         id="path839" />
+      <path
+         d="M 1118.15,104.702 V 630.006"
+         stroke="#ffffff"
+         stroke-width="2"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         fill="none"
+         fill-rule="evenodd"
+         id="path841" />
+      <path
+         d="M 765.695,105.702 H 1119.15"
+         stroke="#ffffff"
+         stroke-width="2"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         fill="none"
+         fill-rule="evenodd"
+         id="path843" />
+      <path
+         d="M 765.695,629.006 H 1119.15"
+         stroke="#ffffff"
+         stroke-width="2"
+         stroke-linejoin="round"
+         stroke-miterlimit="10"
+         fill="none"
+         fill-rule="evenodd"
+         id="path845" />
+      <text
+         fill="#ffffff"
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="22px"
+         transform="translate(908.796,246)"
+         id="text847">Image1</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(643.245,121)"
+         id="text849">0x6000</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(708.995,121)"
+         id="text851">-</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(715.745,121)"
+         id="text853">0000</text>
+      <path
+         d="m 1121.5,109.5 c 5.25,0 9.5,0.709 9.5,1.583 v 126.834 c 0,0.874 4.25,1.583 9.5,1.583 -5.25,0 -9.5,0.709 -9.5,1.583 v 126.834 c 0,0.874 -4.25,1.583 -9.5,1.583"
+         stroke="#4472c4"
+         stroke-width="2.5"
+         stroke-miterlimit="8"
+         fill="none"
+         fill-rule="evenodd"
+         id="path855" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(645.523,385)"
+         id="text857">0x600F</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(710.023,385)"
+         id="text859">-</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(716.773,385)"
+         id="text861">0000</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(645.523,365)"
+         id="text863">0x600E</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(710.773,365)"
+         id="text865">-</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(717.523,365)"
+         id="text867">FFFF</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(645.523,625)"
+         id="text869">0x601D</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(713.523,625)"
+         id="text871">-</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(720.273,625)"
+         id="text873">FFFF</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1145.95,245)"
+         id="text875">960K</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1196.2,245)"
+         id="text877">–</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1212.2,245)"
+         id="text879">Low partition</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1148.12,508)"
+         id="text881">960K</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1198.37,508)"
+         id="text883">–</text>
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(1214.37,508)"
+         id="text885">High partition</text>
+      <rect
+         x="0"
+         y="0"
+         width="347"
+         height="56"
+         stroke="#ffd966"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         fill="#44546a"
+         transform="matrix(-1,0,0,1,1115,109)"
+         id="rect887" />
+      <text
+         fill="#ffffff"
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(903.371,145)"
+         id="text889">Header1</text>
+      <path
+         d="m 1120.5,372.5 c 5.52,0 10,0.746 10,1.667 v 124.666 c 0,0.921 4.48,1.667 10,1.667 -5.52,0 -10,0.746 -10,1.667 v 124.666 c 0,0.921 -4.48,1.667 -10,1.667"
+         stroke="#4472c4"
+         stroke-width="2.5"
+         stroke-miterlimit="8"
+         fill="none"
+         fill-rule="evenodd"
+         id="path891" />
+      <rect
+         x="768"
+         y="694"
+         width="84"
+         height="41"
+         stroke="#172c51"
+         stroke-width="2"
+         stroke-miterlimit="8"
+         fill="url(#pattern2)"
+         id="rect893" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="400"
+         font-size="22px"
+         transform="translate(914.149,722)"
+         id="text895">Erased Flash Partition</text>
+      <path
+         d="M 7.49136e-6,-2.25 36.0486,-2.24988 v 4.5 L -7.49136e-6,2.25 Z M 33.7986,-6.74989 47.2986,1.5748e-4 33.7986,6.75011 Z"
+         fill="#4472c4"
+         transform="matrix(-1,0,0,1,899.799,715.5)"
+         id="path897" />
+    </g>
+  </g>
+</svg>

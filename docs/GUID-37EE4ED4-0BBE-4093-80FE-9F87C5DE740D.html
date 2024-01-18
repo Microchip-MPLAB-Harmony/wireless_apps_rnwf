@@ -1,0 +1,454 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="oxygen-webhelp\template\resources/images/favicon.ico"/><link rel="icon" href="oxygen-webhelp\template\resources/images/favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="The DFU utility is a python based tool, it supports the erase and write operations on RNWF02 module’s Flash memory. It also enables modification of image sequence number and source address in the ..."/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><title>8.1 DFU Utility</title><!--  Generated with Oxygen version 24.1, build number 2022062014.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D-d1921e525"/><meta name="wh-source-relpath" content="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D.xml"/><meta name="wh-out-relpath" content="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022062014"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/microchip.css?buildId=2022062014"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022062014"/>
+<script src="mchp-context-help.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async="" type="text/javascript"></script>
+    <script src="https://assets.adobedtm.com/6a72a357eb48/a636c708c7fe/launch-0b0023397020.min.js"></script><!-- Adobe Analytics -->
+</head>
+
+    <body id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="oxygen-webhelp\template\resources/images/microchip.png" alt="RNWF02 32-Bit Application Developer's Guide "/></a>
+                    <div class=" wh_publication_title "><a href="index.html">RNWF02 32-Bit Application Developer's Guide </a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div class="d-flex justify-contents-around"><div class="flex-grow-1"></div><div class="position-relative flex-grow-1"><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div><div class="align-self-center flex-grow-1 ml-2"><div class="d-flex justify-content-end"><div class="dropdown"><a style="font-size: 1em; padding: 7px 12px !important;" class="btn py-3 px-3 btn-outline-light dropdown-toggle" href="#" role="button" id="devicesMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product Pages</a><div style="font-size: 1em;" class="dropdown-menu" aria-labelledby="devicesMenu"><a class="dropdown-item" target="_blank" href="https://www.microchip.com/en-us/product/rnwf02">RNWF02</a></div></div></div></div></div></form>
+            
+            <div class="mchp-color-stripe-grid-container">
+  <div class="mchp-main-bar mchp-orange-bar"></div>
+  <div class="mchp-main-bar mchp-blue-bar"></div>
+  <div class="mchp-main-bar mchp-green-bar"></div>
+</div>
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109"><div class="title"><a href="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8</ph>
+Device Firmware Update (DFU)</a></div></div></li><li class="active"><div class="topicref" data-id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D"><div class="title"><a href="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8.1</ph>
+DFU Utility</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A-d1921e11" class="topicref introduction" data-id="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A.html" id="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A-d1921e11-link">Introduction </a></div></div></li><li role="treeitem"><div data-tocid="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006-d1921e19" class="topicref introduction" data-id="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006.html" id="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006-d1921e19-link">Features</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27" class="topicref" data-id="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109.html" id="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">1</ph>
+Quick References</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67" class="topicref" data-id="GUID-CA76EF04-450B-4116-A233-43281D8817DA" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-CA76EF04-450B-4116-A233-43281D8817DA.html" id="GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">2</ph>
+Hardware</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142" class="topicref" data-id="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A.html" id="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3</ph>
+Getting Started with Software Development</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342" class="topicref" data-id="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC.html" id="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">4</ph>
+Getting Started with <span class="ph">RNWF02</span> Add on board </a></div></div></li><li role="treeitem"><div data-tocid="GUID-1459CE88-429E-4D6E-8967-D08F201A5131-d1921e377" class="topicref" data-id="GUID-1459CE88-429E-4D6E-8967-D08F201A5131" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-1459CE88-429E-4D6E-8967-D08F201A5131.html" id="GUID-1459CE88-429E-4D6E-8967-D08F201A5131-d1921e377-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">5</ph>
+Out of Box Demo</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385" class="topicref" data-id="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A.html" id="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">6</ph>
+32-bit Example Applications</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490" class="topicref" data-id="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA.html" id="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">7</ph>
+File System</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517" class="topicref" data-id="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109.html" id="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8</ph>
+Device Firmware Update (DFU)</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" class="active"><div data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D-d1921e525" class="topicref" data-id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D.html" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D-d1921e525-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8.1</ph>
+DFU Utility</a></div></div></li><li role="treeitem"><div data-tocid="GUID-48A51EFD-790C-40C4-9225-E32C2E3839F4-d1921e533" class="topicref" data-id="GUID-48A51EFD-790C-40C4-9225-E32C2E3839F4" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-48A51EFD-790C-40C4-9225-E32C2E3839F4.html" id="GUID-48A51EFD-790C-40C4-9225-E32C2E3839F4-d1921e533-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8.2</ph>
+Host Assisted DFU</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541" class="topicref" data-id="GUID-698A341B-D620-4248-94F9-ECF28C147ADC" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-698A341B-D620-4248-94F9-ECF28C147ADC.html" id="GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">9</ph>
+AT Commands</a></div></div></li><li role="treeitem"><div data-tocid="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921-d1921e1976" class="topicref" data-id="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921.html" id="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921-d1921e1976-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">10</ph>
+Document Revision History</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984" class="topicref backmatter backmatter_parent" data-id="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B.html" id="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984-link">Microchip Information</a></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-7 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        <button id="wh_close_topic_toc_button" class="close-toc-button d-none" aria-label="Toggle topic table of content" aria-controls="wh_topic_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-B489FFEE-14F1-4AA8-BFEB-D8EED708BAAD">
+<h1 class="- topic/title title topictitle1" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-B489FFEE-14F1-4AA8-BFEB-D8EED708BAAD" style="">8.1 DFU Utility</h1>
+<div class="- topic/body body">
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_HFH_W1C_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_HFH_W1C_ZYB">
+            <div class="- topic/p p">The DFU utility is a python based tool, it supports the erase and write operations on
+                    <span class="- topic/ph ph">RNWF02</span> module’s Flash memory. It also enables
+                modification of image sequence number and source address in the header section. The
+                DFU utility is available in the <a class="- topic/xref xref" href="https://www.microchip.com/en-us/development-tool/EA32M85A" target="_blank" rel="external noopener">RNWF product page</a>: <a class="- topic/xref xref" href="https://ww1.microchip.com/downloads/aemDocuments/documents/WSG/ProductDocuments/SoftwareTools/rnwf_utilities_v1.0.0.zip" target="_blank" rel="external noopener">rnwf_utilities_vX.X.X</a>
+                    (<code class="+ topic/ph pr-d/codeph ph codeph">rnwf_utilities_vX.X.X\dfu</code>).<figure class="- topic/fig fig fignone" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-FF0589E0-B2D5-411B-B33E-E99607672AD0" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-FF0589E0-B2D5-411B-B33E-E99607672AD0"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure 8-5. <span id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-052493BB-4768-4EE6-8012-D74655A46E4C" class="fig--title">DFU Utility Path</span></span></figcaption>
+                    
+                    <div class="imagecenter"><div class="imagecenter break break"><img class="- topic/image image imagecenter break break" src="GUID-F183EFAA-520C-4950-9AE7-BB707006F0F2-high.svg"/></div></div>
+                </figure></div>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_EXQ_4KJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_EXQ_4KJ_ZYB"><h2 class="- topic/title title sectiontitle">Hardware and Software Dependencies</h2>
+            
+            <div class="- topic/p p">Following are the dependencies of the tool.<ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_WQZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_WQZ_DDC_ZYB">
+                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-67669717-FB20-4B20-A3D4-CAF0EFEB6B23" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-67669717-FB20-4B20-A3D4-CAF0EFEB6B23"><strong class="+ topic/ph hi-d/b ph b">Hardware</strong><ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_QMD_HDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_QMD_HDC_ZYB">
+                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-841827F5-AC42-4912-BC36-C71369FCA17F" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-841827F5-AC42-4912-BC36-C71369FCA17F"><span class="- topic/ph ph">RNWF02</span> module</li>
+                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-7140F381-7821-4C09-96E0-FB0DBE94383A" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-7140F381-7821-4C09-96E0-FB0DBE94383A"><a class="- topic/xref xref" href="https://ftdichip.com/products/ttl-232r-3v3/" target="_blank" rel="external noopener">FTDI Cable</a></li>
+                        </ul></li>
+                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-7D9AEFAF-7DB7-49F4-95C4-D3C74EF5648A" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-7D9AEFAF-7DB7-49F4-95C4-D3C74EF5648A"><strong class="+ topic/ph hi-d/b ph b">Software</strong><ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_ZQZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_ZQZ_DDC_ZYB">
+                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-8298B690-7CAD-40A1-9E18-D4275EF1533E" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-8298B690-7CAD-40A1-9E18-D4275EF1533E">Operating System
+                                    Drivers:<ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_ARZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_ARZ_DDC_ZYB">
+                                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-1C111F2A-2F9C-45D8-B150-E9A8EC52DC06" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-1C111F2A-2F9C-45D8-B150-E9A8EC52DC06">For
+                                            Windows:<ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_BRZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_BRZ_DDC_ZYB">
+                                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-0DBB1707-CEEF-4E46-9D4B-DD06C9E60559" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-0DBB1707-CEEF-4E46-9D4B-DD06C9E60559"><a class="- topic/xref xref" href="https://ftdichip.com/drivers/d2xx-drivers/" target="_blank" rel="external noopener">FTDI D2XX Direct
+                                                  Driver for Windows</a></li>
+                                        </ul></li>
+                                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-E8275855-BD8F-4CA8-9080-E0739F7E04DA" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-E8275855-BD8F-4CA8-9080-E0739F7E04DA">For Linux
+                                            (Ubuntu):<ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_CRZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_CRZ_DDC_ZYB">
+                                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-4F984064-9B6C-4C76-83B3-53C4477FBCD5" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-4F984064-9B6C-4C76-83B3-53C4477FBCD5">Linux
+                                                loads the Virtual COM port (VCP) driver by default,
+                                                During the process the script will take care of
+                                                loading the appropriate driver D2XX/VCP<div class="- topic/note note notype note_notype" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__NOTE_NNN_KLJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__NOTE_NNN_KLJ_ZYB"><span class="note__title">Note:</span> “sudo” permissions are
+                                                  required to run the script.</div></li>
+                                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-9B44DBC7-65F8-4B68-A683-CD07E673D810" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-9B44DBC7-65F8-4B68-A683-CD07E673D810">For
+                                                more details about the D2XX driver installation,
+                                                refer to the <a class="- topic/xref xref" href="https://ftdichip.com/wp-content/uploads/2020/08/AN_220_FTDI_Drivers_Installation_Guide_for_Linux-1.pdf" target="_blank" rel="external noopener">FTDI Drivers
+                                                  Installation Guide for
+                                                Linux</a><pre class="+ topic/pre pr-d/codeblock pre codeblock" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_NMZ_FHC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_NMZ_FHC_ZYB"><code> $ tar zxvf libftd2xx-x86_64-1.4.27.tgz 
+ $ sudo cp -r release/build/lib* /usr/local/lib 
+ $ cd /usr/local/lib/ 
+ $ sudo ln -s libftd2xx.so.1.4.27 libftd2xx.so 
+ $ sudo chmod 0755 libftd2xx.so.1.4.27 
+ $ sudo ldconfig /usr/local/lib/</code></pre></li>
+                                        </ul></li>
+                                </ul></li>
+                            <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-90D23B5E-F3A6-4B46-984C-D27D72893BDE" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-90D23B5E-F3A6-4B46-984C-D27D72893BDE">Python 3<ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_FRZ_DDC_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_FRZ_DDC_ZYB">
+                                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-55E02B25-9622-4C80-B894-E99BEE9ECD86" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-55E02B25-9622-4C80-B894-E99BEE9ECD86">ftd2xx==1.3.2</li>
+                                    <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-9E125333-1C80-4372-996C-6B1750EA65E7" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-9E125333-1C80-4372-996C-6B1750EA65E7">pyserial==3.5</li>
+                                </ul></li>
+                        </ul></li>
+                </ul></div>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_NYB_3NF_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_NYB_3NF_ZYB"><h2 class="- topic/title title sectiontitle">Hardware Setup</h2>
+            
+            <div class="- topic/p p">The <span class="- topic/ph ph">RNWF02</span> module exposes following pins to
+                perform DFU. <div class="table-container"><table class="- topic/table table frame-all" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label"><span class="table--title-label">Table 8-1. </span></span><span class="table--title" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-721F8BE5-D67A-4044-B73D-866ACBA529C5">Pin Description</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                            <tr class="- topic/row valign-middle">
+                                <th class="- topic/entry entry align-left colsep-1 rowsep-1" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__1"><span class="- topic/ph ph">RNWF02</span>
+                                    Module</th>
+                                <th class="- topic/entry entry align-left colsep-1 rowsep-1" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__2">Pin</th>
+                                <th class="- topic/entry entry align-left colsep-0 rowsep-1" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__3">Description</th>
+                            </tr>
+                        </thead><tbody class="- topic/tbody tbody valign-middle">
+                            <tr class="- topic/row valign-middle">
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__1">MCLR_N</td>
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__2">4</td>
+                                <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__3">Master clear Reset, active-low</td>
+                            </tr>
+                            <tr class="- topic/row valign-middle">
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-1 valign-middle" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__1">DFU_Rx/Strap1/PB0</td>
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-1" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__2">26</td>
+                                <td class="- topic/entry entry align-left colsep-0 rowsep-1" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__3">DFU pattern clock/UART Rx</td>
+                            </tr>
+                            <tr class="- topic/row valign-middle">
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__1">DFU_Tx/Strap2/PB1</td>
+                                <td class="- topic/entry entry align-left colsep-1 rowsep-0" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__2">10</td>
+                                <td class="- topic/entry entry align-left colsep-0 rowsep-0" headers="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__TABLE_VDQ_4J4_KYB__entry__3">DFU pattern data/UART Tx</td>
+                            </tr>
+                        </tbody></table></div></div>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_AWB_2SJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_AWB_2SJ_ZYB"><h2 class="- topic/title title sectiontitle"><span class="- topic/ph ph">RNWF02 Add On Board</span></h2>
+            
+            <div class="- topic/p p">The <span class="- topic/ph ph">RNWF02 Add On Board</span> design has interconnected
+                UART1_Tx to PB1/DFU_Tx and UART1_Rx with PB0_Rx to enable both Mission mode and DFU
+                operation over the single UART interface<div class="- topic/note note notype note_notype" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__NOTE_PXB_SNF_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__NOTE_PXB_SNF_ZYB"><span class="note__title">Note:</span> 
+                    <ul class="- topic/ul ul" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_OKC_RRR_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__UL_OKC_RRR_ZYB">
+                        <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-BCEE9FF0-CDB7-422E-881D-E88FCFE19468" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-BCEE9FF0-CDB7-422E-881D-E88FCFE19468">The customer hardware
+                            design can adopt single interface, only if the UART lines can be
+                            multiplexed as a GPIO to trigger the DFU pattern</li>
+                        <li class="- topic/li li" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-2665E15F-D5B6-4D2E-BE3F-47BD1F40519A" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-2665E15F-D5B6-4D2E-BE3F-47BD1F40519A">While performing the DFU,
+                            the module must be powered through the mikroBUS interface (in other
+                            words, <a class="- topic/xref xref" href="GUID-B181CF3F-70AD-415B-A2B8-0867E4F7498C.html">Host Companion
+                                Mode</a>)</li>
+                    </ul>
+                </div></div>
+            <figure class="- topic/fig fig fignone" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_SH3_ZBG_YYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_SH3_ZBG_YYB"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure 8-6. <span id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-DE90650B-7F84-46A6-8DB9-DD57F59F2865" class="fig--title">DFU Setup</span></span></figcaption>
+                
+                <div class="imagecenter"><div class="imagecenter break break"><img class="- topic/image image imagecenter break break" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__IMAGE_IXF_YWC_3ZB" src="GUID-14C2E3C6-A7A0-4EA9-81F9-9556BABE83A4-high.svg"/></div></div>
+            </figure>
+            <p class="- topic/p p">The DFU utility simplifies the dependencies installation by providing a requirement
+                file with all the necessary python modules. </p>
+            <div class="- topic/p p">Before running the DFU utility, navigate to
+                    <code class="+ topic/ph pr-d/codeph ph codeph">rnwf_utilities_vX.X.X\dfu</code> and install all the requirements
+                using the following python
+                command<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_S1C_GHG_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_S1C_GHG_ZYB">&gt;python -m pip install -r requirements.txt</pre></div>
+            <p class="- topic/p p">Following is the DFU utility command syntax:</p>
+            <div class="- topic/p p">
+                <pre class="+ topic/pre pr-d/codeblock pre codeblock language-python" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_FLN_J4F_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_FLN_J4F_ZYB">&gt; python do_dfu.py [-h] [-b BIN_FILES BIN_FILES | -e ERASE [ERASE ...]] [-s SEQ_NUM] [-p PORT] [-v]
+
+options:
+  -h, --help            show this help message <strong class="hl-keyword">and</strong> exit
+  -b BIN_FILES BIN_FILES
+                        Write option: Erase <strong class="hl-keyword">and</strong> write binary file to hexadecimal starting address <strong class="hl-keyword">or</strong> section (<strong class="+ topic/ph hi-d/b ph b">low,
+                        high, file-system</strong>).
+  -e ERASE [ERASE ...]  Erase option: Provide either the hexadecimal starting address <strong class="hl-keyword">and</strong> whole number of <span class="hl-number">4096</span> byte
+                        pages to erase, <strong class="hl-keyword">or</strong> just the section to erase (<strong class="+ topic/ph hi-d/b ph b">low, high, file-system</strong>).
+  -s SEQ_NUM            Modifies image sequence number. Example format: -s <span class="hl-number">0xffeeddcc</span>
+  -p PORT, -port PORT   User specific serial number of the FTDIport, <strong class="hl-keyword">else</strong> autodetect mechanism will be used.
+  -v, -verbose</pre>
+            </div>
+            <p class="- topic/p p">Following section provides the command examples for flashing and erasing the
+                different image partitions</p>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_RKV_HTJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_RKV_HTJ_ZYB"><h2 class="- topic/title title sectiontitle">Update Single/Combined Image</h2>
+            
+            <div class="- topic/p p"><figure class="- topic/fig fig fignone" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_IPS_1DJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_IPS_1DJ_ZYB"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure 8-7. <span id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-D94589AB-61CE-426E-940F-D77E74DE5596" class="fig--title">Update Single/Combined
+                        Image</span></span></figcaption>
+                    
+                    <div class="imagecenter"><div class="imagecenter break break"><img class="- topic/image image imagecenter break break" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__IMAGE_JPS_1DJ_ZYB" src="GUID-D8157543-3524-4B14-9402-185E58831587-high.svg"/></div></div>
+                </figure>Single Image update will Flash both Image1 and Image2 partitions along with
+                the File system (certificate store). The partition can be specified as low or by its
+                starting address
+                (0x60000000).<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_FTT_XPF_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_FTT_XPF_ZYB">python do_dfu.py -b test_binaries/network_controller.X.production.bootable.bin <span class="hl-number">0x60000000</span></pre></div>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_A2X_3QF_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_A2X_3QF_ZYB"><h2 class="- topic/title title sectiontitle">Update OTA Image</h2>
+            
+            <div class="- topic/p p"><figure class="- topic/fig fig fignone" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_GDF_FDJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_GDF_FDJ_ZYB"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure 8-8. <span id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-9E929BCC-E77A-4CF4-969C-3E62FD7B0A94" class="fig--title">Update OTA Image</span></span></figcaption>
+                    
+                    <div class="imagecenter"><div class="imagecenter break break"><img class="- topic/image image imagecenter break break" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__IMAGE_HDF_FDJ_ZYB" src="GUID-70443D35-06B9-4D8B-B86E-7C4BA62AEE51-high.svg"/></div></div>
+                </figure>The OTA Image only include the header and firmware image and does not include
+                the File-System. The OTA Image can be updated in Image1 (Low) partition or Image2
+                (High)
+                partition<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_DNT_QRF_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_DNT_QRF_ZYB">python do_dfu.py -b test_binaries/network_controller.X.production_dfu_ota.bootable.bin low</pre>In
+                order to update the sequence number of the given firmware image -s option can be
+                used as
+                follows:-<pre class="+ topic/pre pr-d/codeblock pre codeblock" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_Z2Z_WGG_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_Z2Z_WGG_ZYB"><code>do_dfu.py -b test_binaries/network_controller.X.production_dfu_ota.bootable.bin low -s 0xffffffc0</code></pre></div>
+        </section>
+        <section class="- topic/section section" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_WHF_WWJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_WHF_WWJ_ZYB"><h2 class="- topic/title title sectiontitle">Erase Partition</h2>
+            
+            <div class="- topic/p p">
+                <figure class="- topic/fig fig fignone" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_UCN_3DJ_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__FIG_UCN_3DJ_ZYB"><figcaption class="- topic/title title figcapcenter"><span class="figtitleprefix fig--title-label">Figure 8-9. <span id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__GUID-B9DB72D0-76A3-4DA8-A7B7-8E1EF0296B88" class="fig--title">Erase Partition</span></span></figcaption>
+                    
+                    <div class="imagecenter"><div class="imagecenter break break"><img class="- topic/image image imagecenter break break" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__IMAGE_VCN_3DJ_ZYB" src="GUID-61948EBE-D878-4270-ADB9-89D3F061C663-high.svg"/></div></div>
+                </figure>
+            </div>
+            <div class="- topic/p p">The DFU utility is flexible to erase only the given partition of the Flash map. The
+                -e option is used and either low (Image1) or high (Image2) can be erased. The erase
+                option is useful to switch the bootable image from other partition of the Flash
+                map.<pre class="+ topic/pre pr-d/codeblock pre codeblock language-python" id="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_MRX_B5F_ZYB" data-ofbid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__CODEBLOCK_MRX_B5F_ZYB">python do_dfu.py -e high</pre></div>
+        </section>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                        <nav role="navigation" id="wh_topic_toc" aria-label="On this page" class="col-lg-2 d-none d-lg-block navbar d-print-none"> 
+                            <div id="wh_topic_toc_content">
+		                        
+	                            <div class=" wh_topic_toc "><div class="wh_topic_label">On this page</div><ul><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_EXQ_4KJ_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_EXQ_4KJ_ZYB">Hardware and Software Dependencies</a></div></li><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_NYB_3NF_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_NYB_3NF_ZYB">Hardware Setup</a></div></li><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_AWB_2SJ_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_AWB_2SJ_ZYB"><span class="- topic/ph ph">RNWF02 Add On Board</span></a></div></li><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_RKV_HTJ_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_RKV_HTJ_ZYB">Update Single/Combined Image</a></div></li><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_A2X_3QF_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_A2X_3QF_ZYB">Update OTA Image</a></div></li><li class="section-item"><div class="section-title"><a href="#GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_WHF_WWJ_ZYB" data-tocid="GUID-37EE4ED4-0BBE-4093-80FE-9F87C5DE740D__SECTION_WHF_WWJ_ZYB">Erase Partition</a></div></li></ul></div>
+	                        	
+                        	</div>
+                        </nav>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <div class="mchp_disclaimer"><p class="mchp_disclaimer_text">The online versions of the documents are provided as a courtesy. Verify all content and data in the device’s PDF documentation found on the device product page.</p></div><footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div class="footer">
+  <div class="mchp-wh-footer">
+    <div class="mchp-footer">
+      <div class="mchp-footer-tier1">
+        <div class="spacer"></div>
+        <div class="mchp-footer-container">
+          <div class="mchp-footer-links mchp-social-media-links">
+            <div class="mchp-component-items">
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.facebook.com/pages/Microchip-Technology-Inc/20320981741" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Facebook" src="oxygen-webhelp/template/resources/images/201016-corp-facebook.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.linkedin.com/company/microchip-technology" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip LinkedIn" src="oxygen-webhelp/template/resources/images/201016-corp-linkedin.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://twitter.com/MicrochipTech" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Twitter" src="oxygen-webhelp/template/resources/images/201016-corp-twitter.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.youtube.com/user/MicrochipTechnology" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip YouTube" src="oxygen-webhelp/template/resources/images/201016-corp-youtube.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.instagram.com/microchiptechnologyinc/" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Instagram" src="oxygen-webhelp/template/resources/images/201016-corp-instagram.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.weibo.com/microchiptech" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Weibo" src="oxygen-webhelp/template/resources/images/201016-corp-weibo.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.microchip.com/en-us/about/blog" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Blog" src="oxygen-webhelp/template/resources/images/201016-corp-blog.png"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mchp-footer-links">
+            <div class="mchp-component-items">
+              <div class="mchp-component-item">
+                <div class="link">
+                  <a href="https://www.microchip.com/about-us/contact-us" class="mchp-link__link">Contact</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information" class="mchp-link__link">Legal</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information/privacy-policy" class="mchp-link__link">Privacy Policy</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information/microchip-cookie-statement" class="mchp-link__link">Cookies</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item">
+                <div class="link">
+                  <a href="https://careers.microchip.com/" class="mchp-link__link">Careers</a>
+                  <span class="mchp-link__separator"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mchp-footer-newsletter">
+            <div class="cmp-text">
+              <p>Stay on the leading edge with our blog</p>
+            </div>
+            <div class="mchp-button-wrapper">
+              <a role="button" href="https://www.microchip.com/en-us/about/blog" class="mchp-button mchp-button-regular solid">
+                <span class="mchp-button__span">MicroSolutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="graphic">
+          <img src="oxygen-webhelp/template/resources/images/footer-graphic.png"/>
+        </div>
+      </div>
+      <div class="mchp-footer-tier2">
+        <p class="mchp-copyright">© Copyright 1998-2022 Microchip Technology Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-2724382-19"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];  
+    function gtag(){dataLayer.push(arguments);}  
+    gtag('js', new Date());   
+    gtag('config', 'UA-2724382-19');
+  </script>
+  
+  <script type="text/javascript">_satellite.pageBottom();</script><!-- Adobe Analytics -->
+  
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+       
+        </body>
+</html>

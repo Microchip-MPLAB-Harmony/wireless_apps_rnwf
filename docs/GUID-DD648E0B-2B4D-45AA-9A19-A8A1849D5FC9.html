@@ -1,0 +1,743 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" data-whc_version="24.1">
+    <head><link rel="shortcut icon" href="oxygen-webhelp\template\resources/images/favicon.ico"/><link rel="icon" href="oxygen-webhelp\template\resources/images/favicon.ico"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="The Cloud service provides an Application Programming Interface (API) to manage MQTT functionalities. These functionalities include, configuring the MQTT settings, connecting, disconnecting and ..."/><meta name="copyright" content="(C) Copyright 2024"/><meta name="generator" content="DITA-OT"/><title>3.1.8.2 Cloud Service</title><!--  Generated with Oxygen version 24.1, build number 2022062014.  --><meta name="wh-path2root" content=""/><meta name="wh-toc-id" content="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9-d1921e238"/><meta name="wh-source-relpath" content="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9.xml"/><meta name="wh-out-relpath" content="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9.html"/>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
+    
+    <!-- Template default styles  -->
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/topic-page.css?buildId=2022062014"/>
+    
+    
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
+    <script data-main="./oxygen-webhelp/app/topic-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+<link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/microchip.css?buildId=2022062014"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022062014"/>
+<script src="mchp-context-help.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async="" type="text/javascript"></script>
+    <script src="https://assets.adobedtm.com/6a72a357eb48/a636c708c7fe/launch-0b0023397020.min.js"></script><!-- Adobe Analytics -->
+</head>
+
+    <body id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9" class="wh_topic_page frmBody">
+        <a href="#wh_topic_body" class="sr-only sr-only-focusable">
+            Jump to main content
+        </a>
+        
+        
+        
+        
+        <header class="navbar navbar-default wh_header">
+    <div class="container-fluid">
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
+                    
+                    <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="oxygen-webhelp\template\resources/images/microchip.png" alt="RNWF02 32-Bit Application Developer's Guide "/></a>
+                    <div class=" wh_publication_title "><a href="index.html">RNWF02 32-Bit Application Developer's Guide </a></div>
+                    
+                </div>
+                
+                
+            </div>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</header>
+        
+        
+         
+        
+        <div class=" wh_search_input navbar-form wh_topic_page_search search " role="form">
+            
+            
+            
+            <form id="searchForm" method="get" role="search" action="search.html"><div class="d-flex justify-contents-around"><div class="flex-grow-1"></div><div class="position-relative flex-grow-1"><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div><div class="align-self-center flex-grow-1 ml-2"><div class="d-flex justify-content-end"><div class="dropdown"><a style="font-size: 1em; padding: 7px 12px !important;" class="btn py-3 px-3 btn-outline-light dropdown-toggle" href="#" role="button" id="devicesMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product Pages</a><div style="font-size: 1em;" class="dropdown-menu" aria-labelledby="devicesMenu"><a class="dropdown-item" target="_blank" href="https://www.microchip.com/en-us/product/rnwf02">RNWF02</a></div></div></div></div></div></form>
+            
+            <div class="mchp-color-stripe-grid-container">
+  <div class="mchp-main-bar mchp-orange-bar"></div>
+  <div class="mchp-main-bar mchp-blue-bar"></div>
+  <div class="mchp-main-bar mchp-green-bar"></div>
+</div>
+            
+        </div>
+        
+        <div class="container-fluid" id="wh_topic_container">
+            <div class="row">
+
+                <nav class="wh_tools d-print-none navbar-expand-md" aria-label="Tools">
+                    
+                    <div data-tooltip-position="bottom" class=" wh_breadcrumb "><ol class="d-print-none"><li><span class="home"><a href="index.html"><span>Home</span></a></span></li><li><div class="topicref" data-id="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A"><div class="title"><a href="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3</ph>
+Getting Started with Software Development</a></div></div></li><li><div class="topicref" data-id="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85"><div class="title"><a href="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1</ph>
+32-bit Microchip Microcontroller Hosts</a></div></div></li><li><div class="topicref" data-id="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575"><div class="title"><a href="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8</ph>
+RNWF02 Service Layer</a></div></div></li><li class="active"><div class="topicref" data-id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9"><div class="title"><a href="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9.html"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.2</ph>
+Cloud Service</a></div></div></li></ol></div>
+                    
+                    
+                    
+                    <div class="wh_right_tools">
+                        <button class="wh_hide_highlight" aria-label="Toggle search highlights" title="Toggle search highlights"></button>
+                        <button class="webhelp_expand_collapse_sections" data-next-state="collapsed" aria-label="Collapse sections" title="Collapse sections"></button>
+                        
+                        
+                        
+                        
+                        <div class=" wh_print_link print d-none d-md-inline-block "><button onClick="window.print()" title="Print this page" aria-label="Print this page"></button></div>
+                        
+                        <button type="button" id="wh_toc_button" class="custom-toggler navbar-toggler collapsed wh_toggle_button navbar-light" aria-expanded="false" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    
+                </nav>
+            </div>
+            
+            
+            
+            
+            <div class="wh_content_area">
+                <div class="row">
+                    
+                        <nav id="wh_publication_toc" class="col-lg-3 col-md-3 col-sm-12 d-md-block d-none d-print-none" aria-label="Table of Contents Container">
+                            <div id="wh_publication_toc_content">
+		                        
+                            	<div class=" wh_publication_toc " data-tooltip-position="right"><span class="expand-button-action-labels"><span id="button-expand-action" role="button" aria-label="Expand"></span><span id="button-collapse-action" role="button" aria-label="Collapse"></span><span id="button-pending-action" role="button" aria-label="Pending"></span></span><ul role="tree" aria-label="Table of Contents"><li role="treeitem"><div data-tocid="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A-d1921e11" class="topicref introduction" data-id="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A.html" id="GUID-749A07A5-61BF-49D9-A2A2-9555F8271D5A-d1921e11-link">Introduction </a></div></div></li><li role="treeitem"><div data-tocid="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006-d1921e19" class="topicref introduction" data-id="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006.html" id="GUID-C25E8000-C4E6-42A4-95E3-FE28E56FA006-d1921e19-link">Features</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27" class="topicref" data-id="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109.html" id="GUID-F596B9B0-6ADE-441E-89AA-8961595DB109-d1921e27-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">1</ph>
+Quick References</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67" class="topicref" data-id="GUID-CA76EF04-450B-4116-A233-43281D8817DA" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-CA76EF04-450B-4116-A233-43281D8817DA.html" id="GUID-CA76EF04-450B-4116-A233-43281D8817DA-d1921e67-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">2</ph>
+Hardware</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142" class="topicref" data-id="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A.html" id="GUID-03BD3C44-4BB7-4261-B5D2-D1C0BC85484A-d1921e142-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3</ph>
+Getting Started with Software Development</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="true"><div data-tocid="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85-d1921e150" class="topicref" data-id="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85-d1921e150-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85.html" id="GUID-CBBB5AC4-E3C0-41B3-85B0-4CEEF379EB85-d1921e150-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1</ph>
+32-bit Microchip Microcontroller Hosts</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem"><div data-tocid="GUID-8BB3AC7E-F75B-4345-8840-41D9E33B6AE0-d1921e158" class="topicref" data-id="GUID-8BB3AC7E-F75B-4345-8840-41D9E33B6AE0" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-8BB3AC7E-F75B-4345-8840-41D9E33B6AE0.html" id="GUID-8BB3AC7E-F75B-4345-8840-41D9E33B6AE0-d1921e158-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.1</ph>
+Software Installation</a></div></div></li><li role="treeitem"><div data-tocid="GUID-04B67110-0D56-455D-B25E-71360ACDA066-d1921e166" class="topicref" data-id="GUID-04B67110-0D56-455D-B25E-71360ACDA066" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-04B67110-0D56-455D-B25E-71360ACDA066.html" id="GUID-04B67110-0D56-455D-B25E-71360ACDA066-d1921e166-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.2</ph>
+<strong class="ph b">MPLAB® Harmony 3</strong></a></div></div></li><li role="treeitem"><div data-tocid="GUID-245A5049-CA82-4B02-8842-6FE4F296FC93-d1921e175" class="topicref" data-id="GUID-245A5049-CA82-4B02-8842-6FE4F296FC93" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-245A5049-CA82-4B02-8842-6FE4F296FC93.html" id="GUID-245A5049-CA82-4B02-8842-6FE4F296FC93-d1921e175-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.3</ph>
+Non-Microchip MCU Support</a></div></div></li><li role="treeitem"><div data-tocid="GUID-3DE75634-87FB-410E-A54F-D4C9418E551B-d1921e183" class="topicref" data-id="GUID-3DE75634-87FB-410E-A54F-D4C9418E551B" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-3DE75634-87FB-410E-A54F-D4C9418E551B.html" id="GUID-3DE75634-87FB-410E-A54F-D4C9418E551B-d1921e183-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.4</ph>
+Glossary of Terms</a></div></div></li><li role="treeitem"><div data-tocid="GUID-CF46BF2C-B0A6-4315-9638-1B04F74D3BFC-d1921e191" class="topicref" data-id="GUID-CF46BF2C-B0A6-4315-9638-1B04F74D3BFC" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-CF46BF2C-B0A6-4315-9638-1B04F74D3BFC.html" id="GUID-CF46BF2C-B0A6-4315-9638-1B04F74D3BFC-d1921e191-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.5</ph>
+Installing Device Family Pack (DFP)</a></div></div></li><li role="treeitem"><div data-tocid="GUID-23035C99-F13B-4264-803A-FB2B616E378B-d1921e199" class="topicref" data-id="GUID-23035C99-F13B-4264-803A-FB2B616E378B" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-23035C99-F13B-4264-803A-FB2B616E378B.html" id="GUID-23035C99-F13B-4264-803A-FB2B616E378B-d1921e199-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.6</ph>
+Creating a New Project</a></div></div></li><li role="treeitem"><div data-tocid="GUID-E41D00B3-E0A6-49AF-9D5E-618B735EC6DA-d1921e207" class="topicref" data-id="GUID-E41D00B3-E0A6-49AF-9D5E-618B735EC6DA" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-E41D00B3-E0A6-49AF-9D5E-618B735EC6DA.html" id="GUID-E41D00B3-E0A6-49AF-9D5E-618B735EC6DA-d1921e207-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.7</ph>
+Project Setup - RNWF MCC H3 Library Configuration</a></div></div></li><li role="treeitem" aria-expanded="true"><div data-tocid="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575-d1921e215" class="topicref" data-id="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575" data-state="expanded"><span role="button" tabindex="0" aria-labelledby="button-collapse-action GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575-d1921e215-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575.html" id="GUID-CF733F9F-D5DE-4262-A3E0-C236C1531575-d1921e215-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8</ph>
+RNWF02 Service Layer</a></div></div><ul role="group" class="navbar-nav nav-list"><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816-d1921e223" class="topicref" data-id="GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816-d1921e223-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816.html" id="GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816-d1921e223-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.1</ph>
+Wi-Fi Service</a></div></div></li><li role="treeitem" class="active"><div data-tocid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9-d1921e238" class="topicref" data-id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9.html" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9-d1921e238-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.2</ph>
+Cloud Service</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-834E84DC-609A-4A37-853F-3552166E1009-d1921e246" class="topicref" data-id="GUID-834E84DC-609A-4A37-853F-3552166E1009" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-834E84DC-609A-4A37-853F-3552166E1009-d1921e246-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-834E84DC-609A-4A37-853F-3552166E1009.html" id="GUID-834E84DC-609A-4A37-853F-3552166E1009-d1921e246-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.3</ph>
+Net Socket Service</a></div></div></li><li role="treeitem"><div data-tocid="GUID-3B61E392-ACFA-4AF0-871F-B5478535EF2C-d1921e262" class="topicref" data-id="GUID-3B61E392-ACFA-4AF0-871F-B5478535EF2C" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-3B61E392-ACFA-4AF0-871F-B5478535EF2C.html" id="GUID-3B61E392-ACFA-4AF0-871F-B5478535EF2C-d1921e262-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.4</ph>
+Provisioning Service</a></div></div></li><li role="treeitem"><div data-tocid="GUID-6E7714AC-0063-4E6F-86E0-C9BBFC026DBA-d1921e270" class="topicref" data-id="GUID-6E7714AC-0063-4E6F-86E0-C9BBFC026DBA" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-6E7714AC-0063-4E6F-86E0-C9BBFC026DBA.html" id="GUID-6E7714AC-0063-4E6F-86E0-C9BBFC026DBA-d1921e270-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.5</ph>
+Wi-Fi OTA Service Interface</a></div></div></li><li role="treeitem"><div data-tocid="GUID-681D8313-B33A-4C96-8FC1-3232AA4A3BD2-d1921e278" class="topicref" data-id="GUID-681D8313-B33A-4C96-8FC1-3232AA4A3BD2" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-681D8313-B33A-4C96-8FC1-3232AA4A3BD2.html" id="GUID-681D8313-B33A-4C96-8FC1-3232AA4A3BD2-d1921e278-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.6</ph>
+RNWF System Service</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-F150D807-27DF-4FA3-9712-46510E7427C9-d1921e286" class="topicref" data-id="GUID-F150D807-27DF-4FA3-9712-46510E7427C9" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-F150D807-27DF-4FA3-9712-46510E7427C9-d1921e286-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-F150D807-27DF-4FA3-9712-46510E7427C9.html" id="GUID-F150D807-27DF-4FA3-9712-46510E7427C9-d1921e286-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.8.7</ph>
+RNWF Service Appendix</a></div></div></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431-d1921e326" class="topicref" data-id="GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431-d1921e326-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431.html" id="GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431-d1921e326-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">3.1.9</ph>
+Clone, Build and Program an Existing Application</a></div></div></li></ul></li></ul></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342" class="topicref" data-id="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC.html" id="GUID-7CFD0125-E7FE-4F03-8812-FE2E2FAEC4DC-d1921e342-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">4</ph>
+Getting Started with <span class="ph">RNWF02</span> Add on board </a></div></div></li><li role="treeitem"><div data-tocid="GUID-1459CE88-429E-4D6E-8967-D08F201A5131-d1921e377" class="topicref" data-id="GUID-1459CE88-429E-4D6E-8967-D08F201A5131" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-1459CE88-429E-4D6E-8967-D08F201A5131.html" id="GUID-1459CE88-429E-4D6E-8967-D08F201A5131-d1921e377-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">5</ph>
+Out of Box Demo</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385" class="topicref" data-id="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A.html" id="GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A-d1921e385-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">6</ph>
+32-bit Example Applications</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490" class="topicref" data-id="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA.html" id="GUID-2F64CFCF-A0B9-43C8-BC1E-292E31F4D9DA-d1921e490-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">7</ph>
+File System</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517" class="topicref" data-id="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109.html" id="GUID-7C7B2071-30CD-420B-99F5-42D42DF96109-d1921e517-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">8</ph>
+Device Firmware Update (DFU)</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541" class="topicref" data-id="GUID-698A341B-D620-4248-94F9-ECF28C147ADC" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-698A341B-D620-4248-94F9-ECF28C147ADC.html" id="GUID-698A341B-D620-4248-94F9-ECF28C147ADC-d1921e541-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">9</ph>
+AT Commands</a></div></div></li><li role="treeitem"><div data-tocid="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921-d1921e1976" class="topicref" data-id="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921" data-state="leaf"><span role="button" class="wh-expand-btn"></span><div class="title"><a href="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921.html" id="GUID-7568679D-4C2D-4D2D-9EC0-131EB3D5B921-d1921e1976-link"><ph xmlns="http://www.oxygenxml.com/ns/webhelp/toc">10</ph>
+Document Revision History</a></div></div></li><li role="treeitem" aria-expanded="false"><div data-tocid="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984" class="topicref backmatter backmatter_parent" data-id="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B" data-state="not-ready"><span role="button" tabindex="0" aria-labelledby="button-expand-action GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984-link" class="wh-expand-btn"></span><div class="title"><a href="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B.html" id="GUID-0FB3F908-88EE-45CE-94F5-E97AF9049C9B-d1921e1984-link">Microchip Information</a></div></div></li></ul></div>
+		                        
+                            </div>
+                        </nav>
+                    
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" id="wh_topic_body">
+                        <button id="wh_close_publication_toc_button" class="close-toc-button d-none" aria-label="Toggle publishing table of content" aria-controls="wh_publication_toc" aria-expanded="true">
+                            <span class="close-toc-icon-container">
+                                <span class="close-toc-icon"></span>     
+                            </span>
+                        </button>
+                        
+                        
+                        <div class=" wh_topic_content body "><main role="main"><article role="article" aria-labelledby="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-E5D1C00C-622C-4B35-A779-21DF5ACC4EE7">
+    <h1 class="- topic/title title topictitle1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-E5D1C00C-622C-4B35-A779-21DF5ACC4EE7" style="">3.1.8.2 Cloud Service</h1>
+    <div class="- topic/body body">
+        <p class="- topic/p p">The Cloud service provides an Application Programming Interface (API) to manage MQTT
+            functionalities. These functionalities include, configuring the MQTT settings,
+            connecting, disconnecting and reconnecting to the MQTT broker, publishing, subscribing
+            and setting callbacks. The MQTT also provides support for the Azure Device Provisioning
+            Service (DPS). The Azure DPS implementation in the service layer simplifies device
+            connectivity with Azure IoT HUB. The user application only provides the IoT central
+            connection parameters and the final IoT HUB connection status is reported through the
+            registered callback function.</p>
+        <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">MQTT System Service Configuration in MCC</strong></p>
+        <figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_OH5_Z1T_SZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_OH5_Z1T_SZB"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 3-18. <span id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-672B118D-6469-4B38-8BF3-D41007C78227" class="fig--title">Cloud Service Configuration</span></span></figcaption>
+            
+            <div class=""><img class="- topic/image image" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__IMAGE_QBG_JGW_PZB" src="GUID-B0B67BF3-11B7-4133-8CCE-C97ACC5CD6DE-high.png"/></div>
+        </figure>
+        <p class="- topic/p p">This section allows MQTT service basic configuration as mentioned below:</p>
+        <ul class="- topic/ul ul" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_KVG_PHW_PZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_KVG_PHW_PZB">
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-E285F374-3792-4CA2-9D37-06A8F82C224B" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-E285F374-3792-4CA2-9D37-06A8F82C224B"><strong class="+ topic/ph hi-d/b ph b">URL:</strong> Configure Cloud provider endpoint / MQTT Broker URL.</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-F11B8F3F-FC48-4534-B7F8-C304FA443140" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-F11B8F3F-FC48-4534-B7F8-C304FA443140"><strong class="+ topic/ph hi-d/b ph b">Service Port</strong>:Configure the MQTT port.</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DB43A2B3-AB45-4BE5-8EC6-E0C56316C162" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DB43A2B3-AB45-4BE5-8EC6-E0C56316C162"><strong class="+ topic/ph hi-d/b ph b">TLS IDX:</strong> TLS indix.</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-1CDFDFC2-B698-4CDD-82E8-7BB19261903A" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-1CDFDFC2-B698-4CDD-82E8-7BB19261903A"><strong class="+ topic/ph hi-d/b ph b">TLS Conf:</strong> TLS
+                configuration.</li>
+        </ul>
+        <ul class="- topic/ul ul" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_LNC_YHW_PZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_LNC_YHW_PZB">
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-B86F12E5-6213-4F74-AB26-059CA27B11FD" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-B86F12E5-6213-4F74-AB26-059CA27B11FD">
+                <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Client ID:</strong> Device ID registered with cloud provider.</p>
+            </li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A0B55C80-E5D3-499C-B8AD-E49A3E01AF8A" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A0B55C80-E5D3-499C-B8AD-E49A3E01AF8A"><strong class="+ topic/ph hi-d/b ph b">User Name and Password:</strong>
+                Configure cloud client credentials.<p class="- topic/p p"></p></li>
+        </ul>
+        <p class="- topic/p p">This section allows MQTT service basic configuration as mentioned below:</p>
+        <ul class="- topic/ul ul" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_GJV_B3W_PZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_GJV_B3W_PZB">
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-27D75982-56C5-43EA-B592-6913C81C17C9" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-27D75982-56C5-43EA-B592-6913C81C17C9"><strong class="+ topic/ph hi-d/b ph b">Message Type:</strong> Configure the message type(NEW/DUP)  and message
+                type1(QOS0/QOS1/QOS2).</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-64223524-420D-4899-9A37-4549CEA58217" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-64223524-420D-4899-9A37-4549CEA58217"><strong class="+ topic/ph hi-d/b ph b">Message Retain type:</strong>Retain flag for the publish message.</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A1DF978D-1A47-413C-B8E0-70F6BA496496" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A1DF978D-1A47-413C-B8E0-70F6BA496496"><strong class="+ topic/ph hi-d/b ph b">Topic:</strong>Publish topic for the
+                message.</li>
+            <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-5EFA1CFC-66A9-42CB-AEB3-7ABB3AE12C7A" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-5EFA1CFC-66A9-42CB-AEB3-7ABB3AE12C7A"><strong class="+ topic/ph hi-d/b ph b">Message:</strong>Indicates message is new or duplicate.<p class="- topic/p p"></p></li>
+        </ul>
+        <p class="- topic/p p">This section allows Cloud service configuration as mentioned below:</p>
+        <div class="- topic/p p">
+            <ul class="- topic/ul ul" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DBE662E1-B383-49F6-AE7B-2D5B8180C50D_UL_OVB_JJB_YYB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DBE662E1-B383-49F6-AE7B-2D5B8180C50D_UL_OVB_JJB_YYB">
+                <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DBE662E1-B383-49F6-AE7B-2D5B8180C50D_GUID-FF6E3945-A0B3-4AC4-A768-9B1C44069870" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-DBE662E1-B383-49F6-AE7B-2D5B8180C50D_GUID-FF6E3945-A0B3-4AC4-A768-9B1C44069870"><strong class="+ topic/ph hi-d/b ph b">Enable Cloud Configs:</strong> To enable cloud configurations select cloud
+                    configuration settings . If disabled, cloud system service source and header
+                    files will not be generated.</li>
+                <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-48FEC662-5B84-4483-B7EF-D2CA1FC15D77" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-48FEC662-5B84-4483-B7EF-D2CA1FC15D77"><strong class="+ topic/ph hi-d/b ph b">Cloud URL:</strong> Configure Cloud
+                    provider endpoint / cloud Broker URL.</li>
+                <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-F157D4DF-0B1A-4589-A988-36EFDBB34E5F" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-F157D4DF-0B1A-4589-A988-36EFDBB34E5F"><strong class="+ topic/ph hi-d/b ph b">User Name and Password:</strong>
+                    Configure cloud client credentials.</li>
+                <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-48BE95AF-D9C3-4997-ADDE-2EF838534A0E" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-48BE95AF-D9C3-4997-ADDE-2EF838534A0E"><strong class="+ topic/ph hi-d/b ph b">Cloud Port:</strong> Configure
+                    Cloud/MQTT port.</li>
+                <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-79B7558E-8A7E-4DE2-9AB6-9CD31A0946EB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-79B7558E-8A7E-4DE2-9AB6-9CD31A0946EB">
+                    <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Client ID:</strong> Device ID registered with cloud provider.</p>
+                    <p class="- topic/p p"></p>
+                </li>
+            </ul>
+        </div>
+        <div class="- topic/p p">The MQTT service API example is as follows:
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-c" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_OLC_5TV_XYB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_OLC_5TV_XYB">SYS_RNWF_RESULT_t <span class="hl-functions">SYS_RNWF_MQTT_SrvCtrl</span>( SYS_RNWF_MQTT_SERVICE_t request, <strong class="hl-keyword">void</strong> *input)</pre>It
+            handles following services and reports the result to application over the return code or
+            through the registered callback:<div class="table-container"><table class="- topic/table table frame-all" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label"><span class="table--title-label">Table 3-5. </span></span><span class="table--title" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-29F656A5-BBAB-4F9D-82C2-AB322BD1012A">MQTT Services</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1">Service</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">Input</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Description</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_CONFIG</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2"><a class="- topic/xref xref" href="GUID-C83AB35B-80E7-47A9-BE31-AA8721DEFC14.html">Broker URL, Port, Client ID, Username, TLS
+                                    configuration</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Configures the MQTT server details along with the corresponding
+                                TLS configurations</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_CONNECT</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">None</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Initiates the MQTT connection to the configured MQTT
+                                broker</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_RECONNECT</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">None</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Triggers the re-connection to the configured MQTT broker</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_DISCONNECT</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">None</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Disconnects from the connected MQTT broker</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SUBSCRIBE_QOS0</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">Subscribe topic (String)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Subscribes to the given subscribe topic with QoS0</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SUBSCRIBE_QOS1</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">Subscribe topic (String)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Subscribes to the given subscribe topic with QoS1</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SUBSCRIBE_QOS2</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">Subscribe topic (String)</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Subscribes to the given subscribe topic with QoS2</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_PUBLISH</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2"><a class="- topic/xref xref" href="GUID-C83AB35B-80E7-47A9-BE31-AA8721DEFC14.html">New, QOS, Retain, topic, message</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Publish the message on given publish topic and
+                                configuration</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SET_CALLBACK</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__2">Callback Function Handler</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_NW3_JKC_4YB__entry__3">Registers the MQTT callback to report the status to user
+                                application</td>
+                        </tr>
+                    </tbody></table></div>The following list captures the MQTT callback event codes and their
+                arguments<div class="table-container"><table class="- topic/table table frame-all" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB" data-cols="3"><caption class="- topic/title title tablecap" data-caption-side="top" data-is-repeated="true"><span class="table--title-label"><span class="table--title-label">Table 3-6. </span></span><span class="table--title" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-3DACF078-9111-47E1-A711-EBD102EE59E3">Callback Event Codes</span></caption><colgroup><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/><col style="width:33.33333333333333%"/></colgroup><thead class="- topic/thead thead">
+                        <tr class="- topic/row">
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1">Event</th>
+                            <th class="- topic/entry entry colsep-1 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2">Response Components</th>
+                            <th class="- topic/entry entry colsep-0 rowsep-1" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Comments</th>
+                        </tr>
+                    </thead><tbody class="- topic/tbody tbody">
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_CONNECTED</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2">None</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Reported once connected to MQTT broker</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_DISCONNECTED</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2">None</td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Event to report the MQTT broker disconnection</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SUBCRIBE_MSG</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2"><a class="- topic/xref xref" href="GUID-C83AB35B-80E7-47A9-BE31-AA8721DEFC14.html">dup, QoS, retain, topic, payload</a></td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Reports the received payload for the subscribed topic</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_SUBCRIBE_ACK</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2">Integer string </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-1" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Subscribe ack return code</td>
+                        </tr>
+                        <tr class="- topic/row">
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__1"><code class="+ topic/ph pr-d/codeph ph codeph">SYS_RNWF_MQTT_DPS_STATUS</code></td>
+                            <td class="- topic/entry entry colsep-1 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__2">Integer </td>
+                            <td class="- topic/entry entry colsep-0 rowsep-0" headers="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__TABLE_AFB_5JJ_MYB__entry__3">Azure DPS status:- <ul class="- topic/ul ul" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_E23_TDX_MZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__UL_E23_TDX_MZB">
+                                    <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-64D4FEC2-9F9F-4618-A567-9682E5BC2553" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-64D4FEC2-9F9F-4618-A567-9682E5BC2553">1 for success </li>
+                                    <li class="- topic/li li" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A8C14ED0-0654-4399-8200-1E4808858E6F" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-A8C14ED0-0654-4399-8200-1E4808858E6F">0 for
+                                        failure</li>
+                                </ul></td>
+                        </tr>
+                    </tbody></table></div></div>
+        <div class="- topic/p p">The sequence chart below explains this process.<figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_QTD_GZT_QZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_QTD_GZT_QZB"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 3-19. <span id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-2891A887-D0F5-4F54-B8B7-00932A26722E" class="fig--title">MQTT (Azure) Connection
+                    Sequence</span></span></figcaption>
+                
+                <div class=""><img class="- topic/image image" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__IMAGE_RTD_GZT_QZB" src="GUID-1D8D0603-D1EC-4334-8EF8-BF6034DFAC1D-high.png"/></div>
+            </figure></div>
+        <p class="- topic/p p">MQTT Publish</p>
+        <div class="- topic/p p">
+            <figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_EKH_CXV_XYB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_EKH_CXV_XYB">
+                <div class="- topic/p p">User application can publish to the MQTT broker by creating the MQTT frame and
+                    then sending the frame using the API. The sequence chart is illustrated
+                    below.<pre class="+ topic/pre pr-d/codeblock pre codeblock language-c" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_QX4_WDX_MZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_QX4_WDX_MZB">SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_PUBLISH, (<strong class="hl-keyword">void</strong> *)&amp;mqtt_pub)</pre></div>
+                <div class="- topic/p p">
+                    <figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_GWZ_ZYT_QZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_GWZ_ZYT_QZB"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 3-20. <span id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-081DFF90-2903-4C4B-A329-D110AE53FB6C" class="fig--title">MQTT Publish Sequence</span></span></figcaption>
+                        
+                        <div class=""><img class="- topic/image image" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__IMAGE_HWZ_ZYT_QZB" src="GUID-563FD4C7-B2B2-4CD2-B0DF-AB24F90485AE-high.png"/></div>
+                    </figure>
+                </div>
+            </figure>
+        </div>
+        <p class="- topic/p p">MQTT Subscribe</p>
+        <div class="- topic/p p">The sequence for subscribing to a topic from the MQTT Broker is illustrated below. The
+            user application needs to use the API to subscribe to the topic with the appropriate QoS
+            value.<pre class="+ topic/pre pr-d/codeblock pre codeblock language-c" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_LWS_F2X_MZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_LWS_F2X_MZB">SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_SUBSCRIBE_QOS0, buffer) </pre></div>
+        <figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-9F9105E0-CEB0-455D-A4B1-095571BB625F" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-9F9105E0-CEB0-455D-A4B1-095571BB625F">
+            <div class="- topic/p p">
+                <figure class="- topic/fig fig fignone" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_C3R_BZT_QZB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__FIG_C3R_BZT_QZB"><figcaption class="- topic/title title figcap"><span class="figtitleprefix fig--title-label">Figure 3-21. <span id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__GUID-89A0FEC0-C10B-48A7-9793-023CC9E6D69B" class="fig--title">MQTT Subscribe Sequence</span></span></figcaption>
+                    
+                    <div class=""><img class="- topic/image image" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__IMAGE_D3R_BZT_QZB" src="GUID-460CECBD-07BE-424C-9230-9CAAB7911B9B-high.png"/></div>
+                </figure>
+            </div>
+        </figure>
+        <p class="- topic/p p">An example of the MQTT application provided below showcases the use of MQTT service
+            API's:</p>
+        <div class="- topic/p p">Some of the configurations con be configured by the user by MCC.
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock language-c" id="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_LSY_D4K_JYB" data-ofbid="GUID-DD648E0B-2B4D-45AA-9A19-A8A1849D5FC9__CODEBLOCK_LSY_D4K_JYB"><em class="hl-comment">/*
+    MQTT application
+*/</em>
+<em class="hl-comment">/* Keeps the device IP address */</em>
+<strong class="hl-keyword">static</strong> <strong class="hl-keyword">char</strong> g_DevIp[<span class="hl-number">16</span>];
+
+APP_DATA1 appData;
+uint8_t app_buf[SYS_RNWF_BUF_LEN_MAX];
+
+<span class="hl-directive">#define</span> <span class="hl-defines">UART_CONSOLE_NUM_BYTES_READ</span>              <span class="hl-number">10</span>
+<span class="hl-directive">#define</span> <span class="hl-defines">UART_CONSOLE_READ_BUFFER_SIZE</span>            <span class="hl-number">10</span>
+uint8_t uart_console_read_buffer[UART_CONSOLE_READ_BUFFER_SIZE];
+
+#ifdef AWS_CLOUD
+
+<strong class="hl-keyword">const</strong> <strong class="hl-keyword">char</strong> *tls_cfg_<span class="hl-number">1</span>[] = {<span class="hl-string">"AmazonRootCA1"</span>, <span class="hl-string">"aws"</span>, <span class="hl-string">"aws"</span>, NULL, <span class="hl-string">"a1gqt8sttiign3-ats.iot.us-east-2.amazonaws.com"</span>};
+                       
+RNWF_MQTT_CFG_t mqtt_cfg = {
+    .url = <span class="hl-string">"a1gqt8sttiign3-ats.iot.us-east-2.amazonaws.com"</span>, <em class="hl-comment">//MCU8 Endpoint link from AWS</em>
+    .username = <span class="hl-string">""</span>,
+    .password = <span class="hl-string">""</span>,
+    .clientid = AWS_DEVICE_ID,
+    .port = <span class="hl-number">8883</span>,
+    .tls_conf = tls_cfg_<span class="hl-number">1</span>,
+    .tls_idx = RNWF_NET_TLS_CONFIG_<span class="hl-number">1</span>,   
+    .azure_dps = <span class="hl-number">0</span>,
+};
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_STATE_MACHINE</span>()         APP_AWS_Task()
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_SUBACK_HANDLER</span>()        APP_AWS_SUBACK_Handler()
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_SUBMSG_HANDLER</span>(msg)     APP_AWS_SUB_Handler(msg)
+
+#elif AZURE_CLOUD
+
+
+<span class="hl-tag-doctype-comment">/**TLS Configuration for the Azure */</span>
+<strong class="hl-keyword">const</strong> <strong class="hl-keyword">char</strong> *tls_cfg_azure[] = {<span class="hl-string">"DigiCertGlobalRootG2"</span>, AZURE_DEVICE_ID, AZURE_DEVICE_ID, NULL, NULL};
+                       
+SYS_RNWF_MQTT_CFG_t mqtt_cfg = {
+    .url = <span class="hl-string">"g2-cert-dps.azure-devices-provisioning.net"</span>,
+    .username = AZURE_SCOPE_ID<span class="hl-string">"/registrations/"</span>AZURE_DEVICE_ID<span class="hl-string">"/api-version=2019-03-31"</span>,    
+    .clientid = AZURE_DEVICE_ID,    
+    .password = <span class="hl-string">""</span>,
+    .port = <span class="hl-number">8883</span>,
+    .tls_conf = tls_cfg_azure,
+    .tls_idx = SYS_RNWF_NET_TLS_CONFIG_<span class="hl-number">1</span>,  
+    .azure_dps = AZURE_DPS_ENABLE
+    <em class="hl-comment">//.azure_dps = 0                        //For AWS</em>
+};
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_STATE_MACHINE</span>()         APP_AZURE_Task()
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_SUBACK_HANDLER</span>()        APP_AZURE_SUBACK_Handler()
+
+<span class="hl-directive">#define</span> <span class="hl-functions">CLOUD_SUBMSG_HANDLER</span>(msg)        APP_AZURE_SUB_Handler(msg)
+#<strong class="hl-keyword">else</strong>
+
+SYS_RNWF_MQTT_CFG_t mqtt_cfg = {
+    .url = <span class="hl-string">"test.mosquitto.org"</span>,        
+    .clientid = <span class="hl-string">"rnwf02"</span>,    
+    .username = <span class="hl-string">""</span>,    
+    .password = <span class="hl-string">""</span>,
+    .port = <span class="hl-number">1883</span>,    
+    .tls_idx = <span class="hl-number">0</span>,  
+    .azure_dps = <span class="hl-number">0</span>
+};
+
+<span class="hl-directive">#define</span> <span class="hl-defines">CLOUD_STATE_MACHINE</span>         APP_AZURE_Task
+
+<span class="hl-directive">#define</span> <span class="hl-defines">CLOUD_SUBACK_HANDLER</span>        APP_AZURE_SUBACK_Handler
+
+<span class="hl-directive">#define</span> <span class="hl-defines">CLOUD_SUBMSG_HANDLER</span>        APP_AZURE_SUB_Handler
+
+#endif
+
+
+SYS_RNWF_RESULT_t <span class="hl-functions">APP_MQTT_Publish</span>(<strong class="hl-keyword">const</strong> <strong class="hl-keyword">char</strong> *top, <strong class="hl-keyword">const</strong> <strong class="hl-keyword">char</strong> *msg)
+{    
+    SYS_RNWF_MQTT_FRAME_t mqtt_pub;    
+    mqtt_pub.isNew = SYS_RNWF_NEW_MSG;
+    mqtt_pub.qos = SYS_RNWF_MQTT_QOS0;
+    mqtt_pub.isRetain = SYS_RNWF_NO_RETAIN;
+    mqtt_pub.topic = top;
+    mqtt_pub.message = msg;        
+    <strong class="hl-keyword">return</strong> <span class="hl-functions">SYS_RNWF_MQTT_SrvCtrl</span>(SYS_RNWF_MQTT_PUBLISH, (<strong class="hl-keyword">void</strong> *)&amp;mqtt_pub);              
+} 
+
+<strong class="hl-keyword">static</strong> <strong class="hl-keyword">void</strong> <span class="hl-functions">usartDmaChannelHandler</span>(DMAC_TRANSFER_EVENT event, uintptr_t contextHandle)
+{
+    <strong class="hl-keyword">if</strong> (event == DMAC_TRANSFER_EVENT_COMPLETE)
+    {
+        isUARTTxComplete = true;
+    }
+}
+
+uint8_t *APP_GET_IP_Address(<strong class="hl-keyword">void</strong>)
+{
+    <strong class="hl-keyword">return</strong> g_DevIp;
+}
+
+
+SYS_RNWF_RESULT_t <span class="hl-functions">APP_MQTT_Callback</span>(SYS_RNWF_MQTT_EVENT_t event, uint8_t *p_str)
+{
+    <strong class="hl-keyword">switch</strong>(event)
+    {
+        <strong class="hl-keyword">case</strong> SYS_RNWF_MQTT_CONNECTED:
+        {    
+            SYS_CONSOLE_PRINT(<span class="hl-string">"MQTT : Connected\r\n"</span>);
+            g_AppState = APP_CLOUD_UP;
+        }
+        <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_MQTT_SUBCRIBE_ACK:
+        {
+            CLOUD_SUBACK_HANDLER();
+        }
+        <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_MQTT_SUBCRIBE_MSG:
+        {
+            CLOUD_SUBMSG_HANDLER(p_str);
+        }
+        <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_MQTT_DISCONNECTED:
+        {            
+            SYS_CONSOLE_PRINT(<span class="hl-string">"MQTT - Reconnecting...\r\n"</span>);
+            g_AppState = APP_CLOUD_DOWN;
+            SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONNECT, NULL);            
+        }
+        <strong class="hl-keyword">break</strong>; 
+#ifdef AZURE_CLOUD        
+        <strong class="hl-keyword">case</strong> SYS_RNWF_MQTT_DPS_STATUS:
+        {
+            <strong class="hl-keyword">if</strong>(*p_str == <span class="hl-number">1</span>)
+            {
+                printf(<span class="hl-string">"DPS Successful! Connecting to Azure IoT Hub\r\n"</span>);
+            }
+            <strong class="hl-keyword">else</strong>
+            {   
+                SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONFIG, (<strong class="hl-keyword">void</strong> *)&amp;mqtt_cfg);                                                           
+            }
+            SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONNECT, NULL);                
+        }
+        <strong class="hl-keyword">break</strong>;
+#endif        
+        <strong class="hl-keyword">default</strong>:
+        <strong class="hl-keyword">break</strong>;
+    }
+    <strong class="hl-keyword">return</strong> SYS_RNWF_PASS;
+}
+
+<strong class="hl-keyword">void</strong> <span class="hl-functions">APP_WIFI_Callback</span>(SYS_RNWF_WIFI_EVENT_t event, uint8_t *p_str)
+{
+            
+    <strong class="hl-keyword">switch</strong>(event)
+    {
+        <strong class="hl-keyword">case</strong> SYS_RNWF_SNTP_UP:
+        {            
+                SYS_CONSOLE_PRINT(<span class="hl-string">"SNTP UP:%s\n"</span>, &amp;p_str[<span class="hl-number">2</span>]);  
+                SYS_CONSOLE_PRINT(<span class="hl-string">"Connecting to the Cloud\r\n"</span>);
+                SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_SET_CALLBACK, APP_MQTT_Callback);
+                SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONFIG, (<strong class="hl-keyword">void</strong> *)&amp;mqtt_cfg);
+                SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONNECT, NULL);
+                g_AppState = APP_CLOUD_DOWN;
+        }
+        <strong class="hl-keyword">break</strong>;
+        
+        <strong class="hl-keyword">case</strong> SYS_RNWF_CONNECTED:
+          SYS_CONSOLE_PRINT(<span class="hl-string">"Wi-Fi Connected    \r\n"</span>);
+       <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_DISCONNECTED:
+            g_AppState = APP_WIFI_DOWN;
+            SYS_CONSOLE_PRINT(<span class="hl-string">"Wi-Fi Disconnected\nReconnecting... \r\n"</span>);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_STA_CONNECT, NULL);
+            <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_DHCP_DONE:
+        {
+            SYS_CONSOLE_PRINT(<span class="hl-string">"DHCP IP:%s\r\n"</span>, &amp;p_str[<span class="hl-number">2</span>]); 
+            strncpy(g_DevIp, &amp;p_str[<span class="hl-number">3</span>], strlen(&amp;p_str[<span class="hl-number">3</span>])-<span class="hl-number">1</span>);
+            g_AppState = APP_WIFI_UP;
+        }
+        <strong class="hl-keyword">case</strong> SYS_RNWF_SCAN_INDICATION:
+            <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">case</strong> SYS_RNWF_SCAN_DONE:
+            <strong class="hl-keyword">break</strong>;
+        <strong class="hl-keyword">default</strong>:
+            <strong class="hl-keyword">break</strong>;
+                    
+    }    
+}
+
+<strong class="hl-keyword">void</strong> APP_Initialize ( <strong class="hl-keyword">void</strong> )
+{
+    <em class="hl-comment">/* Place the App state machine in its initial state. */</em>
+    appData.state = APP_STATE_INITIALIZE;
+}
+
+<strong class="hl-keyword">void</strong> APP_Tasks ( <strong class="hl-keyword">void</strong> )
+{
+    <strong class="hl-keyword">switch</strong>(appData.state)
+    {
+        <strong class="hl-keyword">case</strong> APP_STATE_INITIALIZE:
+        {
+            DMAC_ChannelCallbackRegister(DMAC_CHANNEL_<span class="hl-number">0</span>, usartDmaChannelHandler, <span class="hl-number">0</span>);
+            SYS_RNWF_IF_Init();
+            
+            APP_AZURE_INIT();
+            
+            appData.state = APP_STATE_REGISTER_CALLBACK;
+            SYS_CONSOLE_PRINT(<span class="hl-string">"APP_STATE_INITIALIZE\r\n"</span>);
+            <strong class="hl-keyword">break</strong>;
+        }
+        <strong class="hl-keyword">case</strong> APP_STATE_REGISTER_CALLBACK:
+        {
+                
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RWWF_SYSTEM_GET_WIFI_INFO, app_buf);    
+            SYS_CONSOLE_PRINT(<span class="hl-string">"Wi-Fi Info:- \r\n%s\r\n\r\n"</span>, app_buf);
+            
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_CERT_LIST, app_buf);    
+            SYS_CONSOLE_PRINT(<span class="hl-string">"Certs on RNWF02:- \r\n%s\r\n\r\n"</span>, app_buf);
+            
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_KEY_LIST, app_buf);    
+            SYS_CONSOLE_PRINT(<span class="hl-string">"Keys on RNWF02:- \r\n%s\r\n\r\n"</span>, app_buf);
+           
+            <strong class="hl-keyword">const</strong> <strong class="hl-keyword">char</strong> sntp_url[] =  <span class="hl-string">"0.in.pool.ntp.org"</span>;    
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SET_SNTP, sntp_url);
+             
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SW_REV, app_buf);    
+            SYS_CONSOLE_PRINT(<span class="hl-string">"Software Revision:- %s\r\n"</span>, app_buf);
+            
+              
+            <em class="hl-comment">/* RNWF Application Callback register */</em>
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_CALLBACK, APP_WIFI_Callback);
+          
+            <em class="hl-comment">/* Wi-Fii Connectivity */</em>
+            SYS_RNWF_WIFI_PARAM_t wifi_sta_cfg = {SYS_RNWF_WIFI_MODE_STA, SYS_RNWF_WIFI_STA_SSID, SYS_RNWF_WIFI_STA_PWD, SYS_RNWF_STA_SECURITY, SYS_RNWF_WIFI_STA_AUTOCONNECT};        
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_SET_WIFI_PARAMS, &amp;wifi_sta_cfg);
+
+            appData.state = APP_STATE_TASK;
+            <strong class="hl-keyword">break</strong>;
+        }
+        <strong class="hl-keyword">case</strong> APP_STATE_TASK:
+        {
+            <strong class="hl-keyword">if</strong>(g_AppState == APP_CLOUD_UP)
+            {
+                CLOUD_STATE_MACHINE();
+            }
+            RNWF_EVENT_Handler();
+            <strong class="hl-keyword">break</strong>;
+        }
+        <strong class="hl-keyword">default</strong>:
+        {
+            <strong class="hl-keyword">break</strong>;
+        }
+    }
+}</pre></div>
+    </div>
+</article></main></div>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+        </div> 
+        <div class="mchp_disclaimer"><p class="mchp_disclaimer_text">The online versions of the documents are provided as a courtesy. Verify all content and data in the device’s PDF documentation found on the device product page.</p></div><footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
+    <div class="footer">
+  <div class="mchp-wh-footer">
+    <div class="mchp-footer">
+      <div class="mchp-footer-tier1">
+        <div class="spacer"></div>
+        <div class="mchp-footer-container">
+          <div class="mchp-footer-links mchp-social-media-links">
+            <div class="mchp-component-items">
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.facebook.com/pages/Microchip-Technology-Inc/20320981741" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Facebook" src="oxygen-webhelp/template/resources/images/201016-corp-facebook.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.linkedin.com/company/microchip-technology" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip LinkedIn" src="oxygen-webhelp/template/resources/images/201016-corp-linkedin.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://twitter.com/MicrochipTech" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Twitter" src="oxygen-webhelp/template/resources/images/201016-corp-twitter.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.youtube.com/user/MicrochipTechnology" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip YouTube" src="oxygen-webhelp/template/resources/images/201016-corp-youtube.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.instagram.com/microchiptechnologyinc/" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Instagram" src="oxygen-webhelp/template/resources/images/201016-corp-instagram.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.weibo.com/microchiptech" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Weibo" src="oxygen-webhelp/template/resources/images/201016-corp-weibo.png"/>
+                </a>
+              </div>
+              <div class="mchp-component-item">
+                <a class="cmp-image__link" href="https://www.microchip.com/en-us/about/blog" target="_blank">
+                  <img class="cmp-image__image" alt="Microchip Blog" src="oxygen-webhelp/template/resources/images/201016-corp-blog.png"/>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mchp-footer-links">
+            <div class="mchp-component-items">
+              <div class="mchp-component-item">
+                <div class="link">
+                  <a href="https://www.microchip.com/about-us/contact-us" class="mchp-link__link">Contact</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information" class="mchp-link__link">Legal</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information/privacy-policy" class="mchp-link__link">Privacy Policy</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item ">
+                <div class="link">
+                  <a href="https://www.microchip.com/en-us/about/legal-information/microchip-cookie-statement" class="mchp-link__link">Cookies</a>
+                  <span class="mchp-link__separator">|</span>
+                </div>
+              </div>
+              <div class="mchp-component-item">
+                <div class="link">
+                  <a href="https://careers.microchip.com/" class="mchp-link__link">Careers</a>
+                  <span class="mchp-link__separator"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mchp-footer-newsletter">
+            <div class="cmp-text">
+              <p>Stay on the leading edge with our blog</p>
+            </div>
+            <div class="mchp-button-wrapper">
+              <a role="button" href="https://www.microchip.com/en-us/about/blog" class="mchp-button mchp-button-regular solid">
+                <span class="mchp-button__span">MicroSolutions</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="graphic">
+          <img src="oxygen-webhelp/template/resources/images/footer-graphic.png"/>
+        </div>
+      </div>
+      <div class="mchp-footer-tier2">
+        <p class="mchp-copyright">© Copyright 1998-2022 Microchip Technology Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-2724382-19"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];  
+    function gtag(){dataLayer.push(arguments);}  
+    gtag('js', new Date());   
+    gtag('config', 'UA-2724382-19');
+  </script>
+  
+  <script type="text/javascript">_satellite.pageBottom();</script><!-- Adobe Analytics -->
+  
+</div>
+  </div>
+</footer>
+        
+        <div id="go2top" class="d-print-none">
+            <span class="oxy-icon oxy-icon-up"></span>
+        </div>
+        
+        <div id="modal_img_large" class="modal">
+            <span class="close oxy-icon oxy-icon-remove"></span>
+            <div id="modal_img_container"></div>
+            <div id="caption"></div>
+        </div>
+        
+        
+        
+       
+        </body>
+</html>
