@@ -3,7 +3,7 @@ package:
   name: "wireless_apps_rnwf"
   type: "application"
   status: "production"
-  required: true
+  required: false
   version: "v1.0.0"
 
   dependencies:
@@ -18,7 +18,4 @@ package:
       version: "v3.17.0"
     - name: "wireless_system_rnwf"
       type: "package"
-      version: "v1.0.0" 
-    - name: "CMSIS_5"
-      type: "package"
-      version: "5.9.0"       
+      version: "v1.0.0"

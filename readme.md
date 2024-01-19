@@ -27,7 +27,7 @@ To clone or download these applications from Github, go to the [main page of thi
 |Folder|Description|
 |------|-----------|
 |apps|Contains Wireless service example applications.|
-|docs|Contains documentation in html format for offline viewing \(to be used only after cloning this repository onto a local machine\). Use [github pages](https://microchip-mplab-harmony.github.io/wireless_apps_rnwf/) of this repository for viewing it online.|
+|docs|Contains documentation in html format for offline viewing \(to be used only after cloning this repository onto a local machine\).|
 
 ## Code Examples
 
