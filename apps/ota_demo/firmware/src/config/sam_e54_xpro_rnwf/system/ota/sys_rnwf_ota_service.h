@@ -97,7 +97,6 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 
 /* DFU */
 /* Enable to get debug ota prints */
-//#define SYS_RNWF_OTA_DFU_DEBUG
 
 /* RNWF PE version */
 #define SYS_RNWF_OTA_RIO0_PE_VERSION           1

@@ -55,7 +55,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system/debug/sys_debug.h"
 #include "system/inf/sys_rnwf_interface.h"
 #include "system/wifi/sys_rnwf_wifi_service.h"
-#include "system/net/sys_rnwf_net_service.h"
 #include "peripheral/dmac/plib_dmac.h"
 #include "system/sys_rnwf_system_service.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
@@ -183,7 +182,7 @@ static bool SYS_RNWF_IF_QDequeue(SYS_RNWF_IF_QUEUE_t * if_q, uint8_t ** mem_idx)
 /* To do Software reset of the RNWF device */
 static SYS_RNWF_RESULT_t SYS_RNWF_IF_SwReset(void) 
 {
-	SYS_RNWF_IF_CmdRspSend(NULL, NULL, NULL, "\r\n", NULL);
+	SYS_RNWF_IF_CmdRspSend(NULL, NULL, NULL, SYS_RNWF_RESET_TARGET, NULL);
     
     return SYS_RNWF_PASS;
 }
@@ -205,7 +204,6 @@ static inline size_t SYS_RNWF_IF_CommandRespRead(uint8_t* pRdBuffer, const size_
 // Section: Interface Functions                                               */
 /* ************************************************************************** */
 /* ************************************************************************** */
-
 /* To Get the Socket ID from the string */
 static uint32_t SYS_RNWF_IF_GetSocketID(unsigned char * main_string) 
 {
@@ -228,6 +226,21 @@ static uint32_t SYS_RNWF_IF_GetSocketID(unsigned char * main_string)
         }
     }
     return 0;
+}
+
+/*Check whether the address is IPv4 or IPv6*/
+bool SYS_RNWF_IpAddress(unsigned char * main_string)
+{
+    int count=0;
+    for(int i=0; main_string[i]; i++)
+    {
+        if(main_string[i] == '.')
+            count++;
+    }
+    if(count >= 3)
+        return true;
+    else
+        return false;
 }
 
 /* This function effectively replaces the '\r' character with '\0' */
@@ -272,6 +285,7 @@ static SYS_RNWF_RESULT_t SYS_RNWF_IF_AsyncHandler(uint8_t * p_msg)
         case 'D':
         case 'N': 
         case 'T':
+        case 'P':
         {
             SYS_RNWF_WIFI_CALLBACK_t wifi_CallBackHandler[SYS_RNWF_WIFI_SERVICE_CB_MAX];
             SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_GET_CALLBACK, wifi_CallBackHandler);
@@ -285,8 +299,17 @@ static SYS_RNWF_RESULT_t SYS_RNWF_IF_AsyncHandler(uint8_t * p_msg)
 
                 if ((strstr((char * ) p_msg, SYS_RNWF_EVENT_STA_AUTO_IP) != NULL) || (strstr((char * ) p_msg, SYS_RNWF_EVENT_AP_AUTO_IP) != NULL))
                 {
-                    wifi_cb_func(SYS_RNWF_DHCP_DONE, p_arg);
-                } 
+                    bool IPv4_address = false;
+                    IPv4_address = SYS_RNWF_IpAddress(p_msg);
+                    if(IPv4_address == true)
+                    {
+                        wifi_cb_func(SYS_RNWF_IPv4_DHCP_DONE, p_arg);
+                    }
+                    else
+                    {
+                        wifi_cb_func(SYS_RNWF_IPv6_DHCP_DONE, p_arg);
+                    }
+                }
 
                 else if ((strstr((char * ) p_msg, SYS_RNWF_EVENT_LINK_LOSS) != NULL) || (strstr((char * ) p_msg, SYS_RNWF_EVENT_ERROR) != NULL))
                 {
@@ -318,10 +341,15 @@ static SYS_RNWF_RESULT_t SYS_RNWF_IF_AsyncHandler(uint8_t * p_msg)
                 {
                     wifi_cb_func(SYS_RNWF_SNTP_UP, p_arg);   
                 }
+
+                if(strstr((char *)p_msg, SYS_RNWF_EVENT_PING))
+                {
+                    wifi_cb_func(SYS_RNWF_WIFI_PING_RESP, p_arg);   
+                }
+
             }
         }
         break;
-        
         /** Socket based Async Events*/
         case 'S': 
         {

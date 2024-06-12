@@ -181,9 +181,9 @@ void SYS_Initialize ( void* data )
 
     SERCOM2_USART_Initialize();
 
-    SERCOM0_USART_Initialize();
-
     EVSYS_Initialize();
+
+    SERCOM0_USART_Initialize();
 
     DMAC_Initialize();
 
@@ -209,7 +209,7 @@ void SYS_Initialize ( void* data )
 
 
     /* MISRAC 2012 deviation block end */
-    APP_Initialize();
+    APP_RNWF02_Initialize();
 
 
     NVIC_Initialize();

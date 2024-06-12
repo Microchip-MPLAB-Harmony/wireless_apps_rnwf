@@ -37,7 +37,7 @@ int main ( void )
     SYS_Initialize ( NULL );
 
     SYS_CONSOLE_PRINT("########################################\r\n");
-    SYS_CONSOLE_PRINT("   Welcome RNWF TCP Client Demo\r\n");
+    SYS_CONSOLE_PRINT("         TCP Client Demo\r\n");
     SYS_CONSOLE_PRINT("########################################\r\n");
     
     while ( true )

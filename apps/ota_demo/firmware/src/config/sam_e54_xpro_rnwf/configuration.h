@@ -82,34 +82,25 @@ extern "C" {
 
 
 #define SYS_RNWF_NET_BIND_TYPE0					SYS_RNWF_BIND_LOCAL
-
-#define SYS_RNWF_NET_SOCK_PORT0					6666
-
 #define SYS_RNWF_NET_SOCK_TYPE0					SYS_RNWF_SOCK_TCP 
-
-#define SYS_RNWF_NET_SOCK_ADDR0					""
-
+#define SYS_RNWF_NET_SOCK_TYPE_IPv4_0           4
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_LOCAL0      0
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_GLOBAL0     0
+#define SYS_RNWF_NET_SOCK_PORT0					6666
 #define SYS_RNWF_TLS_ENABLE0					0
 
 
 #define SYS_RNWF_NET_BIND_TYPE1					SYS_RNWF_BIND_REMOTE 
-
-#define SYS_RNWF_NET_SOCK_PORT1					8000
-
 #define SYS_RNWF_NET_SOCK_TYPE1					SYS_RNWF_SOCK_TCP 
-
-
-#define SYS_RNWF_NET_SOCK_ADDR1					""
+#define SYS_RNWF_NET_SOCK_TYPE_IPv4_1           4
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_LOCAL1      0
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_GLOBAL1     0
+#define SYS_RNWF_NET_SOCK_PORT1					8000
 
 #define SYS_RNWF_TLS_ENABLE1					0
 
+
 #define SYS_RNWF_NET_SockCallbackHandler  	    APP_SOCKET_Callback
-
-#define SYS_DEBUG_ENABLE
-#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
-#define SYS_DEBUG_BUFFER_DMA_READY
-#define SYS_DEBUG_USE_CONSOLE
-
 
 /* TIME System Service Configuration Options */
 #define SYS_TIME_INDEX_0                            (0)
@@ -119,6 +110,13 @@ extern "C" {
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
 #define SYS_TIME_CPU_CLOCK_FREQUENCY                (120000000)
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (232)
+
+
+#define SYS_DEBUG_ENABLE
+#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
+#define SYS_DEBUG_BUFFER_DMA_READY
+#define SYS_DEBUG_USE_CONSOLE
+
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
@@ -161,13 +159,13 @@ extern "C" {
 #define RNWF_WIFI_DEVMODE        			SYS_RNWF_WIFI_MODE_STA
 
 #define SYS_RNWF_WIFI_STA_SSID				"DEMO_AP"
-#define SYS_RNWF_WIFI_STA_PWD        			"password"
+#define SYS_RNWF_WIFI_STA_PWD        		"password"
 #define SYS_RNWF_STA_SECURITY				SYS_RNWF_WPA2 
 #define SYS_RNWF_WIFI_STA_AUTOCONNECT   		true
 
 
-#define SYS_RNWF_WIFI_CallbackHandler			        APP_WIFI_Callback
-
+#define SYS_RNWF_COUNTRYCODE                "GEN"
+#define SYS_RNWF_WIFI_CallbackHandler	    APP_WIFI_Callback
 
 
 // *****************************************************************************

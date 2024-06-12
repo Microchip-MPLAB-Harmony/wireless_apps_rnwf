@@ -82,27 +82,26 @@ extern "C" {
 
 
 #define SYS_RNWF_NET_BIND_TYPE0					SYS_RNWF_BIND_REMOTE 
-
-#define SYS_RNWF_NET_SOCK_PORT0					443
-
 #define SYS_RNWF_NET_SOCK_TYPE0					SYS_RNWF_SOCK_TCP 
-
-#define SYS_RNWF_NET_SOCK_ADDR0					"52.92.132.8"
-
+#define SYS_RNWF_NET_SOCK_TYPE_IPv4_0           4
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_LOCAL0      0
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_GLOBAL0     0
+#define SYS_RNWF_NET_SOCK_ADDR0                 "52.92.132.8"
+#define SYS_RNWF_NET_SOCK_PORT0					443
 #define SYS_RNWF_TLS_ENABLE0					1
+#define SYS_RNWF_NET_PEER_AUTH0                 "1"
 #define SYS_RNWF_NET_ROOT_CERT0					"AmazonRootCA1"
-
-#define SYS_RNWF_NET_DEVICE_KEY0				 NULL
-
-#define SYS_RNWD_NET_DEVICE_KEY_PWD0			 NULL
-
-#define SYS_RNWF_NET_SERVER_NAME0				"s3-us-west-2.amazonaws.com"
-
-#define SYS_RNWF_NET_DOMAIN_NAME0				NULL
+#define SYS_RNWF_NET_DEVICE_CERTIFICATE0		NULL
+#define SYS_RNWF_NET_DEVICE_KEY0				NULL
+#define SYS_RNWD_NET_DEVICE_KEY_PWD0			NULL
+#define SYS_RNWF_NET_SERVER_NAME0				"file-download-files.s3-us-west-2.amazonaws.com"
+#define SYS_RNWF_NET_DOMAIN_NAME_VERIFY0        "1"
+#define SYS_RNWF_NET_DOMAIN_NAME0				"s3-us-west-2.amazonaws.com"
 
 
 
 #define SYS_RNWF_NET_SockCallbackHandler  	    APP_SOCKET_Callback
+
 
 #define SYS_DEBUG_ENABLE
 #define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
@@ -140,13 +139,14 @@ extern "C" {
 #define RNWF_WIFI_DEVMODE        			SYS_RNWF_WIFI_MODE_STA
 
 #define SYS_RNWF_WIFI_STA_SSID				"DEMO_AP"
-#define SYS_RNWF_WIFI_STA_PWD        			"password"
+#define SYS_RNWF_WIFI_STA_PWD        		"password"
 #define SYS_RNWF_STA_SECURITY				SYS_RNWF_WPA2 
 #define SYS_RNWF_WIFI_STA_AUTOCONNECT   		true
 
 
-#define SYS_RNWF_WIFI_CallbackHandler			        APP_WIFI_Callback
-
+#define SYS_RNWF_COUNTRYCODE                "GEN"
+#define SYS_RNWF_SNTP_ADDRESS               "129.154.46.154"
+#define SYS_RNWF_WIFI_CallbackHandler	    APP_WIFI_Callback
 
 
 // *****************************************************************************

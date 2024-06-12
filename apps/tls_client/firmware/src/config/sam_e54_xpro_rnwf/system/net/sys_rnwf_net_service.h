@@ -64,7 +64,7 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_SOCK_GET_LIST              "AT+SOCKLST\r\n"
 
 #define SYS_RNWF_SOCK_OPEN_UDP              "AT+SOCKO=1,4\r\n"
-#define SYS_RNWF_SOCK_OPEN_TCP              "AT+SOCKO=2,4\r\n"
+#define SYS_RNWF_SOCK_OPEN_TCP              "AT+SOCKO=2,%d\r\n"
 #define SYS_RNWF_SOCK_OPEN_RESP             "+SOCKO:"
 
 #define SYS_RNWF_SOCK_BIND_LOCAL            "AT+SOCKBL=%lu,%d\r\n"
@@ -95,6 +95,10 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_SOCK_TLS_SET_KEY_NAME      "AT+TLSC=%d,3,\"%s\"\r\n"
 #define SYS_RNWF_SOCK_TLS_SET_KEY_PWD       "AT+TLSC=%d,4,\"%s\"\r\n"
 #define SYS_RNWF_SOCK_TLS_SERVER_NAME       "AT+TLSC=%d,5,\"%s\"\r\n"
+#define SYS_RNWF_SOCK_TLS_DOMAIN_NAME       "AT+TLSC=%d,6,\"%s\"\r\n"
+#define SYS_RNWF_NET_PEER_AUTHENTICATION    "AT+TLSC=%d,40,%d\r\n"
+#define SYS_RNWF_SOCK_TLS_DOMAIN_NAME_VERIFY  "AT+TLSC=%d,41,%d\r\n"
+
 
 
 /**
@@ -232,8 +236,11 @@ typedef enum
  */
 typedef enum 
 {
+    /* TLS Peer authentication */
+    SYS_RNWF_NET_PEER_AUTH = 0,
+
     /* TLS CA Certificate */
-    SYS_RNWF_NET_TLS_CA_CERT = 0, 
+    SYS_RNWF_NET_TLS_CA_CERT, 
 
     /* TLS Certificate Name */         
     SYS_RNWF_NET_TLS_CERT_NAME,
@@ -247,7 +254,30 @@ typedef enum
     /* TLS Server name  */
     SYS_RNWF_NET_TLS_SERVER_NAME,
 
+    /* TLS Domain Name */
+    SYS_RNWF_NET_TLS_DOMAIN_NAME,
+     
+    /* TLS Domain Name Verify */
+    SYS_RNWF_NET_TLS_DOMAIN_NAME_VERIFY
+
 }SYS_RNWF_NET_TLS_CONFIG_ID_t;
+
+
+/**
+ @brief Network socket IP Configurations
+ */
+typedef enum 
+{
+    /**<Open socket with IPv4 address */
+        SYS_RNWF_NET_IPV4 = 4,
+
+    /**<Open socket with IPv6 locak address */
+        SYS_RNWF_NET_IPV6_LOCAL = 6,
+    
+    /**<Open socket with IPv6 global address */
+        SYS_RNWF_NET_IPV6_GLOBAL = 6,
+    
+}SYS_RNWF_NET_IP_TYPE_t;
 
 
 /**
@@ -265,7 +295,7 @@ typedef struct
     /**<Server or Client port number*/
     uint16_t            sock_port;          
     
-    /**<Socket Address (IPv4 Address)*/
+    /**<Socket Address (IPv4 or IPv6   Address)*/
     const char          *sock_addr;         
     
     /**<Server Socket ID*/
@@ -273,6 +303,9 @@ typedef struct
     
     /**<TLS configuration */
     uint8_t             tls_conf; 
+
+    /**<Open socket with IPv4/IPv6 address */
+    SYS_RNWF_NET_IP_TYPE_t  IP;
 
 }SYS_RNWF_NET_SOCKET_t;
 

@@ -52,7 +52,7 @@ int main ( void )
     SYS_Initialize ( NULL );
 
         SYS_CONSOLE_PRINT("########################################\r\n");
-        SYS_CONSOLE_PRINT("   Welcome RNWF TCP Server Demo\r\n");
+        SYS_CONSOLE_PRINT("         TCP Server Demo\r\n");
         SYS_CONSOLE_PRINT("########################################\r\n");
     while ( true )
     {

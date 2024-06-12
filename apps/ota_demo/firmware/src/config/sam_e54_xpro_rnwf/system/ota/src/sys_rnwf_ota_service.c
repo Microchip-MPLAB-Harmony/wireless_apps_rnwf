@@ -55,7 +55,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 /* This section lists the other files that are included in this file.
  */
-#include "app.h"
+#include "app_rnwf02.h"
 #include "configuration.h"
 #include "system/time/sys_time.h"
 #include "system/debug/sys_debug.h"
@@ -315,7 +315,7 @@ static SYS_RNWF_RESULT_t SYS_RNWF_OTA_ConfProcess
             token = (char *)strtok(NULL, ", ");
         }
         
-        /* Configure Socket parameters manually through Net service Configuration*/
+        /* Configure Socket parameters */
         otaCfg.socket.tls_conf = SYS_RNWF_TLS_ENABLE1;
         otaCfg.socket.bind_type = SYS_RNWF_NET_BIND_TYPE1;
         otaCfg.socket.sock_type = SYS_RNWF_NET_SOCK_TYPE1;
@@ -991,8 +991,6 @@ SYS_RNWF_RESULT_t SYS_RNWF_OTA_SrvCtrl
             }
             
             g_otaBuf = (uint8_t *)input;
-            
-            /* Configure Socket parameters manually through Net service Configuration*/
             ota_cfgSock.bind_type = SYS_RNWF_NET_BIND_TYPE0;
             ota_cfgSock.sock_port = SYS_RNWF_NET_SOCK_PORT0;
             ota_cfgSock.sock_type = SYS_RNWF_NET_SOCK_TYPE0;

@@ -108,7 +108,7 @@ SYS_RNWF_RESULT_t SYS_RNWF_NET_SockSrvCtrl( SYS_RNWF_NET_SOCK_SERVICE_t request,
             SYS_RNWF_NET_SOCKET_t *socket = (SYS_RNWF_NET_SOCKET_t*)(input); 
             uint8_t socket_id[32];
             
-            if(SYS_RNWF_CMD_SEND_OK_WAIT(SYS_RNWF_SOCK_OPEN_RESP, (uint8_t *)socket_id, SYS_RNWF_SOCK_OPEN_TCP) == SYS_RNWF_PASS)
+            if(SYS_RNWF_CMD_SEND_OK_WAIT(SYS_RNWF_SOCK_OPEN_RESP, (uint8_t *)socket_id, SYS_RNWF_SOCK_OPEN_TCP,socket->IP) == SYS_RNWF_PASS)
             {
                 socket->sock_master = atoi((char *)socket_id);
                 switch(socket->bind_type)
@@ -209,8 +209,18 @@ SYS_RNWF_RESULT_t SYS_RNWF_NET_SockSrvCtrl( SYS_RNWF_NET_SOCK_SERVICE_t request,
         {
             const char **tls_cfg_list = input;            
             
-            if(tls_cfg_list[SYS_RNWF_NET_TLS_CA_CERT] != NULL)
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SET_CA_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_CA_CERT]);     
+            if(tls_cfg_list[SYS_RNWF_NET_PEER_AUTH] != NULL)
+            {
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_NET_PEER_AUTHENTICATION, request, 1);
+                
+                if(tls_cfg_list[SYS_RNWF_NET_TLS_CA_CERT] != NULL)
+                    result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SET_CA_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_CA_CERT]);     
+            }
+            else
+            {
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_NET_PEER_AUTHENTICATION, request, 0);
+            }
+                 
             
             if(tls_cfg_list[SYS_RNWF_NET_TLS_CERT_NAME] != NULL)
                 result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SET_CERT_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_CERT_NAME]);     
@@ -222,7 +232,18 @@ SYS_RNWF_RESULT_t SYS_RNWF_NET_SockSrvCtrl( SYS_RNWF_NET_SOCK_SERVICE_t request,
                 result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SET_KEY_PWD, request, tls_cfg_list[SYS_RNWF_NET_TLS_KEY_PWD]);     
             
             if(tls_cfg_list[SYS_RNWF_NET_TLS_SERVER_NAME] != NULL)
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SERVER_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_SERVER_NAME]);                 
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_SERVER_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_SERVER_NAME]); 
+
+            if(tls_cfg_list[SYS_RNWF_NET_TLS_DOMAIN_NAME] != NULL)
+            {
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL,SYS_RNWF_SOCK_TLS_DOMAIN_NAME_VERIFY, request, 1);
+                if(tls_cfg_list[SYS_RNWF_NET_TLS_DOMAIN_NAME_VERIFY] != NULL)
+                    result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_SOCK_TLS_DOMAIN_NAME, request, tls_cfg_list[SYS_RNWF_NET_TLS_DOMAIN_NAME]);
+            }
+            else
+            {
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL,SYS_RNWF_SOCK_TLS_DOMAIN_NAME_VERIFY, request, 0);
+            }
             
             break;
         }

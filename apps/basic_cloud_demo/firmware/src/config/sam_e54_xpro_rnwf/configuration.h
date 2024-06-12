@@ -81,47 +81,32 @@ extern "C" {
 // *****************************************************************************
 
 
-#define SYS_RNWF_NET_BIND_TYPE0					SYS_RNWF_BIND_LOCAL
-
-#define SYS_RNWF_NET_SOCK_PORT0					6666
-
+#define SYS_RNWF_NET_BIND_TYPE0					SYS_RNWF_BIND_REMOTE 
 #define SYS_RNWF_NET_SOCK_TYPE0					SYS_RNWF_SOCK_TCP 
-
-#define SYS_RNWF_NET_SOCK_ADDR0					""
-
+#define SYS_RNWF_NET_SOCK_TYPE_IPv4_0           4
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_LOCAL0      0
+#define SYS_RNWF_NET_SOCK_TYPE_IPv6_GLOBAL0     0
+#define SYS_RNWF_NET_SOCK_ADDR0                 ""
+#define SYS_RNWF_NET_SOCK_PORT0					80
 #define SYS_RNWF_TLS_ENABLE0					0
 
 
+
 #define SYS_RNWF_NET_SockCallbackHandler  	    APP_SOCKET_Callback
-#define SYS_RNWF_MQTT_CLOUD_URL        		"g2-cert-dps.azure-devices-provisioning.net"
-#define SYS_RNWF_MQTT_CLOUD_PORT			8883
 
-#define SYS_RNWF_MQTT_QOS_TYPE					SYS_RNWF_MQTT_QOS0
+#define SYS_RNWF_MQTT_CLOUD_URL        		    "test.mosquitto.org"
+#define SYS_RNWF_MQTT_CLOUD_PORT			    1883
+#define SYS_RNWF_MQTT_AZURE_DPS_ENABLE			    0
+#define SYS_RNWF_MQTT_CLOUD_USER_NAME			""
+#define SYS_RNWF_MQTT_PASSWORD				    ""
+#define SYS_RNWF_MQTT_CLIENT_ID       			"rnwf02"
+#define SYS_RNWF_MQTT_VERSION                   3
+#define SYS_RNWF_MQTT_SUB_TOPIC_0            ""
+#define SYS_RNWF_MQTT_SUB_TOPIC_1            "$MCHP/Sample233"
+#define SYS_RNWF_MQTT_SUB_QOS_TYPE           "QOS0"
 
-#define SYS_RNWF_MQTT_RETAIN_TYPE				SYS_RNWF_NO_RETAIN
-
-#define SYS_RNWF_MQTT_TOPIC_NAME        	    "devices/rnwf02_device_01/messages/events/"
-
-#define SYS_RNWF_MQTT_CLIENT_ID       			"rnwf02_device_01"
-#define SYS_RNWF_MQTT_SCOPE_ID       			"0ne00B5478B"
-#define SYS_RNWF_MQTT_DEVICE_TEMPLATE			"dtmi:com:Microchip:SAME54_XPRO;1"
-#define SYS_RNWF_MQTT_CLOUD_USER_NAME			"0ne00B5478B/registrations/rnwf02_device_01/api-version=2019-03-31"
-#define SYS_RNWF_MQTT_PASSWORD				""
-#define SYS_RNWF_MQTT_AZURE_DPS_ENABLE			1
-#define SYS_RNWF_MQTT_SERVER_CERT            "DigiCertGlobalRootG2"
-#define SYS_RNWF_MQTT_DEVICE_CERT            "rnwf02_device_01"
-#define SYS_RNWF_MQTT_DEVICE_KEY             "rnwf02_device_01"
-#define SYS_RNWF_MQTT_DEVICE_KEY_PSK         ""
-#define SYS_RNWF_MQTT_TLS_SERVER_NAME        ""
-#define SYS_RNWF_MQTT_TLS_DOMAIN_NAME        ""
-
-
-#define SYS_RNWF_MQTT_SUB_TOPIC_0            "iothub/twin/PATCH/properties/desired/#"
-#define SYS_RNWF_MQTT_SUB_TOPIC_1            "$iothub/methods/POST/#"
-#define SYS_RNWF_MQTT_SUB_TOPIC_2            "$iothub/twin/res/#"
-
-
-#define SYS_RNWF_MQTT_CallbackHandler        APP_MQTT_Callback
+#define SYS_MQTT_AZURE_ENABLE_TLS			    0
+#define SYS_RNWF_MQTT_CallbackHandler           APP_MQTT_Callback
 
 #define SYS_DEBUG_ENABLE
 #define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
@@ -159,13 +144,13 @@ extern "C" {
 #define RNWF_WIFI_DEVMODE        			SYS_RNWF_WIFI_MODE_STA
 
 #define SYS_RNWF_WIFI_STA_SSID				"DEMO_AP"
-#define SYS_RNWF_WIFI_STA_PWD        			"password"
+#define SYS_RNWF_WIFI_STA_PWD        		"password"
 #define SYS_RNWF_STA_SECURITY				SYS_RNWF_WPA2 
 #define SYS_RNWF_WIFI_STA_AUTOCONNECT   		true
 
 
-#define SYS_RNWF_WIFI_CallbackHandler			        APP_WIFI_Callback
-
+#define SYS_RNWF_COUNTRYCODE                "GEN"
+#define SYS_RNWF_WIFI_CallbackHandler	    APP_WIFI_Callback
 
 
 // *****************************************************************************

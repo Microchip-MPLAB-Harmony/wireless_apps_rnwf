@@ -50,8 +50,8 @@
 #include <stdbool.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/sercom/usart/plib_sercom2_usart.h"
-#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/sercom/usart/plib_sercom0_usart.h"
+#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/sercom/spi_master/plib_sercom6_spi_master.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
@@ -70,7 +70,7 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "app.h"
+#include "app_rnwf02.h"
 
 
 
@@ -202,9 +202,9 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  drvSST26;
+    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysDebug;
 
-    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysConsole0;
 
 

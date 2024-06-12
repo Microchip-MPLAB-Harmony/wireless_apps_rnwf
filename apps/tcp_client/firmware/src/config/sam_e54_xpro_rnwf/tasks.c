@@ -83,8 +83,8 @@ void SYS_Tasks ( void )
     
 
     /* Maintain the application's state machine. */
-        /* Call Application task APP. */
-    APP_Tasks();
+        /* Call Application task APP_RNWF02. */
+    APP_RNWF02_Tasks();
 
 
 

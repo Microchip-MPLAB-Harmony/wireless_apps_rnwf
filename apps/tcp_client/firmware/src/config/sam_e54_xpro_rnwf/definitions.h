@@ -66,7 +66,7 @@
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
-#include "app.h"
+#include "app_rnwf02.h"
 
 
 

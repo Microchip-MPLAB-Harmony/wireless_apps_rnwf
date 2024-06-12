@@ -61,7 +61,7 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_IF_ASYNC_BUF_MAX  1024
 
 /* Interface Async buffer maximum msg size */
-#define SYS_RNWF_IF_ASYNC_MSG_MAX  64
+#define SYS_RNWF_IF_ASYNC_MSG_MAX  128
 /* Interface buffer maximum size */
 #define SYS_RNWF_IF_BUF_MAX     (SYS_RNWF_IF_ASYNC_BUF_MAX/SYS_RNWF_IF_ASYNC_MSG_MAX)
 
@@ -80,13 +80,19 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_AT_CMD     "AT"
 #define SYS_RNWF_AT_EOL     "\r\n>"
 #define SYS_RNWF_AT_DONE    "OK"
-#define SYS_RNWF_AT_ERROR     "ERROR"
+#define SYS_RNWF_AT_ERROR   "ERROR"
 
-#define SYS_RNWF_ARG_DELIMETER          ":"
+#define SYS_RNWF_ARG_DELIMETER        ":"
 
 /*  Wi-Fi Event Code*/
-#define SYS_RNWF_EVENT_STA_AUTO_IP        "WSTAAIP:"
-#define SYS_RNWF_EVENT_AP_AUTO_IP         "WAPAIP:"
+#define SYS_RNWF_EVENT_STA_AUTO_IP    "WSTAAIP:"
+#define SYS_RNWF_EVENT_AP_AUTO_IP     "WAPAIP:"
+
+/*  Wi-Fi Ping Event Code*/
+#define SYS_RNWF_EVENT_PING           "PING:"
+
+/*IPv6 local link IP prefix*/
+#define SYS_RNWF_LOCAL_IP_PREFIX      "FE80"
 
 #define SYS_RNWF_EVENT_LINK_UP        "WSTALU:"
 #define SYS_RNWF_EVENT_LINK_LOSS      "WSTALD:"
@@ -104,7 +110,7 @@ Copyright (C) 2020 released Microchip Technology Inc.  All rights reserved.
 #define SYS_RNWF_EVENT_DNS_ERROR      "DNSERR:"
 
 /*  TIME Event Code */
-#define SYS_RNWF_EVENT_TIME             "TIME:"
+#define SYS_RNWF_EVENT_TIME           "TIME:"
 
 /*  INFO Event Code */
 #define SYS_RNWF_EVENT_INFO           "INFO:"

@@ -128,8 +128,8 @@ SYS_RNWF_RESULT_t SYS_RNWF_WIFI_SrvCtrl( SYS_RNWF_WIFI_SERVICE_t request, void *
             
             if(wifi_config->mode == SYS_RNWF_WIFI_MODE_STA)
             {
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_DISABLE);//AT+WAP=0
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_DISCONNECT);//AT+WSTA=0
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_DISABLE);
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_DISCONNECT);
                 result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_STA_SSID, wifi_config->ssid);            
                 result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_STA_PWD, wifi_config->passphrase);
                 result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_STA_SEC, wifi_config->security);
@@ -141,20 +141,26 @@ SYS_RNWF_RESULT_t SYS_RNWF_WIFI_SrvCtrl( SYS_RNWF_WIFI_SERVICE_t request, void *
                 }
             }
             else if(wifi_config->mode == SYS_RNWF_WIFI_MODE_AP)                
-            {                   
-                uint8_t default_channel = 6;
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_DISCONNECT);//AT+WSTA=0\r\n
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_DISABLE); //AT+WAP=0\r\n               
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_SSID, wifi_config->ssid);  //AT+WAPC=1,"wsn"          
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_PWD, wifi_config->passphrase);//AT+WAPC=3,\"%s\"\r\n
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_SEC, wifi_config->security);//AT+WAPC=2,%d\r\n
-                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_CHANNEL, default_channel);    //AT+WAPC=4,%d\r\n
-                if(wifi_config->autoconnect)
-                {
-                    result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_ENABLE);//AT+WAP=1
-                }
+            {
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_DISCONNECT);
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_DISABLE);       
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_SSID, wifi_config->ssid);     
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_PWD, wifi_config->passphrase);
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_SEC, wifi_config->security);
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SET_AP_CHANNEL, wifi_config->channel);
+                result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL, NULL, SYS_RNWF_WIFI_SOFTAP_ENABLE);
             }
             break;            
+        }
+
+
+
+        case SYS_RNWF_WIFI_SET_REGULATORY_DOMAIN:
+        {
+            const char *reg_domain = (const char *)input;
+            result = SYS_RNWF_CMD_SEND_OK_WAIT(NULL,NULL, SYS_RNWF_WIFI_SET_REG_DONAIN, reg_domain);
+            
+            break;
         }
 
         /**<Request/Trigger Wi-Fi passive scan */ 
@@ -191,6 +197,14 @@ SYS_RNWF_RESULT_t SYS_RNWF_WIFI_SrvCtrl( SYS_RNWF_WIFI_SERVICE_t request, void *
             
             callBackHandler[0] = g_wifiCallBackHandler[0];
             callBackHandler[1] = g_wifiCallBackHandler[1];
+            break;
+        }
+        
+        /* RNWF Get Wifi Config Info */
+        case SYS_RNWF_GET_WIFI_CONF_INFO:
+        {
+            *(uint8_t*)input = '\0';
+            result = SYS_RNWF_CMD_SEND_OK_WAIT("+WIFIC:", input, SYS_RNWF_WIFI_CONF_INFO);
             break;
         }
         default:
