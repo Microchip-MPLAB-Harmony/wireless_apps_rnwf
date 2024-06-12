@@ -33,7 +33,7 @@ To clone or download these applications from Github, go to the [main page of thi
 
 The following applications are provided to demonstrate the typical or interesting usage models of one or more wireless usecases.
 
-**RNWF Code Examples**
+**RNWF02 Code Examples**
 
 |Name|Description|
 |----|-----------|
@@ -42,7 +42,7 @@ The following applications are provided to demonstrate the typical or interestin
 |[TCP Server](apps/tcp_server/readme.md)|TCP Server example application|
 |[TLS Client](apps/tls_client/readme.md)|TLS Client example application|
 |[Azure Cloud demo](apps/azure_demo/readme.md)|Azure Cloud example application|
-|[OTA demo](apps/ota_demo\readme.md)|OTA example application|
+|[OTA demo](apps/ota_demo/readme.md)|OTA example application|
 |[Basic Cloud demo](apps/basic_cloud_demo/readme.md)|Basic MQTT example application|
 
 
