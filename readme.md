@@ -33,13 +33,38 @@ To clone or download these applications from Github, go to the [main page of thi
 
 The following applications are provided to demonstrate the typical or interesting usage models of one or more wireless usecases.
 
+**RNWF Code Examples**
+
 |Name|Description|
 |----|-----------|
-|[Wi-Fi easy config](apps\Wi-Fi_easy_config\readme.md)| HTTP server / web-page based Wi-Fi provisioning example.|
-|[TCP Client](apps\tcp_client\readme.md)|TCP Client example application|
-|[TCP Server](apps\tcp_server\readme.md)|TCP Server example application|
-|[TLS Client](apps\tls_client\readme.md)|TLS Client example application|
-|[Azure Cloud demo](apps\basic_cloud_demo\readme.md)|Azure Cloud example application|
-|[OTA demo](apps\ota_demo\readme.md)|OTA example application|
+|[Wi-Fi easy config](apps/wifi_easy_config/readme.md)| HTTP server / web-page based Wi-Fi provisioning example.|
+|[TCP Client](apps/tcp_client/readme.md)|TCP Client example application|
+|[TCP Server](apps/tcp_server/readme.md)|TCP Server example application|
+|[TLS Client](apps/tls_client/readme.md)|TLS Client example application|
+|[Azure Cloud demo](apps/azure_demo/readme.md)|Azure Cloud example application|
+|[OTA demo](apps/ota_demo\readme.md)|OTA example application|
+|[Basic Cloud demo](apps/basic_cloud_demo/readme.md)|Basic MQTT example application|
 
 
+**WINCS02 Code Examples**
+
+|Name|Description|
+|----|-----------|
+|[Wi-Fi easy config](apps/wifi_easy_config/readme_wincs02.md)| HTTP server / web-page based Wi-Fi provisioning example.|
+|[TCP Client](apps/tcp_client/readme_wincs02.md)|TCP Client example application|
+|[TCP Server](apps/tcp_server/readme_wincs02.md)|TCP Server example application|
+|[Basic Cloud demo](apps/basic_cloud_demo/readme_wincs02.md)|Basic MQTT example application|
+
+
+
+## Documentation
+
+|Name|Description|
+|----|-----------|
+|[WLAN Driver Library API Information](https://onlinedocs.microchip.com/oxy/GUID-8B137D7B-852A-471A-8E47-463DF557852F-en-US-3/index.html)|  Document of MPLAB Harmony WLAN Driver API Information|
+|[RNWF02 Application Developer's Guide](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/index.html)|RNWF02 Application Developer's Guide|
+|[RNWF02 Add On Board Users Guide](https://onlinedocs.microchip.com/g/GUID-52DD287B-BC7E-48D9-88EF-A3075A09154B)| RNWF02 Add On Board Users Guide|
+|[RNWF02 Wi-Fi Module Data Sheet](https://onlinedocs.microchip.com/g/GUID-3DDF7D25-768C-4E66-8343-E56E3AE4B4BB)|RNWF02 Wi-Fi Module Data Sheet|
+|[RNWF02 Reference API Users Guide](https://onlinedocs.microchip.com/g/GUID-817B01E8-25E7-4A90-B815-25D6CA8B9579)|RNWF02 Reference API Users Guide|
+|[RNWFxx Wi-Fi Library Release Notes](https://onlinedocs.microchip.com/g/GUID-9DF112DF-79FD-4D57-853F-633360D04142)|RNWFxx Wi-Fi Library Release Notes|
+|[WINCS02 Wi-Fi Driver](https://github.com/Microchip-MPLAB-Harmony/wireless_wifi)|WINCS02 Wi-Fi Driver|

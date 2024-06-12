@@ -14,11 +14,11 @@ When there are multiple project files opened in the Project window, ensure to se
 
 1.  To build the project, click on **Clean and Build the Project** as illustrated in the following figure.
 
-    ![](images\GUID-11A66698-B8C3-4B44-A92F-F8B8CF5F9642-low.png "Building the Project")
+    ![Building the Project](images/GUID-11A66698-B8C3-4B44-A92F-F8B8CF5F9642-low.png)
 
 2.  To Program the board, click on **Make and Program Device Main Project** as illustrated in the following figure.
 
-    ![](images\GUID-488A76C8-FE78-46F8-A2ED-E761E2AF15B2-low.png "Make and Program")
+    ![Make and Program](images/GUID-488A76C8-FE78-46F8-A2ED-E761E2AF15B2-low.png)
 
 
 **Parent topic:**[Clone, Build and Program an Existing Application](GUID-D8E431D1-962C-48A4-AD83-C22EB92DE431.md)
