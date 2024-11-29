@@ -1,4 +1,4 @@
-<config configName="default" projectName="ota_demo_sam_e54_xpro_rnwf02" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="ota_demo_sam_e54_xpro_rnwf02" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -3350,7 +3350,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;312&quot; canvasWidth=&quot;1009&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;361&quot; canvasWidth=&quot;1070&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -3367,7 +3367,7 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;sercom0&quot; x=&quot;710&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom2&quot; x=&quot;550&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom6&quot; x=&quot;750&quot; y=&quot;200&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sysNetRNWF&quot; x=&quot;870&quot; y=&quot;160&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sysNetRNWF&quot; x=&quot;870&quot; y=&quot;159&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sysOtaRNWF&quot; x=&quot;15&quot; y=&quot;291&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sysWifiRNWF&quot; x=&quot;800&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_console&quot; x=&quot;170&quot; y=&quot;80&quot;/&gt;
@@ -9916,24 +9916,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWD_NET_DEVICE_KEY_PWD0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
-  &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWD_NET_DEVICE_KEY_PWD0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysNetRNWF&gt;
-&lt;/sysNetRNWF&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWD_NET_DEVICE_KEY_PWD1"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
-  &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWD_NET_DEVICE_KEY_PWD1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysNetRNWF&gt;
-&lt;/sysNetRNWF&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DEBUG_LOGS"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DEBUG_LOGS&quot;&gt;
@@ -9955,7 +9937,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DEVICE_CERTIFICATE1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DEVICE_CERTIFICATE1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;dasd&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -9973,7 +9962,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DEVICE_KEY1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DEVICE_KEY1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;dsaf&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -9991,7 +9987,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DOMAIN_NAME1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DOMAIN_NAME1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;faefaf&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -10009,7 +10012,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DOMAIN_NAME_VERIFY1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DOMAIN_NAME_VERIFY1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -10027,7 +10037,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_ENABLE_TLS1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_ENABLE_TLS1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -10076,7 +10088,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_PEER_AUTH1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_PEER_AUTH1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -10112,7 +10131,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_SERVER_NAME1"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_SERVER_NAME1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;fefa&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -10228,24 +10254,6 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysOtaRNWF" name="SYS_RNWF_OTA_DEBUG_LOGS"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysOtaRNWF&gt;
   &lt;sysOtaRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_OTA_DEBUG_LOGS&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysOtaRNWF&gt;
-&lt;/sysOtaRNWF&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysOtaRNWF" name="SYS_RNWF_OTA_TUNNEL"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysOtaRNWF&gt;
-  &lt;sysOtaRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_OTA_TUNNEL&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysOtaRNWF&gt;
-&lt;/sysOtaRNWF&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysOtaRNWF" name="SYS_RNWF_OTA_TUNNEL_PORT"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysOtaRNWF&gt;
-  &lt;sysOtaRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_OTA_TUNNEL_PORT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/sysOtaRNWF&gt;
 &lt;/sysOtaRNWF&gt;
@@ -10676,7 +10684,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWifiRNWF" name="SYS_RNWF_WIFI_STA_SSID_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_WIFI_STA_SSID_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DEMO_AP_RNWF&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
 </value>
@@ -11782,367 +11792,367 @@
          <hash>eb40334131146a88b7bf8c6608b17b991b187e2cd22490ab43684f87adb307ce</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\ATSAME54P20A.ld</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\ATSAME54P20A.ld</file>
          <hash>d16806801e07c979cea29ee524ed4c3d3e526c5cb77c7d8adf4128ba06157a04</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\bsp\bsp.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\bsp\bsp.c</file>
          <hash>5cb21f9aaac63012c30d9eb9e34ab1e613e4c9f515cd7516cedbc9701ff6a16d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\bsp\bsp.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\bsp\bsp.h</file>
          <hash>0f53b638b719dc36a805157b33d769d0232834a4a9a4efd223ffd14d2095469e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\configuration.h</file>
-         <hash>1e1ca13e80091f1a39380526095f98046f069fa3025d413cec9bc2235283522d</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\configuration.h</file>
+         <hash>f3c0491facae388070e6bdc5d66740cd339577c1b07ec3298c656a7f76a9097f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\definitions.h</file>
-         <hash>e2b9d6854da6f747ed93cfe5781be4bb94ca9afad0f3d96360755aa041138fb1</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\definitions.h</file>
+         <hash>0bbf6899cde9b8e5008f4008277dba73e82c993d428cf04f478cfe45bc14469c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\device.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\device.h</file>
          <hash>68bb28accb617ce48b644e0b41a8f8a1aab2e1025456ba49a5a4bd72bf8e9fe8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\device_cache.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\device_cache.h</file>
          <hash>e2914501b361bbc93a56d6915b1bf4fac00277e61f31fdee87a587bc15dea5b6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\device_vectors.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\device_vectors.h</file>
          <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\driver.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\driver.h</file>
          <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\driver_common.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\driver_common.h</file>
          <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\drv_sst26.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\drv_sst26.h</file>
          <hash>f11f50198610ebfb0697699a3e8d3a5fa52d5e3982a5d5dbd05a88e638b6031e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\drv_sst26_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\drv_sst26_definitions.h</file>
          <hash>3d0b7e20c162c0d239cc4cfb18604e3dcbe98eccd02e8247066918cb3208c6e4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\src\drv_sst26.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\src\drv_sst26.c</file>
          <hash>28f488bed0ea357df11e1756f4173476bb76e9b1dd029404d538a530c51f94f8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\src\drv_sst26_local.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\src\drv_sst26_local.h</file>
          <hash>eb033cea94cfa35bdf509e22f76fe2b546757aaabe36c91a3c013bfe16157a7e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\src\drv_sst26_spi_interface.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\src\drv_sst26_spi_interface.c</file>
          <hash>a568b90352a4d86c0707aaeec2881bca0c21699b1bffff0c9c71f1cdf158d37e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\driver\sst26\src\drv_sst26_spi_interface.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\driver\sst26\src\drv_sst26_spi_interface.h</file>
          <hash>1f9acab797cdfe7d5efbcbec82487b9023dc5806c020b833c548ffdf4cddc2d5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\exceptions.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\exceptions.c</file>
          <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\initialization.c</file>
-         <hash>76a31e8fa16276bb97ec6ca811b275c655bd69cf8c3bf67bbd44aa1ca3a6e531</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\initialization.c</file>
+         <hash>2fc6587dc0e13cbfdd61b70065e2c79b5c1979ff4207faf995b4b1844e68d0e9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\interrupts.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\interrupts.c</file>
          <hash>32c03ecda86ce1da40933255a5fc222272056ba6e71b9891cfcf2a1fda9ab218</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\interrupts.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\interrupts.h</file>
          <hash>3d6d0bce1c59cacadc6f1fefdfb8397bf65786c6ffeb507de4c76ee6e61f0700</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\libc_syscalls.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\libc_syscalls.c</file>
          <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\osal\osal.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\osal\osal.h</file>
          <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\osal\osal_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\osal\osal_definitions.h</file>
          <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\osal\osal_impl_basic.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\osal\osal_impl_basic.h</file>
          <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\clock\plib_clock.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\clock\plib_clock.c</file>
          <hash>702603044a477557888014d40cb49ce815343870b2023ac7ce9b4a2c8502bc3b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\clock\plib_clock.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\clock\plib_clock.h</file>
          <hash>59322a99314cb17c6b595d51d18769582e61189140188aa053acfdc671487f21</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\cmcc\plib_cmcc.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\cmcc\plib_cmcc.c</file>
          <hash>3b03e762c5515130718e7694736be6c25984ff8078c84d21a3fb9eba54f68e5d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\cmcc\plib_cmcc.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\cmcc\plib_cmcc.h</file>
          <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\dmac\plib_dmac.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\dmac\plib_dmac.c</file>
          <hash>270caf74e315d9ed10499e874e093d1ced06fcad43783adc93524af111f5aeb4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\dmac\plib_dmac.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\dmac\plib_dmac.h</file>
          <hash>717bf86e7fbf9af5574a06add397e50b6741a67da0d1fd2a43243990faf8c85e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\evsys\plib_evsys.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\evsys\plib_evsys.c</file>
          <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\evsys\plib_evsys.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\evsys\plib_evsys.h</file>
          <hash>f7d08eb8162f271ce1db384c082586a6624e506aa7f502c64c4ab5a1aadac47d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\nvic\plib_nvic.c</file>
-         <hash>45c58282b3d6d34b24502d053c8c555d235dbea1d5b4f99db11e3732dea504e6</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\nvic\plib_nvic.c</file>
+         <hash>1b077e6564a1c77f4c6088600f64f3ed75844db51c3ddc1e73f243e32ab1db99</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\nvic\plib_nvic.h</file>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\nvmctrl\plib_nvmctrl.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\nvmctrl\plib_nvmctrl.c</file>
          <hash>1a6bdac00590cbec796a13351597c695bc1d962a95641bdb573d1bf0dc38b2d8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\nvmctrl\plib_nvmctrl.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\nvmctrl\plib_nvmctrl.h</file>
          <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\port\plib_port.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\port\plib_port.c</file>
          <hash>8036c633a67ccddb510475cdcb91d48b6df0a475d0b52791b9eae8ada3c07b8e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\port\plib_port.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\port\plib_port.h</file>
          <hash>b2f1eb0d1d687cb0411168c21ed2b633d1a098c40e1adc41eea3730f57c8cd84</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\spi_master\plib_sercom6_spi_master.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\spi_master\plib_sercom6_spi_master.c</file>
          <hash>fd42a1c9a1c5b3d2e17d06bd5ae394fccc4970fc27287d60e0d288450b01f913</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\spi_master\plib_sercom6_spi_master.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\spi_master\plib_sercom6_spi_master.h</file>
          <hash>95644ec1f02ce960fae376b2ad4c152e18e9e6cfef4efb1a18b473149b05b110</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\spi_master\plib_sercom_spi_master_common.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\spi_master\plib_sercom_spi_master_common.h</file>
          <hash>f28c2694b21a2c5ebad94edb7de6fac0acb2bd5686d78d08289cd2185cdccfbf</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\usart\plib_sercom0_usart.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\usart\plib_sercom0_usart.c</file>
          <hash>cc2c0bb59cfd6d80bda9ec90d8a7a492ef6ebd1613e5938b956797ad4e5954eb</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\usart\plib_sercom0_usart.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\usart\plib_sercom0_usart.h</file>
          <hash>0df2c338e8de7443bc597e108b579c4f29d23090bba433ebddf71d0eac3d218a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\usart\plib_sercom2_usart.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\usart\plib_sercom2_usart.c</file>
          <hash>211795636b70132ec6690c61fa113a02823dc591da28f4f5b505058b65e606a2</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\usart\plib_sercom2_usart.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\usart\plib_sercom2_usart.h</file>
          <hash>4ab7717726a19aa31b04cb4ea2dea4082167fa6ecc9bc16acf532d7fb171b739</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
          <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\tc\plib_tc0.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\tc\plib_tc0.c</file>
          <hash>ec3ff1b8f7b99b2ca2a56e5fd0b964847085577771ff64d0e18c2fb64e65de9c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\tc\plib_tc0.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\tc\plib_tc0.h</file>
          <hash>c71eb1c99c9c3244b6d2a5030b97723a3d32d7a2c83c4ab2374c2e947e64b0c0</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\peripheral\tc\plib_tc_common.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\peripheral\tc\plib_tc_common.h</file>
          <hash>487b4f489229b8e16b24ab48ddc1f414b095585439f0e10d53b2285fc3979f63</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\pin_configurations.csv</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\pin_configurations.csv</file>
          <hash>2ec88b265c6eb47c50e45250a3d6e63cc4ac711f3dbf7063472e584bf5130219</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\startup_xc32.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\startup_xc32.c</file>
          <hash>f374b97d65f92553f1b75d8c9239b8b0f8581c710f78ea47b02c7f6fa6f74c74</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\stdio\xc32_monitor.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\stdio\xc32_monitor.c</file>
          <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\sys_tasks.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\sys_tasks.h</file>
          <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\cache\sys_cache.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\cache\sys_cache.c</file>
          <hash>da28c09b0da0fdd6fb7064631c15c9197c78df33fcd17d742baef909830a320e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\cache\sys_cache.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\cache\sys_cache.h</file>
          <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\src\sys_console.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\src\sys_console.c</file>
          <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\src\sys_console_local.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\src\sys_console_local.h</file>
          <hash>024a0b50ea2fea72b964b8209fb256b5df6693badd320485821e7912c5eebb25</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\src\sys_console_uart.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\src\sys_console_uart.c</file>
          <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\src\sys_console_uart.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\src\sys_console_uart.h</file>
          <hash>690c74d55c9204f3e3d621635257df1de1c89f097671a678c359f5e24461589a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\src\sys_console_uart_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\src\sys_console_uart_definitions.h</file>
          <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\console\sys_console.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\console\sys_console.h</file>
          <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\debug\src\sys_debug.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\debug\src\sys_debug.c</file>
          <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\debug\src\sys_debug_local.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\debug\src\sys_debug_local.h</file>
          <hash>d14855e54d4929ec6c9c3ea1e9de3fdc1711bb278fc27ab39079e9f16ecc87d5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\debug\sys_debug.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\debug\sys_debug.h</file>
          <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\inf\src\sys_rnwf_interface.c</file>
-         <hash>9e83cb80bd83fa41933ea7877955de19f86ea3d5941d6bead34d6853e4790722</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\inf\src\sys_rnwf_interface.c</file>
+         <hash>b74ceefb5d851280785173fac6aeb9bb0518b797726807fae0ab2fd42958ea84</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\inf\sys_rnwf_interface.h</file>
-         <hash>ca02056cf9406009c152057497e8ee01b13e1592a64523b0a2faaabd8a2f81a8</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\inf\sys_rnwf_interface.h</file>
+         <hash>477037e51a83e86f848e9f45712b2a4e53029f4f77a5ce735c9c79787109ecf4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\int\src\sys_int.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\int\src\sys_int.c</file>
          <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\int\sys_int.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\int\sys_int.h</file>
          <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\int\sys_int_mapping.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\int\sys_int_mapping.h</file>
          <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\net\src\sys_rnwf_net_service.c</file>
-         <hash>55a0bc739dfdf74027c4fcbf794b96d185b52edffa6279d9c2958d2e8b31c05a</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\net\src\sys_rnwf_net_service.c</file>
+         <hash>7992347244b335f0aaee9816632ed99ab66061a8bc399f42e14a482970922542</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\net\sys_rnwf_net_service.h</file>
-         <hash>e7ef746ea0b50d460a05a2c1724c1738872da5ef7152bcf5808a0f8dfc26cc13</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\net\sys_rnwf_net_service.h</file>
+         <hash>3255b7158defc46124f9c06456a716efb512fd349861e41200da07879434a3e7</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\ota\src\sys_rnwf_ota_service.c</file>
-         <hash>06b0dd5a8ee6b80139190138e242eb219d458d1d509856c309fd1c0582c11c70</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\ota\src\sys_rnwf_ota_service.c</file>
+         <hash>34c5a6f5e034b05c6d255fabbd51c913579845a3518f5fe6c0e6368ef22c0b67</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\ota\sys_rnwf_ota_service.h</file>
-         <hash>c474d25473534a328b6921b4b405d8589c7cd2136db6a30432393c14ce7d6968</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\ota\sys_rnwf_ota_service.h</file>
+         <hash>867e6316aa0ce43b337e6b14e4cd40a48c8f69839d27242b54a657eb9c35eabf</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\ports\sys_ports.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\ports\sys_ports.h</file>
          <hash>c099eab3dad845f438f1a140c65b10c30a2aa3bc38aefa098ff1f4d2096a4f20</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\ports\sys_ports_mapping.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\ports\sys_ports_mapping.h</file>
          <hash>8a3e7ed01aa847c87f76796b56665f7f91f591fddfe6cf2e4161a03332608c3e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\reset\sys_reset.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\reset\sys_reset.c</file>
          <hash>e671888007ee4e0355beae1e361ff894dc2bc4fa0a4614d6975b18c5ce057181</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\reset\sys_reset.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\reset\sys_reset.h</file>
          <hash>962efce739387d25aacb5dc3aa90e90f216a478bcf19b57237540fd72bce2748</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\sys_rnwf_system_service.c</file>
-         <hash>bf4c61b78dc7bd33737085324057080115fc9adbde1445ce059a66083c4f9787</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\sys_rnwf_system_service.c</file>
+         <hash>5942fd83e9e5861a3c38f1268748e2980d8b5d6f9b1b6a755bb1e24f0be51e2e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\sys_rnwf_system_service.h</file>
-         <hash>e53fb286878d09f70de0e496376431e2d6da9bed3819e5d2fddbcf6a03b1874d</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\sys_rnwf_system_service.h</file>
+         <hash>cd87e39d4efa38654db5a5b527dcce30f519116ef91c0d286ca2b2609d71fe3e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\system.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\system.h</file>
          <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\system_common.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\system_common.h</file>
          <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\system_module.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\system_module.h</file>
          <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\time\src\sys_time.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\time\src\sys_time.c</file>
          <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\time\src\sys_time_local.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\time\src\sys_time_local.h</file>
          <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\time\sys_time.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\time\sys_time.h</file>
          <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\time\sys_time_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\time\sys_time_definitions.h</file>
          <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\wifi\src\sys_rnwf_wifi_service.c</file>
-         <hash>ec5490773b3c8789f871531cd5c263f4d1ea20129dc16ddc151e1b9001b649aa</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\wifi\src\sys_rnwf_wifi_service.c</file>
+         <hash>78dcf607c6015e4e90c677f2a370ba31afcf62aff105dd3916fbad5c11a4be4d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\system\wifi\sys_rnwf_wifi_service.h</file>
-         <hash>28c694ad599fa8b74bb02d4b7c01e9c34f944a0ac5d635d9d950b050727d87f5</hash>
+         <file>..\src\config\sam_e54_xpro_rnwf02\system\wifi\sys_rnwf_wifi_service.h</file>
+         <hash>6ff226f42cb95dd9eb16ef3b6e0fa6733d82e74a6fdb800995c81334f109fb19</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\tasks.c</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\tasks.c</file>
          <hash>c98aa8eea23c0ddb407f66cbeacb1ce1b6fbfda83ce35dcf93f5524e010be332</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\toolchain_specifics.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\toolchain_specifics.h</file>
          <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_rnwf\user.h</file>
+         <file>..\src\config\sam_e54_xpro_rnwf02\user.h</file>
          <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
       </entry>
       <entry>

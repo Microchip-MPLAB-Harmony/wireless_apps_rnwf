@@ -90,9 +90,9 @@ static SYS_RNWF_NET_SOCKET_t g_tcpClientSock = {
         .bind_type = SYS_RNWF_NET_BIND_TYPE0,
         .sock_port = SYS_RNWF_NET_SOCK_PORT0,
         .sock_type = SYS_RNWF_NET_SOCK_TYPE0,
-        .sock_addr = SYS_RNWF_NET_SOCK_ADDR0,
+        .sock_addr = SYS_RNWF_NET_SOCK_SERVER_ADDR0,
         .tls_conf = SYS_RNWF_TLS_ENABLE0,
-        .IP       = SYS_RNWF_NET_IPV4,
+        .ip_type       = SYS_RNWF_NET_IPV4,
 };
 
 /*TLS Configurations*/
@@ -103,7 +103,7 @@ static const char *g_tlsCfg_1[] =
                                     SYS_RNWF_NET_ROOT_CERT0, 
                                     SYS_RNWF_NET_DEVICE_CERTIFICATE0, 
                                     SYS_RNWF_NET_DEVICE_KEY0,                                     
-                                    SYS_RNWD_NET_DEVICE_KEY_PWD0,                                    
+                                    SYS_RNWF_NET_DEVICE_KEY_PWD0,                                    
                                     SYS_RNWF_NET_SERVER_NAME0,
                                     SYS_RNWF_NET_DOMAIN_NAME0,
                                     SYS_RNWF_NET_DOMAIN_NAME_VERIFY0
@@ -125,62 +125,75 @@ static void APP_RNWF_usartDmaChannelHandler(DMAC_TRANSFER_EVENT event, uintptr_t
 
 
 /* Application Wi-fi Callback Handler function */
-void SYS_RNWF_WIFI_CallbackHandler(SYS_RNWF_WIFI_EVENT_t event, uint8_t *p_str)
+void SYS_RNWF_WIFI_CallbackHandler(SYS_RNWF_WIFI_EVENT_t event,SYS_RNWF_WIFI_HANDLE_t wifiHandler)
 {
+    uint8_t *p_str = (uint8_t *)wifiHandler;
             
     switch(event)
     {
         /* SNTP UP event code*/
-        case SYS_RNWF_SNTP_UP:
+        case SYS_RNWF_WIFI_SNTP_UP:
         {       
-            static int i=1;
-            SYS_CONSOLE_PRINT("SNTP UP:%s\r\n", &p_str[0]);
-            if(i == 1)
+            static uint8_t flag=1;
+            
+            if(flag == 1)
             {
-            SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_TLS_CONFIG_1, g_tlsCfg_1);
-            g_tcpClientSock.tls_conf = SYS_RNWF_NET_TLS_CONFIG_1;
-            SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_TCP_OPEN, &g_tcpClientSock);
-            i=2;
+                SYS_CONSOLE_PRINT("SNTP UP:%s\r\n", &p_str[0]);
+                SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_TLS_CONFIG_1, g_tlsCfg_1);
+                g_tcpClientSock.tls_conf = SYS_RNWF_NET_TLS_CONFIG_1;
+                SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_TCP_OPEN, &g_tcpClientSock);
+                flag=2;
             }
         }
         break;
 
         /* Wi-Fi connected event code*/
-        case SYS_RNWF_CONNECTED:
+        case SYS_RNWF_WIFI_CONNECTED:
         {
             SYS_CONSOLE_PRINT("Wi-Fi Connected    \r\n");
             break;
         }
         
         /* Wi-Fi disconnected event code*/
-        case SYS_RNWF_DISCONNECTED:
+        case SYS_RNWF_WIFI_DISCONNECTED:
         {
             SYS_CONSOLE_PRINT("Wi-Fi Disconnected\nReconnecting... \r\n");
-            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_STA_CONNECT, NULL);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_STA_CONNECT, NULL);
             break;
         }
         
-        case SYS_RNWF_IPv4_DHCP_DONE:
+        case SYS_RNWF_WIFI_DHCP_IPV4_COMPLETE:
         {
             SYS_CONSOLE_PRINT("DHCP Done...%s \r\n",&p_str[2]); 
             break;
         }
         
-        /* Wi-Fi IPv6 DHCP complete event code*/
-        case SYS_RNWF_IPv6_DHCP_DONE:
+        /* Wi-Fi IPv6 Local DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_LOCAL_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("IPv6 DHCP Done...%s \r\n",&p_str[2]); 
+            SYS_CONSOLE_PRINT("IPv6 Local DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Local IPv6 address code*/     
+            break;
+        }
+        
+        /* Wi-Fi IPv6 Global DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_GLOBAL_COMPLETE:
+        {
+            SYS_CONSOLE_PRINT("IPv6 Global DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Global IPv6 address code*/     
             break;
         }
         
         /* Wi-Fi scan indication event code*/
-        case SYS_RNWF_SCAN_INDICATION:
+        case SYS_RNWF_WIFI_SCAN_INDICATION:
         {
             break;
         } 
         
         /* Wi-Fi scan complete event code*/
-        case SYS_RNWF_SCAN_DONE:
+        case SYS_RNWF_WIFI_SCAN_DONE:
         {
             break;
         }
@@ -195,8 +208,9 @@ void SYS_RNWF_WIFI_CallbackHandler(SYS_RNWF_WIFI_EVENT_t event, uint8_t *p_str)
 
 
 /* Application NET socket Callback Handler function */
-void SYS_RNWF_NET_SockCallbackHandler(uint32_t socket, SYS_RNWF_NET_SOCK_EVENT_t event, uint8_t *p_str)
+void SYS_RNWF_NET_SockCallbackHandler(uint32_t socket, SYS_RNWF_NET_SOCK_EVENT_t event,SYS_RNWF_NET_HANDLE_t netHandler)
 {
+     uint8_t *p_str = ( uint8_t *)netHandler;
     uint8_t *tmpPtr;
    volatile static uint32_t rcvd_bytes;
     switch(event)
@@ -219,7 +233,7 @@ void SYS_RNWF_NET_SockCallbackHandler(uint32_t socket, SYS_RNWF_NET_SOCK_EVENT_t
         case SYS_RNWF_NET_SOCK_EVENT_DISCONNECTED:
         {
             SYS_CONSOLE_PRINT("DisConnected to server!\r\n");
-            SYS_CONSOLE_PRINT("Closed socket : %d\r\n",socket);
+            SYS_CONSOLE_PRINT("Closing socket : %d\r\n",socket);
 //            SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_CLOSE, &socket);
             break;
         }        
@@ -252,7 +266,7 @@ void SYS_RNWF_NET_SockCallbackHandler(uint32_t socket, SYS_RNWF_NET_SOCK_EVENT_t
                     if(rcvd_bytes >= g_fileLen)
                     {
                         SYS_CONSOLE_PRINT("Receive Complete!\r\n");  
-                        SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_CLOSE, (void *)&socket);
+//                        SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_CLOSE, (void *)&socket);
                     }                    
                 }            
                 else
@@ -309,12 +323,19 @@ void APP_RNWF02_Tasks ( void )
         case APP_STATE_REGISTER_CALLBACK:
         {
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_MAN_ID, g_appBuf);    
-            SYS_CONSOLE_PRINT("Manufacturer = %s\r\n", g_appBuf);            
-    
-            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_CERT_LIST, g_appBuf); 
-            SYS_CONSOLE_PRINT("Cert list = ");
-            for(int i=0;g_appBuf[i];i++)
-            SYS_CONSOLE_PRINT("%c", g_appBuf[i]);
+            SYS_CONSOLE_PRINT("\r\nManufacturer = %s\r\n", g_appBuf);  
+             
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SW_REV, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nSoftware Revision:- %s\r\n", g_appBuf);
+            
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RWWF_SYSTEM_GET_WIFI_INFO, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nWi-Fi Info:- \r\n%s\r\n", g_appBuf);
+              
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_CERT_LIST, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nCerts on RNWF:- \r\n%s\r\n", g_appBuf);
+              
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_KEY_LIST, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nKeys on RNWF:- \r\n%s\r\n", g_appBuf);
            
             char sntp_url[] =  SYS_RNWF_SNTP_ADDRESS;   
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SET_SNTP, sntp_url);
@@ -323,6 +344,10 @@ void APP_RNWF02_Tasks ( void )
             SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_CALLBACK, SYS_RNWF_WIFI_CallbackHandler);      
             SYS_RNWF_NET_SockSrvCtrl(SYS_RNWF_NET_SOCK_SET_CALLBACK, SYS_RNWF_NET_SockCallbackHandler);
             
+            /* Set Regulatory domain/Country Code */
+            const char *regDomain = SYS_RNWF_COUNTRYCODE;
+            SYS_CONSOLE_PRINT("\r\nSetting regulatory domain : %s\r\n",regDomain);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_REGULATORY_DOMAIN, (void *)regDomain);
             /* Wi-Fi Connectivity */
             SYS_RNWF_WIFI_PARAM_t wifi_sta_cfg = {SYS_RNWF_WIFI_MODE_STA, SYS_RNWF_WIFI_STA_SSID, SYS_RNWF_WIFI_STA_PWD, SYS_RNWF_STA_SECURITY, SYS_RNWF_WIFI_STA_AUTOCONNECT};        
             SYS_CONSOLE_PRINT("\r\nConnecting to %s\r\n", SYS_RNWF_WIFI_STA_SSID);

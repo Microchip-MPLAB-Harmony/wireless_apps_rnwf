@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app.c
+    app_wincs02.c
 
   Summary:
     This file contains the source code for the MPLAB Harmony application.
@@ -32,9 +32,11 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <time.h>
+
+/* This section lists the other files that are included in this file.
+ */
 #include "configuration.h"
 #include "driver/driver_common.h"
-
 #include "app_wincs02.h"
 #include "system/system_module.h"
 #include "system/console/sys_console.h"
@@ -63,7 +65,7 @@
     Application strings and buffers are be defined outside this structure.
 */
 
-APP_DATA appData;
+APP_DATA g_appData;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -74,13 +76,52 @@ APP_DATA appData;
 /* TODO:  Add any necessary callback functions.
 */
 
-void SYS_WINCS_WIFI_CallbackHandler(SYS_WINCS_WIFI_EVENT_t event, uint8_t *p_str)
+// *****************************************************************************
+// Application Wi-Fi Callback Handler
+//
+// Summary:
+//    Handles Wi-Fi events.
+//
+// Description:
+//    This function handles various Wi-Fi events and performs appropriate actions.
+//
+// Parameters:
+//    event - The type of Wi-Fi event
+//    wifiHandle - Handle to the Wi-Fi event data
+//
+// Returns:
+//    None.
+//
+// Remarks:
+//    None.
+// *****************************************************************************
+void SYS_WINCS_WIFI_CallbackHandler
+(
+    SYS_WINCS_WIFI_EVENT_t event,         // The type of Wi-Fi event
+    SYS_WINCS_WIFI_HANDLE_t wifiHandle    // Handle to the Wi-Fi event data
+)
 {
             
     switch(event)
     {
+        /* Set regulatory domain Acknowledgment */
+        case SYS_WINCS_WIFI_REG_DOMAIN_SET_ACK:
+        {
+            // The driver generates this event callback twice, hence the if condition 
+            // to ignore one more callback. This will be resolved in the next release.
+            static bool domainFlag = false;
+            if( domainFlag == false)
+            {
+                SYS_CONSOLE_PRINT("Set Reg Domain -> SUCCESS\r\n");
+                g_appData.state = APP_STATE_WINCS_ENABLE_PROV;
+                domainFlag = true;
+            }
+            
+            break;
+        } 
+        
         /* SNTP UP event code*/
-        case SYS_WINCS_SNTP_UP:
+        case SYS_WINCS_WIFI_SNTP_UP:
         {            
             SYS_CONSOLE_PRINT("[APP] : SNTP UP \r\n"); 
             break;
@@ -88,48 +129,35 @@ void SYS_WINCS_WIFI_CallbackHandler(SYS_WINCS_WIFI_EVENT_t event, uint8_t *p_str
         break;
 
         /* Wi-Fi connected event code*/
-        case SYS_WINCS_CONNECTED:
+        case SYS_WINCS_WIFI_CONNECTED:
         {
-            SYS_CONSOLE_PRINT("[APP] : Wi-Fi Connected    \r\n");
+            SYS_CONSOLE_PRINT(TERM_GREEN"[APP] : Wi-Fi Connected    \r\n"TERM_RESET);
             break;
         }
         
         /* Wi-Fi disconnected event code*/
-        case SYS_WINCS_DISCONNECTED:
+        case SYS_WINCS_WIFI_DISCONNECTED:
         {
-            SYS_CONSOLE_PRINT("[APP] : Wi-Fi Disconnected\nReconnecting... \r\n");
-            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_STA_CONNECT, NULL);
+            SYS_CONSOLE_PRINT(TERM_RED"[APP] : Wi-Fi Disconnected\nReconnecting... \r\n"TERM_RESET);
             break;
         }
         
         /* Wi-Fi DHCP complete event code*/
-        case SYS_WINCS_DHCP_DONE:
+        case SYS_WINCS_WIFI_DHCP_IPV4_COMPLETE:
         {         
-            SYS_CONSOLE_PRINT("[APP] : DHCP IPv4 : %s\r\n", p_str);
+            SYS_CONSOLE_PRINT("[APP] : DHCP IPv4 : %s\r\n", (uint8_t *)wifiHandle);
             break;
         }
         
-        case SYS_WINCS_DHCP_IPV6_LOCAL_DONE:
+        case SYS_WINCS_WIFI_DHCP_IPV6_LOCAL_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("[APP] : DHCP IPv6 Local : %s\r\n", p_str);
+            SYS_CONSOLE_PRINT("[APP] : DHCP IPv6 Local : %s\r\n", (uint8_t *)wifiHandle);
             break;
         }
         
-        case SYS_WINCS_DHCP_IPV6_GLOBAL_DONE:
+        case SYS_WINCS_WIFI_DHCP_IPV6_GLOBAL_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("[APP] : DHCP IPv6 Global: %s\r\n", p_str);
-            break;
-        }
-        
-        /* Wi-Fi scan indication event code*/
-        case SYS_WINCS_SCAN_INDICATION:
-        {
-            break;
-        } 
-        
-        /* Wi-Fi scan complete event code*/
-        case SYS_WINCS_SCAN_DONE:
-        {
+            SYS_CONSOLE_PRINT("[APP] : DHCP IPv6 Global: %s\r\n", (uint8_t *)wifiHandle);
             break;
         }
         
@@ -140,21 +168,40 @@ void SYS_WINCS_WIFI_CallbackHandler(SYS_WINCS_WIFI_EVENT_t event, uint8_t *p_str
     }    
 }
 
+// *****************************************************************************
+/**
+ * @brief Callback handler for WiFi provisioning events.
+ *
+ * This function is called whenever a WiFi provisioning event occurs. It handles
+ * the event based on the type of event received and the provisioning handle.
+ *
+ * @param event The WiFi provisioning event that occurred. This is of type
+ *              SYS_WINCS_PROV_EVENT_t and indicates the specific event.
+ * @param provHandle The handle associated with the provisioning event. This is
+ *                   of type SYS_WINCS_PROV_HANDLE_t and is used to identify
+ *                   the specific provisioning instance.
+ */
+// *****************************************************************************
 
-/* Application Wifi Provision Callback handler */
-static void SYS_WINCS_WIFIPROV_CallbackHandler ( SYS_WINCS_PROV_EVENT_t event, uint8_t *p_str)
+static void SYS_WINCS_WIFIPROV_CallbackHandler 
+( 
+    SYS_WINCS_PROV_EVENT_t event, 
+    SYS_WINCS_PROV_HANDLE_t provHandle
+)
 {
     switch(event)
     {
         /**<Provisionging complete*/
-        case SYS_WINCS_PROV_COMPLTE:
+        case SYS_WINCS_PROV_COMPLETE:
         {
             SYS_WINCS_PROV_SrvCtrl(SYS_WINCS_PROV_DISABLE, NULL);
-            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_CALLBACK, SYS_WINCS_WIFI_CallbackHandler);
+//            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_CALLBACK, SYS_WINCS_WIFI_CallbackHandler);
             
-            // Application can save the configuration in NVM
-            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_PARAMS, (void *)p_str); 
-            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_STA_CONNECT, NULL);
+            // Connect to the received AP configurations
+            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_PARAMS, (SYS_WINCS_WIFI_HANDLE_t)provHandle);
+            
+            //If autoConnect is false 
+            //SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_STA_CONNECT, NULL);
             break;
         }    
         
@@ -191,18 +238,30 @@ static void SYS_WINCS_WIFIPROV_CallbackHandler ( SYS_WINCS_PROV_EVENT_t event, u
 // *****************************************************************************
 // *****************************************************************************
 
-/*******************************************************************************
-  Function:
-    void APP_Initialize ( void )
-
-  Remarks:
-    See prototype in app.h.
- */
+// *****************************************************************************
+// Application Initialization Function
+//
+// Summary:
+//    Initializes the application.
+//
+// Description:
+//    This function initializes the application's state machine and other
+//    parameters.
+//
+// Parameters:
+//    None.
+//
+// Returns:
+//    None.
+//
+// Remarks:
+//    None.
+// *****************************************************************************
 
 void APP_WINCS02_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_WINCS_INIT;
+    g_appData.state = APP_STATE_WINCS_PRINT;
 
 
 
@@ -212,20 +271,43 @@ void APP_WINCS02_Initialize ( void )
 }
 
 
-/******************************************************************************
-  Function:
-    void APP_Tasks ( void )
 
-  Remarks:
-    See prototype in app.h.
- */
-
+// *****************************************************************************
+// Application Tasks Function
+//
+// Summary:
+//    Executes the application's tasks.
+//
+// Description:
+//    This function implements the application's state machine and performs
+//    the necessary actions based on the current state.
+//
+// Parameters:
+//    None.
+//
+// Returns:
+//    None.
+//
+// Remarks:
+//    None.
+// *****************************************************************************
 void APP_WINCS02_Tasks ( void )
 {
 
     /* Check the application's current state. */
-    switch ( appData.state )
+    switch ( g_appData.state )
     {
+        // State to print Message 
+        case APP_STATE_WINCS_PRINT:
+        {
+            SYS_CONSOLE_PRINT(TERM_YELLOW"########################################\r\n"TERM_RESET);
+            SYS_CONSOLE_PRINT(TERM_CYAN"       WINCS02 Wi-Fi Easy Config demo\r\n"TERM_RESET);
+            SYS_CONSOLE_PRINT(TERM_YELLOW"########################################\r\n"TERM_RESET);
+            
+            g_appData.state = APP_STATE_WINCS_INIT;
+            break;
+        }
+        
         /* Application's initial state. */
        case APP_STATE_WINCS_INIT:
         {
@@ -234,7 +316,7 @@ void APP_WINCS02_Tasks ( void )
 
             if (SYS_STATUS_READY == status)
             {
-                appData.state = APP_STATE_WINCS_OPEN_DRIVER;
+                g_appData.state = APP_STATE_WINCS_OPEN_DRIVER;
             }
             
             break;
@@ -243,10 +325,16 @@ void APP_WINCS02_Tasks ( void )
         case APP_STATE_WINCS_OPEN_DRIVER:
         {
             DRV_HANDLE wdrvHandle = DRV_HANDLE_INVALID;
-            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_OPEN_DRIVER, &wdrvHandle);
-            
+            // Open the Wi-Fi driver
+            if (SYS_WINCS_FAIL ==  SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_OPEN_DRIVER, &wdrvHandle))
+            {
+                g_appData.state = APP_STATE_WINCS_ERROR;
+                break;
+            }
+
+            // Get the driver handle
             SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_GET_DRV_HANDLE, &wdrvHandle);
-            appData.state = APP_STATE_WINCS_DEVICE_INFO;
+            g_appData.state = APP_STATE_WINCS_DEVICE_INFO;
             break;
         }
         
@@ -256,51 +344,89 @@ void APP_WINCS02_Tasks ( void )
             APP_FIRMWARE_VERSION_INFO fwVersion;
             APP_DEVICE_INFO devInfo;
             SYS_WINCS_RESULT_t status = SYS_WINCS_BUSY;
-            
-            status = SYS_WINCS_SYSTEM_SrvCtrl(SYS_WINCS_SYSTEM_SW_REV,&fwVersion);
-            
+
+            // Get the firmware version
+            status = SYS_WINCS_SYSTEM_SrvCtrl(SYS_WINCS_SYSTEM_SW_REV, &fwVersion);
+
             if(status == SYS_WINCS_PASS)
             {
+                // Get the device information
                 status = SYS_WINCS_SYSTEM_SrvCtrl(SYS_WINCS_SYSTEM_DEV_INFO, &devInfo);
             }
-            
+
             if(status == SYS_WINCS_PASS)
             {
-                status = SYS_WINCS_SYSTEM_SrvCtrl (SYS_WINCS_SYSTEM_DRIVER_VER, &drvVersion);
+                // Get the driver version
+                status = SYS_WINCS_SYSTEM_SrvCtrl(SYS_WINCS_SYSTEM_DRIVER_VER, &drvVersion);
             }
-            
+
             if(status == SYS_WINCS_PASS)
             {
                 char buff[30];
+                // Print device information
                 SYS_CONSOLE_PRINT("WINC: Device ID = %08x\r\n", devInfo.id);
-                for (int i=0; i<devInfo.numImages; i++)
+                for (int i = 0; i < devInfo.numImages; i++)
                 {
-                    SYS_CONSOLE_PRINT("%d: Seq No = %08x, Version = %08x, Source Address = %08x\r\n", i, devInfo.image[i].seqNum, devInfo.image[i].version, devInfo.image[i].srcAddr);
+                    SYS_CONSOLE_PRINT("%d: Seq No = %08x, Version = %08x, Source Address = %08x\r\n", 
+                            i, devInfo.image[i].seqNum, devInfo.image[i].version, devInfo.image[i].srcAddr);
                 }
-                
-                SYS_CONSOLE_PRINT("Firmware Version: %d.%d.%d ", fwVersion.version.major, fwVersion.version.minor, fwVersion.version.patch);
+
+                // Print firmware version
+                SYS_CONSOLE_PRINT(TERM_CYAN "Firmware Version: %d.%d.%d ", fwVersion.version.major,
+                        fwVersion.version.minor, fwVersion.version.patch);
                 strftime(buff, sizeof(buff), "%X %b %d %Y", localtime((time_t*)&fwVersion.build.timeUTC));
                 SYS_CONSOLE_PRINT(" [%s]\r\n", buff);
-                SYS_CONSOLE_PRINT("Driver Version: %d.%d.%d\r\n\r\n", drvVersion.version.major, drvVersion.version.minor, drvVersion.version.patch);
+
+                // Print driver version
+                SYS_CONSOLE_PRINT("Driver Version: %d.%d.%d\r\n"TERM_RESET, drvVersion.version.major, 
+                        drvVersion.version.minor, drvVersion.version.patch);
                 
-                appData.state = APP_STATE_WINCS_SET_CALLBACK;
+                g_appData.state = APP_STATE_WINCS_SET_REG_DOMAIN;
             }
             break;
         }
         
-        case APP_STATE_WINCS_SET_CALLBACK:
+        case APP_STATE_WINCS_SET_REG_DOMAIN:
+        {
+            
+            // Set the callback handler for Wi-Fi events
+            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_CALLBACK, SYS_WINCS_WIFI_CallbackHandler);
+
+            SYS_CONSOLE_PRINT(TERM_YELLOW"[APP] : Setting REG domain to " TERM_UL "%s\r\n"TERM_RESET ,SYS_WINCS_WIFI_COUNTRYCODE);
+            // Set the regulatory domain
+            if (SYS_WINCS_FAIL == SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_REG_DOMAIN, SYS_WINCS_WIFI_COUNTRYCODE))
+            {
+                g_appData.state = APP_STATE_WINCS_ERROR;
+                break;
+            }
+            g_appData.state = APP_STATE_WINCS_SERVICE_TASKS;
+            break;
+        }
+        
+        case APP_STATE_WINCS_ENABLE_PROV:
         {
             // Enable Provisioning Mode
-            SYS_WINCS_PROV_SrvCtrl(SYS_WINCS_PROV_ENABLE, NULL);
             SYS_WINCS_PROV_SrvCtrl(SYS_WINCS_PROV_SET_CALLBACK, (void *)SYS_WINCS_WIFIPROV_CallbackHandler);
             
-            appData.state = APP_STATE_WINCS_SERVICE_TASKS;
+            if (SYS_WINCS_FAIL == SYS_WINCS_PROV_SrvCtrl(SYS_WINCS_PROV_ENABLE, NULL))
+            {
+                g_appData.state = APP_STATE_WINCS_ERROR;
+                break;
+            }
+            g_appData.state = APP_STATE_WINCS_SERVICE_TASKS;
             break;
         }
         
         case APP_STATE_WINCS_SERVICE_TASKS:
         {
 
+            break;
+        }
+        
+        case APP_STATE_WINCS_ERROR:
+        {
+            SYS_CONSOLE_PRINT(TERM_RED"[APP_ERROR] : ERROR in Application "TERM_RESET);
+            g_appData.state = APP_STATE_WINCS_SERVICE_TASKS;
             break;
         }
 

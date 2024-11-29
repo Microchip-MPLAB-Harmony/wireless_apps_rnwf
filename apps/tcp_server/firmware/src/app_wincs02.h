@@ -5,7 +5,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app.h
+    app_wincs02.h
 
   Summary:
     This header file provides prototypes and definitions for the application.
@@ -32,6 +32,18 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
+
+
+//Tera Term Color coding 
+#define TERM_GREEN "\x1B[32m"
+#define TERM_RED   "\x1B[31m"
+#define TERM_YELLOW "\x1B[33m"
+#define TERM_CYAN "\x1B[36m"
+#define TERM_WHITE "\x1B[47m"
+#define TERM_RESET "\x1B[0m"
+#define TERM_BG_RED "\x1B[41m" 
+#define TERM_BOLD "\x1B[1m" 
+#define TERM_UL "\x1B[4m"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -61,15 +73,35 @@ extern "C" {
 
 typedef enum
 {
-    /* Application's state machine's initial state. */
-    APP_STATE_WINCS_INIT=0,
-    APP_STATE_WINCS_OPEN_DRIVER,
-    APP_STATE_WINCS_DEVICE_INFO,
-    APP_STATE_WINCS_SET_WIFI_PARAMS,
-            APP_STATE,
-    APP_STATE_WINCS_SERVICE_TASKS
-    /* TODO: Define states used by the application state machine. */
+      // State to print Message 
+    APP_STATE_WINCS_PRINT = -1,
+        
+    // Initial state of the application
+    APP_STATE_WINCS_INIT = 0,
 
+    // State to open the Wi-Fi driver
+    APP_STATE_WINCS_OPEN_DRIVER,
+
+    // State to retrieve device information
+    APP_STATE_WINCS_DEVICE_INFO,
+
+    // State to set the regulatory domain for Wi-Fi
+    APP_STATE_WINCS_SET_REG_DOMAIN,
+
+    // State to configure Wi-Fi parameters
+    APP_STATE_WINCS_SET_WIFI_PARAMS,
+    
+    // State to create socket
+    APP_STATE_WINCS_CREATE_SOCKET,
+
+    // State to handle errors
+    APP_STATE_WINCS_ERROR,
+
+    // State to perform regular service tasks and wait for callback
+    APP_STATE_WINCS_SERVICE_TASKS
+
+    /* TODO: Define states used by the application state machine. */
+            
 } APP_STATES;
 
 

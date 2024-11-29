@@ -52,10 +52,6 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
-    SYS_CONSOLE_PRINT("########################################\r\n");
-    SYS_CONSOLE_PRINT("       Wi-Fi Easy Config Demo\r\n");
-    SYS_CONSOLE_PRINT("########################################\r\n");    
-        
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */

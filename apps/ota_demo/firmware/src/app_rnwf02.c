@@ -28,7 +28,7 @@
     Microchip Technology Inc.
 
   File Name:
-    app.c
+    app_rnwf02.c
 
   Summary:
     This file contains the source code for the MPLAB Harmony application.
@@ -134,7 +134,16 @@ static uint32_t g_appImgSize;
 // *****************************************************************************
 // *****************************************************************************
 
-/* Wifi Callback Handler Function */
+/**
+ * Callback handler for WiFi events.
+ *
+ * This function is called whenever a WiFi event occurs. It processes the event
+ * and performs the necessary actions based on the event type.
+ *
+ * parameter : event - The WiFi event that triggered the callback.
+ * parameter : p_str - Pointer to a string associated with the event, if any.
+ */
+
 static void SYS_RNWF_WIFI_CallbackHandler
 (
     SYS_RNWF_WIFI_EVENT_t event, 
@@ -144,48 +153,36 @@ static void SYS_RNWF_WIFI_CallbackHandler
     switch(event)
     {
         /* Wifi Connected */
-        case SYS_RNWF_CONNECTED:
+        case SYS_RNWF_WIFI_CONNECTED:
         {
-            SYS_CONSOLE_PRINT("Wi-Fi Connected\r\n");
+            SYS_CONSOLE_PRINT(TERM_GREEN"[APP] : Wi-Fi Connected    \r\n"TERM_RESET);
             break;
         }
         
         /* Wifi Disconnected */
-        case SYS_RNWF_DISCONNECTED:
+        case SYS_RNWF_WIFI_DISCONNECTED:
         {    
-            SYS_CONSOLE_PRINT("WiFi Disconnected\nReconnecting... \r\n");
-            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_STA_CONNECT, NULL);
+            SYS_CONSOLE_PRINT(TERM_RED"[APP] : Wi-Fi Disconnected\nReconnecting... \r\n"TERM_RESET);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_STA_CONNECT, NULL);
             break;
         }
             
         /* DHCP IP allocated */
-        case SYS_RNWF_IPv4_DHCP_DONE:
+        case SYS_RNWF_WIFI_DHCP_IPV4_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("DHCP IP:%s\r\n", &p_str[2]); 
+            SYS_CONSOLE_PRINT("[APP] : DHCP IPv4 : %s\r\n",  &p_str[2]); 
             
             /* Enable OTA by passing the OTA buffer space */
             if(SYS_RNWF_OTA_SrvCtrl(SYS_RNWF_OTA_ENABLE, (void *)g_appBuf) == SYS_RNWF_PASS)
             {
-                SYS_RNWF_OTA_DBG_MSG("Successfully Enabled the OTA\r\n");
+                SYS_RNWF_OTA_DBG_MSG(TERM_GREEN"Successfully Enabled the OTA. Waiting for OTA Server Details...\r\n"TERM_RESET);
             }
             else
             {
-                SYS_RNWF_OTA_DBG_MSG("ERROR!!! Failed to enable the OTA\r\n");
+                SYS_RNWF_OTA_DBG_MSG(TERM_RED"ERROR!!! Failed to enable the OTA\r\n"TERM_RESET);
             }
             break;
         }
-        
-        /* Wifi Scan Indication */
-        case SYS_RNWF_SCAN_INDICATION:
-        {
-            break;
-        }
-            
-        /* Wifi Scan Done */
-        case SYS_RNWF_SCAN_DONE:
-        {
-            break;
-        } 
         
         default:
         {
@@ -194,7 +191,16 @@ static void SYS_RNWF_WIFI_CallbackHandler
     }    
 }
 
-/* OTA Callback Handler Function */
+/**
+ * Callback handler for OTA (Over-The-Air) update events.
+ *
+ * This function is called whenever an OTA event occurs. It processes the event
+ * and performs the necessary actions based on the event type.
+ *
+ * parameter : event - The OTA event that triggered the callback.
+ * parameter : p_str - Pointer to a string or data associated with the event, if any.
+ */
+
 static void SYS_RNWF_OTA_CallbackHandler
 (
     SYS_RNWF_OTA_EVENT_t event,
@@ -214,11 +220,11 @@ static void SYS_RNWF_OTA_CallbackHandler
         /* FW Download start */
         case SYS_RNWF_OTA_EVENT_DWLD_START:
         {
-            SYS_CONSOLE_PRINT("Total Size = %lu\r\n", *(uint32_t *)p_str); 
+            SYS_CONSOLE_PRINT(TERM_CYAN"Total Size = %lu\r\n"TERM_RESET, *(uint32_t *)p_str); 
             SYS_CONSOLE_PRINT("Erasing the SPI Flash\r\n");
             
             SYS_RNWF_OTA_FlashErase();
-            SYS_CONSOLE_PRINT("Erasing Complete!\r\n"); 
+            SYS_CONSOLE_PRINT(TERM_GREEN"Erasing Complete!\r\n"TERM_RESET); 
             break;
         }
         
@@ -226,19 +232,24 @@ static void SYS_RNWF_OTA_CallbackHandler
         case SYS_RNWF_OTA_EVENT_DWLD_DONE:
         {       
             g_appImgSize = *(uint32_t *)p_str;  
-            SYS_CONSOLE_PRINT("Download Success!= %lu bytes\r\n", g_appImgSize);  
-            
+            SYS_CONSOLE_PRINT(TERM_GREEN"Download Success!= %lu bytes 100%\r\n"TERM_RESET, g_appImgSize);  
             break; 
         }
               
         /* Write to SST26 */
-        case SYS_RNWF_OTA_EVENT_FILE_CHUNK:
+        case SYS_RNWF_OTA_EVENT_FILE_CHUNK://15212
         {
             volatile SYS_RNWF_OTA_CHUNK_t *ota_chunk = (SYS_RNWF_OTA_CHUNK_t *)p_str;               
             SYS_RNWF_OTA_FlashWrite(flash_addr,ota_chunk->chunk_size ,ota_chunk->chunk_ptr);
             flash_addr += ota_chunk->chunk_size;
             break; 
         }    
+        
+        case SYS_RNWF_OTA_EVENT_DWLD_FAIL:
+        {
+            SYS_CONSOLE_PRINT(TERM_RED"[APP ERROR] : OTA image Download Failed\r\n"TERM_RESET);
+            break;
+        }
                            
         default:
         {
@@ -259,7 +270,7 @@ static void SYS_RNWF_OTA_CallbackHandler
     void APP_Initialize ( void )
 
   Remarks:
-    See prototype in app.h.
+    See prototype in app_wincs02.h.
  */
 
 void APP_RNWF02_Initialize 
@@ -276,6 +287,16 @@ void APP_RNWF02_Initialize
 // Section: Application Local Functions
 // *****************************************************************************
 // *****************************************************************************
+
+
+/**
+ * Software reset handler.
+ *
+ * This function is responsible for handling software reset events. It performs
+ * the necessary actions to reset the system or specific components.
+ *
+ * parameter : None.
+ */
 
 void APP_RNWF_SwResetHandler
 (
@@ -297,7 +318,15 @@ void APP_RNWF_SwResetHandler
 }
 
 
-/* Maintain the application's state machine. */
+/**
+ * Application tasks handler.
+ *
+ * This function is responsible for handling the main tasks of the application.
+ * It is typically called in the main loop and performs periodic checks and operations.
+ *
+ * parameter : None.
+ */
+
 void APP_RNWF02_Tasks 
 ( 
     void 
@@ -308,13 +337,13 @@ void APP_RNWF02_Tasks
         /* Initialize Flash and RNWF device */
         case APP_STATE_INITIALIZE:
         {
-            SYS_CONSOLE_PRINT("%s", "##############################################\r\n");
-            SYS_CONSOLE_PRINT("%s", "  Welcome RNWF02 WiFi Host Assisted OTA Demo  \r\n");
-            SYS_CONSOLE_PRINT("%s", "##############################################\r\n\r\n"); 
+            SYS_CONSOLE_PRINT(TERM_YELLOW"%s"TERM_RESET, "##############################################\r\n");
+            SYS_CONSOLE_PRINT(TERM_CYAN"%s"TERM_RESET, "  Welcome RNWF02 WiFi Host Assisted OTA Demo  \r\n");
+            SYS_CONSOLE_PRINT(TERM_YELLOW"%s"TERM_RESET, "##############################################\r\n\r\n"); 
             
             if(false == SYS_RNWF_OTA_FlashInitialize())
             {
-                SYS_CONSOLE_PRINT("ERROR : No valid SPI Flash found!\r\n\tConnect SPI MikroBus(SST26) to EXT2 and reset!\r\n");
+                SYS_CONSOLE_PRINT(TERM_RED"[APP ERROR] : No valid SPI Flash found!\r\n\tConnect SPI MikroBus(SST26) to EXT2 and reset!\r\n"TERM_RESET);
                 g_appData.state = APP_STATE_ERROR;
                 break;
             }
@@ -348,7 +377,7 @@ void APP_RNWF02_Tasks
                     g_appData.state = APP_STATE_PROGRAM_DFU;
                     break;
                 }
-                SYS_CONSOLE_PRINT("Error: Module is Bricked!");
+                SYS_CONSOLE_PRINT(TERM_RED"[APP ERROR] : Module is Bricked!"TERM_RESET);
                 
                 g_appData.state = APP_STATE_ERROR;
                 break;
@@ -357,21 +386,21 @@ void APP_RNWF02_Tasks
             {
                 if(g_appBuf[0] == '\0')
                 {
-                    SYS_CONSOLE_PRINT("ERROR : No RNWF02 module found\r\n\tConnect RNWF02 module to EXT1 and reset\r\n");
+                    SYS_CONSOLE_PRINT(TERM_RED"[APP ERROR] : No RNWF02 module found\r\n\tConnect RNWF02 module to EXT1 and reset\r\n"TERM_RESET);
                     g_appData.state = APP_STATE_ERROR;
                     break;
                 }
                 
-                SYS_CONSOLE_PRINT("Software Revision: %s\r\n",g_appBuf);
+                SYS_CONSOLE_PRINT(TERM_CYAN"[APP] : Software Revision: %s\r\n"TERM_RESET,g_appBuf);
             }
             
             /* Get RNWF device Information */
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_DEV_INFO, g_appBuf);
-            SYS_CONSOLE_PRINT("Device Info: %s\r\n", g_appBuf);
+            SYS_CONSOLE_PRINT("[APP] : Device Info: %s\r\n", g_appBuf);
             
             /* Get RNWF device Wi-Fi Information*/
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RWWF_SYSTEM_GET_WIFI_INFO, g_appBuf);
-            SYS_CONSOLE_PRINT("%s\r\n\n", g_appBuf);
+            SYS_CONSOLE_PRINT("[APP] : Network Configuration : %s\r\n\n", g_appBuf);
             
             g_appData.state = APP_STATE_REGISTER_CALLBACK;
             break;
@@ -382,7 +411,7 @@ void APP_RNWF02_Tasks
         {
             /* Configure SSID and Password for STA mode */
             SYS_RNWF_WIFI_PARAM_t wifi_sta_cfg = {SYS_RNWF_WIFI_MODE_STA, SYS_RNWF_WIFI_STA_SSID, SYS_RNWF_WIFI_STA_PWD, SYS_RNWF_STA_SECURITY, 1};
-            SYS_CONSOLE_PRINT("Connecting to %s\r\n",SYS_RNWF_WIFI_STA_SSID);
+            SYS_CONSOLE_PRINT("[APP] : Connecting to AP : %s\r\n",SYS_RNWF_WIFI_STA_SSID);
             
             /* Register Callback with Wifi Service */
             SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_CALLBACK, SYS_RNWF_WIFI_CallbackHandler);
@@ -403,6 +432,7 @@ void APP_RNWF02_Tasks
             
             if (isDownloadDone == true)
             {
+                SYS_CONSOLE_PRINT(TERM_GREEN"[APP] : Download Completed !!!\r\n"TERM_RESET);
                 g_appData.state = APP_STATE_PROGRAM_DFU;
             }
             break;
@@ -434,7 +464,7 @@ void APP_RNWF02_Tasks
         /* Application Error State */
         case APP_STATE_ERROR:
         {
-            SYS_CONSOLE_PRINT("ERROR : APP Error\r\n");
+            SYS_CONSOLE_PRINT(TERM_RED"[APP ERROR] : Error in Application\r\n"TERM_RESET);
             g_appData.state = APP_STATE_IDLE;
             break;
         }

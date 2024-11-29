@@ -4,14 +4,14 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>tcp_client_sam_e54_xpro_rnwf02</name>
-            <creation-uuid>926628a8-a77e-4abf-81a3-c7ee3c687ab0</creation-uuid>
+            <creation-uuid>cef769d9-e47b-4a56-a95a-7599f0dd2243</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>
                 <confElem>
-                    <name>sam_e54_xpro_rnwf</name>
+                    <name>sam_e54_xpro_rnwf02</name>
                     <type>2</type>
                 </confElem>
             </confList>

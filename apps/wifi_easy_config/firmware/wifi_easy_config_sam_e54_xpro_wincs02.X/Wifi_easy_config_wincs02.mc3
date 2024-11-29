@@ -1,4 +1,4 @@
-<config configName="default" projectName="Wifi_easy_config_wincs02" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="Wifi_easy_config_wincs02" configVersion="1.1" device="ATSAME54P20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -75,7 +75,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.2"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -3395,7 +3395,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;222&quot; canvasWidth=&quot;1220&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;435&quot; canvasWidth=&quot;1059&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -3412,9 +3412,9 @@
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;sercom2&quot; x=&quot;550&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;sercom4&quot; x=&quot;210&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sysNetRNWF&quot; x=&quot;1020&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sysWifiProvRNWF&quot; x=&quot;1070&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sysWifiRNWF&quot; x=&quot;800&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sysNetRNWF&quot; x=&quot;32&quot; y=&quot;305&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sysWifiProvRNWF&quot; x=&quot;12&quot; y=&quot;365&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sysWifiRNWF&quot; x=&quot;22&quot; y=&quot;254&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_console&quot; x=&quot;890&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_debug&quot; x=&quot;30&quot; y=&quot;100&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;370&quot; y=&quot;100&quot;/&gt;
@@ -10743,24 +10743,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWD_NET_DEVICE_KEY_PWD0"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
-  &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWD_NET_DEVICE_KEY_PWD0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysNetRNWF&gt;
-&lt;/sysNetRNWF&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWD_NET_DEVICE_KEY_PWD1"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
-  &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWD_NET_DEVICE_KEY_PWD1&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
-  &lt;/sysNetRNWF&gt;
-&lt;/sysNetRNWF&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_DEBUG_LOGS"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_DEBUG_LOGS&quot;&gt;
@@ -10863,7 +10845,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysNetRNWF" name="SYS_RNWF_NET_MODE0"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysNetRNWF&gt;
   &lt;sysNetRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_NET_MODE0&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;SERVER&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysNetRNWF&gt;
 &lt;/sysNetRNWF&gt;
 </value>
@@ -11302,7 +11286,9 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWifiRNWF" name="SYS_RNWF_WIFI_MODE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_WIFI_MODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;PROV&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
 </value>
@@ -11321,7 +11307,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_WIFI_MODE_PROV&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
@@ -11332,7 +11318,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_WIFI_MODE_STA&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
@@ -11369,7 +11355,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWifiRNWF" name="SYS_RNWF_WIFI_PROV_SSID_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_RNWF_WIFI_PROV_SSID_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DEMO_SOFTAP_WINCS&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
 </value>
@@ -11478,7 +11471,14 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sysWifiRNWF" name="SYS_WIFI_PROV_PWD_NAME"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;sysWifiRNWF&gt;
   &lt;sysWifiRNWF dnOrder=&quot;0&quot; id=&quot;SYS_WIFI_PROV_PWD_NAME&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;/&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;visible&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;12345678&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/sysWifiRNWF&gt;
 &lt;/sysWifiRNWF&gt;
 </value>
@@ -12001,579 +12001,611 @@
          <hash>d5d6ce02e7014d2b23bcb2b619fdf7e3f038e74408b94ef6caa70b1b25c2ca0a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\ATSAME54P20A.ld</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\ATSAME54P20A.ld</file>
          <hash>d16806801e07c979cea29ee524ed4c3d3e526c5cb77c7d8adf4128ba06157a04</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\bsp\bsp.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\bsp\bsp.c</file>
          <hash>5cb21f9aaac63012c30d9eb9e34ab1e613e4c9f515cd7516cedbc9701ff6a16d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\bsp\bsp.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\bsp\bsp.h</file>
          <hash>0f53b638b719dc36a805157b33d769d0232834a4a9a4efd223ffd14d2095469e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\configuration.h</file>
-         <hash>f36980602cef4afe7dd49b5e029e36086edc5c7e2ba6521d49faaf24c19d7b3d</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\configuration.h</file>
+         <hash>b547ffe4ad21d1511f42a306dbc3d7f77cd253c9d8a35629347f0243b9935927</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\definitions.h</file>
-         <hash>b03cd61d764cb7d4898dd7f520f7231691d3be8b00569dcc20c22cc9a985d47f</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\definitions.h</file>
+         <hash>d297d0a7e04468d8a47f13b6c6f5b24ef10350ce44117b6e3dda9f0a3927b34b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\device.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\device.h</file>
          <hash>68bb28accb617ce48b644e0b41a8f8a1aab2e1025456ba49a5a4bd72bf8e9fe8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\device_cache.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\device_cache.h</file>
          <hash>e2914501b361bbc93a56d6915b1bf4fac00277e61f31fdee87a587bc15dea5b6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\device_vectors.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\device_vectors.h</file>
          <hash>2ca6c5e4f11c88f714464908b2a390e9ca48457311f7e72f6f6679dea2b43b86</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\driver.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\driver.h</file>
          <hash>042fdd289460dbddb8e805850af7e3ac9aea95468e37414959781ebc5b2f454d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\driver_common.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\driver_common.h</file>
          <hash>5217965f6720b4fdf717e99ce9df4f2c9fbd82bbbc9655847166d1eefa806fee</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\dev\wdrv_winc_eint.c</file>
-         <hash>fd68cfd442a8031ba4f015787421bbea7da6b17e83a2aabd949107977217b84f</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\dev\wdrv_winc_eint.c</file>
+         <hash>8ed94b556e8d2d5f2d959e62b0e2ba0e623d27daa8e1190c6de98b88c41a121e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\dev\wdrv_winc_spi.c</file>
-         <hash>02e84ba033aaa01dfb0810316154de978a3e43b83bc7d11711c0ce218da5e390</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\dev\wdrv_winc_spi.c</file>
+         <hash>5bafb87dc418ea01e6ec1b89fb4a40c49921be63048ca913d88a41badf0fda26</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\dev\conf_winc_dev.h</file>
-         <hash>d02fa5c6e1b31aa89a3a06f393835a58f0188fa0cbf84f3bacc75e7398e1fd8c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\dev\conf_winc_dev.h</file>
+         <hash>a3984c02e398f0b90a7a618f64cc4e62e45f884a430a6427ce8bf7bdadb705f0</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\dev\wdrv_winc_eint.h</file>
-         <hash>2c379d2bc41a839d2a033b74a0eba8c48a5f500a5ecb040d90d9209a710c31d4</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\dev\wdrv_winc_eint.h</file>
+         <hash>8911d8da5e937f0f0e4e501c491ca4c89cfe67582aaf68862d2209f6bb0dfd79</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\dev\wdrv_winc_spi.h</file>
-         <hash>2c4828c9a1cf95af29fc60cc4f10f2315ff27d047d893175e610bdae819fc9ad</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\dev\wdrv_winc_spi.h</file>
+         <hash>7d95f50c67e34db07743b87e30a9e3ca71ab0995de1466ec537fdbf580cd2ea2</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\microchip_pic32mzw2_nc_intf.h</file>
-         <hash>64f1fab542b60f04ca3561eddeef0cbf909a47bd94bf2d002fe045f3b6fe7167</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\microchip_pic32mzw2_nc_intf.h</file>
+         <hash>9cfef60d07596edb2e56261deebc1dfb255a026bae3878aec66985705b2675cb</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_cmd_req.h</file>
-         <hash>0547399fb2bd59b2fe16778aca81635482dd199816f2686e4bbd6203152e003f</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_cmd_req.h</file>
+         <hash>3a5a227fd3cf443641782934e7e06731a6e58fd1aeb4ba729c692631af16be21</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_cmds.h</file>
-         <hash>0a6e720c8b267eec44d5b4ec742153a56c706b9fb85de332b3f885e58c138a4f</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_cmds.h</file>
+         <hash>e702f55e6443d0e236aaf03fdab00c3a00fed1e9f94cf8b1c9cb6d965808d5b5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_debug.h</file>
-         <hash>a4a64b02161faaab75c91c78f4f56c73fad519a9fb68a02e7d67420b3d815aa2</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_debug.h</file>
+         <hash>1ddd09575d547b6bcb84194d61eaff27504d4316f13bc3932d205e071465b2a4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_dev.h</file>
-         <hash>bde812ba19f31980f69629e4d1525fe519cc15eea3803d59e3c3088ec9a5de64</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_dev.h</file>
+         <hash>86b159889b0f6b3f3eba29b926cd819ef29a26245ccd0c7091347d788ea09a22</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_sdio_drv.h</file>
-         <hash>4927b0c2ff872838a4480a8597b618eb23fa2ec6a06ce996296405484366db9f</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_sdio_drv.h</file>
+         <hash>c06f89965dfe78c155db4628e3aa0bd65f35aed8d056d302fd54f79ac2546e2a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\nc_driver\winc_socket.h</file>
-         <hash>96c786cf101a84a838663d49d1752b3206329a8702bcc2b615f4d9ddf46cc9db</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_socket.h</file>
+         <hash>b11e65e3d8ac121b01607492d661722381d1e1d7379fa5af0aa13363860029d7</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc.h</file>
-         <hash>3fe133761f7d1044c93a96463c0327abde7d7e30e85e4f1777b2c49615fa90ef</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\nc_driver\winc_tables.h</file>
+         <hash>ce1e3d65f6e8560465e82d6973b0000b192017dd8fcd878da291ea7a74d6fc90</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_api.h</file>
-         <hash>648958b720d95c8186ee4f237c22e5a59019905847c17de2a1cd58a27d098d4a</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc.h</file>
+         <hash>1bb04a6868b68a9d1b853aff3a7919db263f8837dfb236f2b19dd4a8c4acbc94</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_assoc.h</file>
-         <hash>ea95f3605a7be4d73254a4d30477c8c9e2de3d880210717df06c63e7757069cd</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_api.h</file>
+         <hash>8d63c92dce091cdcf9105c501ba85dc9588f006de1c5741f8c0fb1b457bb4df6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_authctx.h</file>
-         <hash>a26d60665fd51ec7d2f236541c94584362a02b825bf1df87e124a1bf8a91fad9</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_assoc.h</file>
+         <hash>971edbe177aad5265e753e958e03b9cd1aaccd99291ddd79fb0e7b8efe652a1d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_bssctx.h</file>
-         <hash>3a964a5f0fb1b494b78b43659c35964cc8aed45db3f5d7fd9b701847f20605a6</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_authctx.h</file>
+         <hash>cb1381552e553803be27d2eada0e40188e57071efe31bfa34315fb71def08687</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_bssfind.h</file>
-         <hash>ed1cbb89bd6861af4e32d5864d98ef937ed3483046413493550aea3fba100fa7</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_bssctx.h</file>
+         <hash>1226912f018e8c11fc059d91a2ef260a3084f90c6b639d6d8d06b291dee3e8ad</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_client_api.h</file>
-         <hash>c193f9a086d5095accda4d33296ab150adb9d432ff443a89b5e77c8e40e295bd</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_bssfind.h</file>
+         <hash>0fd54d1fddde8957ffda40cb3b3f9ae9b037394a1ce49d39829cfcdd896e2d45</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_common.h</file>
-         <hash>1ace69b4e966d9808cbcc85ee037100bf8557a5d6ece3b917661d847606c8e13</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_client_api.h</file>
+         <hash>a8075abb6d62f3d12b6e315a3bd4f6f31442008a46f12422736a88753b78177b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_debug.h</file>
-         <hash>682b45074dfb9b4f6700a52eefb7c7592fbb5a828483f93518fdd217fc748c23</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_common.h</file>
+         <hash>7f3756972aa855405b051bc819f234db280455579ef765d758585650ab709fd7</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_dhcps.h</file>
-         <hash>5ffe48a807effc02953f72a9df452390cacba513947f0740964640c1f066a0a0</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_debug.h</file>
+         <hash>6e32e1a0e172add2412bf9b2be9eb11a364f741858ef16cdb017c6dd02bead3b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_dns.h</file>
-         <hash>5f867f40c33a85d4b50adcac57a20752aa4961ef8f89fb57792f253a25d73fef</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_dhcps.h</file>
+         <hash>ecd15e34bc8a2aaf10a29889b0cd7eb221eadb1ab898f947efa162c0156ed8bf</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_extcrypto.h</file>
-         <hash>8a65de5bbf285a4dc3966e93a6f68b30f1f24084d142fce4243c57f504d05c33</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_dns.h</file>
+         <hash>db9533035216e28b64d2ea52283c3dc1aa71538315606b4c2c352735a81679e9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_file.h</file>
-         <hash>537b9828c62e32e8fac3e2acaf6a9cf7053fbc79e40f8d31f5d08f2fa8f0d3e4</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_extcrypto.h</file>
+         <hash>fb9a6c58e107d0d1b4f57c31dea11096ae35e087c0758a3f18556c8eb2fbefd8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_mqtt.h</file>
-         <hash>bde0139e9d673d7a0d5c338251fec2e142f584456f8ca9d15d7948d672ca0831</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_file.h</file>
+         <hash>b6da05b6e3a721a7111e466c72e1d932be68bfc834b91349ae6c8b831a7580a1</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_netif.h</file>
-         <hash>d894778279e08729fe40f4b346b846eb725daeea14c28fa171925b03f9d2a381</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_mqtt.h</file>
+         <hash>55d47fe91cbf980ee978fcc8f78cb66216a19b474ff70ff0539f58cf1e5e62c5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_sntp.h</file>
-         <hash>af58bffb5c5ff4cf7807c0f409614703a9eaaaf7889b04486cd3643b19078241</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_netif.h</file>
+         <hash>c7e7ed45069446575f752ea3fe1faf94bcf14cf5e52b78d65e22d7e9e35cb313</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_socket.h</file>
-         <hash>c13d3ef7ffb98bcc72c81606b80f3fab1b490e7f40428da850e3dfd6cb33573a</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_nvm.h</file>
+         <hash>4f8e27bac2f9952eaf9ab9ea395b6982386e4262358a7e0a02f3e09ef8f94a07</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_softap.h</file>
-         <hash>7452c332178766dbc05d3b691d694abc9d43aa04261b426f52b8e3849dcca794</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_ota.h</file>
+         <hash>f71a0749d3d5ad80640527492c7aa8866a7d51c30c03ad74f83668a7adec6986</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_sta.h</file>
-         <hash>e683f284d8ede99648ad4a38f5286a82e2e2a07b2e13bad32229f53204cd876e</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_prov.h</file>
+         <hash>659264cc2a5334388449daa0810e1a7f30eb95f49d00f122b18fa2f2c48c4f8b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_systime.h</file>
-         <hash>d4122cdee3a8b6ba4ad46bed8049a0fb136a3af39ee1760346ffbe2a7d83bfb2</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_sntp.h</file>
+         <hash>4cc9d7d98d6fedf02354986bae06661f1cb26d88254a73498cb781a65ef08f2c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_tls.h</file>
-         <hash>23807a9f72c811951d18f59440d22a7224f412de033f366b57acfbc5be02aa3c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_socket.h</file>
+         <hash>35f3483642ae71306d82d780e672a5af02d16687fda77e354e6e6eb623c22991</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_utils.h</file>
-         <hash>6a39d00076d40074f94fe336287825432936d346b216aef93a03b17e290e4369</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_softap.h</file>
+         <hash>fec2b4284adcc91f1b6905cf162abb83c74e48d48206ab02774425dc5e490837</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\include\wdrv_winc_wifi.h</file>
-         <hash>8627c46b6f7ba68af8a54ecf2ae556d2f94ec2911738122320a34402f821ce06</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_sta.h</file>
+         <hash>60bae6f199a571af4424f54699c8fdd8e1b30cb4131d8019b5e6d8a6b56bbbaa</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\nc_driver\winc_cmd_req.c</file>
-         <hash>df7171968adcb5e8fe0778bf77ed280f241529eb071a55410bbaf79319d510ca</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_systime.h</file>
+         <hash>cadd95176805112852a4172acf4cea3c295d6e625298afb54ca4756651d452e0</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\nc_driver\winc_cmds.c</file>
-         <hash>fc488e9980c0b3ad7acc014fe00810d400955ca53c63794b1c622bd8a843b42c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_tls.h</file>
+         <hash>2487d8906ba01141b18afc12dd80bb9643f65025133ce427c437a6d31b92bd46</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\nc_driver\winc_dev.c</file>
-         <hash>a650a7f11b0ff6728c5a3d7f724eba226d706e982c226123cca1c20eeed642c4</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_utils.h</file>
+         <hash>20ab1738616c699e2cd5e60f833207ffca35c5953b10b759e75fa439f52f9a96</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\nc_driver\winc_sdio_drv.c</file>
-         <hash>df4d7eea7af519108bc320a4d05ca997ea3583834cf45a71eb0577bcc5fcc3b5</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_wifi.h</file>
+         <hash>98097cc3c7904f3a1182ef4d6411132c683ae8f22a5e49e3e6987379aae7640d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\nc_driver\winc_socket.c</file>
-         <hash>fe27e7dfb058a035f86906659be509f57ac7a44342c0c273bf2c7ac9f229ad90</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_cmd_req.c</file>
+         <hash>9b37929c6093b9e203ec6c231c6406988568d3b69ced833982898d83dfc39601</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc.c</file>
-         <hash>05468693a2d343d49461fe14780a1a42000d8a974b3b4fc3ba8c7c9339dedcc7</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_cmds.c</file>
+         <hash>a9c8734a94360a4be2392c40609ee8e225c71828c34e569ddfa198f36a47203b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_assoc.c</file>
-         <hash>c7817a5f856a0fc1f36f6af0fda5303ff939a374a5f797f72ba0126ecabaa20a</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_dev.c</file>
+         <hash>0a76ff35bd70222c94d60cdf5501755c79d88ba52045c775e5f67bf6d9cf891e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_authctx.c</file>
-         <hash>6e27438cbc019726d21f1b8773dfe734c8acb031e2a58f641ac78c6b079e5bb8</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_sdio_drv.c</file>
+         <hash>7dfde858f0abef4abf3adf510a054a51cf6afa8ff081ac1e41bce726a911eaea</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_bssctx.c</file>
-         <hash>3c57aaacfe0d9ee0fa6523486d004af2373b992ef196f3c8b5b59e9296cb0158</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_socket.c</file>
+         <hash>3dc4c8cf0da8751eb161ec3dbe1454749135e77e364eecc73741022347ef60fe</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_bssfind.c</file>
-         <hash>9e658f9640b3629c2f2777d51f35741d9d287bc069c16a3b2b84dc24e6dfdc02</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\nc_driver\winc_tables.c</file>
+         <hash>3bcecdc51c396a456ce6d22c1e61af36706865241c44815d9cc818e0dafc0f08</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_dhcps.c</file>
-         <hash>2b0a33035a10539b1c6274774bab78b63b71b804b0f75206b65f066d3e8bf101</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc.c</file>
+         <hash>d244e40be5d8e0cddc86055bc76187f6947c09e2de9e9e261fcbcbcff6e0864b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_dns.c</file>
-         <hash>7d1acae3b3092673f6e10f1591a51dd9da624e86e11845fb58f78bd5817a1b23</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_assoc.c</file>
+         <hash>80a949b6005798367ca722abc4f57444f479a1f79fab2ba25b7859fd5195bab9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_extcrypto.c</file>
-         <hash>b260ce417beaa17f267d79fd4a032b32c29e3725bd7a7f6437a5898024ef84a1</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_authctx.c</file>
+         <hash>34b82da976bbef4bf68a60804e35b9b45208f25a12fbac56be28835a00733719</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_file.c</file>
-         <hash>9ce77a7e3188107d422b17dedbe2e49ca82c42253367fa22d2c5e63f6469bd6d</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_bssctx.c</file>
+         <hash>4a919cb138a1bd13d2408ee29d160d1d432ca831ea36056cab5189f82b04bb76</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_mqtt.c</file>
-         <hash>2f684ce248cad488015486d4cfc1ded54efd3dc5533a019014346a473cb5fe5c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_bssfind.c</file>
+         <hash>a92f12ce491b49ef64df556bb12d43e6eb8cdf9259437ef0f4aad7a2ad4a8c36</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_netif.c</file>
-         <hash>2b50d0b6f9c74dd02c96c2bb89c75596a70dc94f4c2060595efb461a8bdb9290</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_dhcps.c</file>
+         <hash>c8d104fccff2f3fab7b9b3490ff0a9c15c30841ea8afa853b2e877edcb0e3a29</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_sntp.c</file>
-         <hash>7298d0d9eb04439bada78d8f6fe20888ec0b9980f65e714156abb23bff2e20f8</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_dns.c</file>
+         <hash>2ce8f282aa03487cc53fab21d6db944e4b61e1d9cb7f7080e8ce5f76a76333e2</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_socket.c</file>
-         <hash>bf57393a1af5374833690dd0f5cc286c7e8929e08abdeca2f12d4b3894e7ef58</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_extcrypto.c</file>
+         <hash>826e9bd5adbd4a9758a14ef862de595dfdfc1bab494b2e741397890b7630ad43</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_softap.c</file>
-         <hash>bcd991ca9b28309b96c9fe5edaf6a4c22daffb3a62c23ea3374bc1b4bfe7cec2</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_file.c</file>
+         <hash>5c32e8e9497378df3cc1b31b9cd9cdc8a53486ca51ff433fc007cdf569be9c65</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_sta.c</file>
-         <hash>c30be5b58fc190866a9d6d4981db9459c318fbdbc97238640b108273320b9270</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_mqtt.c</file>
+         <hash>ec70b853e7b8f888cec87056809e650724885bff719bf4eeeac55f995198dc3a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_systime.c</file>
-         <hash>f89a6bd413e9d81d4c932c9cdcbebd76168b9a483a1bb7c4a0d2572aad0ed88a</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_netif.c</file>
+         <hash>5ee85d41ecf8f6b258a90200a041b8efe902b545b5a30bb7c60a11a9f885165f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_tls.c</file>
-         <hash>51f5919ba2d9f6d6d7d47c84da7159e56628c841990d8d8fbdfa7a178e96ad4c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_nvm.c</file>
+         <hash>8d7ccf3a05f0bbce9eccf28b933c2364eba4beefaa1db734fb2d7c89b65a5e8d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_utils.c</file>
-         <hash>0a05e57501b5c36f3dc3134ea6aef196da495356081c2df6dad46e73a482b900</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_ota.c</file>
+         <hash>76f02260cc037a3cd0a3afa85e0f9c41bab37b0beb16ca43554f004d65ecd578</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\driver\wifi\wincs02\wdrv_winc_wifi.c</file>
-         <hash>93c9116027ef729fdff04a390ebc011e593b31251e1d66cb7b0704a45b1ba8c7</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_prov.c</file>
+         <hash>46eb519f44f4521eebdfdf2b5f76dacca454c036c2611f28e264865a9a1b3fa4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\exceptions.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_sntp.c</file>
+         <hash>17859a0e9fa559df4712f74e2ee25bbfcf4bf12104fc7b381beaeb92d38e7ca9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_socket.c</file>
+         <hash>2272629993349cf6717fbe1da93ee6277b6a877bf98d34a61b7e9159fc4127de</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_softap.c</file>
+         <hash>8d727b5a6354cdc408bad711d98e0da254ed51a49549647ad4d79c0779b8cff1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_sta.c</file>
+         <hash>87db3c6b8da3b0b67d3bd41abd553372a30819ecc563c478f9a07b51df0319c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_systime.c</file>
+         <hash>0be4dbb870a10cf51a3d77eab596bb3912a0110b490cebeb0de42bc5fc4b7642</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_tls.c</file>
+         <hash>9d8915377d500d139082ec48c383f5336dc1057c38dd0303844fe44427993a7f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_utils.c</file>
+         <hash>e0fa1ecf09d0f7b5c688c7612ac751a999bf9d73c26e54d8c840ac4272c23cd3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_wifi.c</file>
+         <hash>446658654071cd35ab931c24451fcdd6affe9636cc469b355b2bc4cad456be00</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\sam_e54_xpro_wincs02\exceptions.c</file>
          <hash>89852728a9a1cc4c9746839cc3caf5308b8698c0c30bf6bfbad0db9e552a387e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\initialization.c</file>
-         <hash>91ede4753593a7f2b59d93013738b697f67fe8004396af59f85a9d87207abdb8</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\initialization.c</file>
+         <hash>3eb043961669032509eac468965cf1c6c18a117a330571d2c504d42073cc653a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\interrupts.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\interrupts.c</file>
          <hash>c0f6fc29b913fc92a9110cebec10db8b4ef911b5320063ca36ffed9fdfb24acc</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\interrupts.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\interrupts.h</file>
          <hash>69a55e9fd44ea98ae3abb6676cb1199ac92b2a618bb2b384f624d87b68de1559</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\libc_syscalls.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\libc_syscalls.c</file>
          <hash>88bb2e34c939601b5b7ad076556e3ee0fcedf388436b8cddb6d6fd3e9d07472f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\osal\osal.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\osal\osal.h</file>
          <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\osal\osal_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\osal\osal_definitions.h</file>
          <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\osal\osal_impl_basic.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\osal\osal_impl_basic.h</file>
          <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\clock\plib_clock.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\clock\plib_clock.c</file>
          <hash>e4a3170563151ee411da1d941f6af583c048301d3161c041373de01ed8337497</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\clock\plib_clock.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\clock\plib_clock.h</file>
          <hash>59322a99314cb17c6b595d51d18769582e61189140188aa053acfdc671487f21</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\cmcc\plib_cmcc.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\cmcc\plib_cmcc.c</file>
          <hash>3b03e762c5515130718e7694736be6c25984ff8078c84d21a3fb9eba54f68e5d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\cmcc\plib_cmcc.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\cmcc\plib_cmcc.h</file>
          <hash>89b940242bfa0ecdba3ac53666c5996e25fab712227d37d2d6881c8a86b5f497</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\dmac\plib_dmac.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\dmac\plib_dmac.c</file>
          <hash>3afd683dd943bb64e370f310d90c380e89a629e044069808336e231c72c34d16</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\dmac\plib_dmac.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\dmac\plib_dmac.h</file>
          <hash>717bf86e7fbf9af5574a06add397e50b6741a67da0d1fd2a43243990faf8c85e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\eic\plib_eic.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\eic\plib_eic.c</file>
          <hash>29f9dc384e512f9e014c82c78b916e1cb609aa0643cca1503ff0e70a5720e81c</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\eic\plib_eic.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\eic\plib_eic.h</file>
          <hash>f4a613f36d3f29afc8b15d5b6a48fdce94815a703079aa7849fa1c3058aeea2f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\evsys\plib_evsys.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\evsys\plib_evsys.c</file>
          <hash>171913270aa095f1e8ff9192995129ff7bab22e5c793c4223f9046802e69d1e6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\evsys\plib_evsys.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\evsys\plib_evsys.h</file>
          <hash>f7d08eb8162f271ce1db384c082586a6624e506aa7f502c64c4ab5a1aadac47d</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\nvic\plib_nvic.c</file>
-         <hash>f28d610861afeb4a7f464e00cfee85a3a5aefe67090843eae3bd23b5fbd22562</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\nvic\plib_nvic.c</file>
+         <hash>8e9e363ea0aeda2f5d58beccbc0cd87d37c5853dc56f6bded8661f92f35fbc0f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\nvic\plib_nvic.h</file>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\nvmctrl\plib_nvmctrl.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\nvmctrl\plib_nvmctrl.c</file>
          <hash>1a6bdac00590cbec796a13351597c695bc1d962a95641bdb573d1bf0dc38b2d8</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\nvmctrl\plib_nvmctrl.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\nvmctrl\plib_nvmctrl.h</file>
          <hash>fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\port\plib_port.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\port\plib_port.c</file>
          <hash>7df46643b7de6910df167db8001e3e23b716762b431129ebfe164f356e41a729</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\port\plib_port.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\port\plib_port.h</file>
          <hash>8c93937cf2dd737d7f69dd0a279268739c05c6b09eb2a541b8d53aba6602bd44</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\spi_master\plib_sercom4_spi_master.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\spi_master\plib_sercom4_spi_master.c</file>
          <hash>e6c54d2653d55a993b74645f05ba26732093e60799d36f8826a1c513b1666fb6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\spi_master\plib_sercom4_spi_master.h</file>
          <hash>8615baebaf7234665699c1684aec924b2a5a4be311d3f3980c546a77b8f04ae5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\spi_master\plib_sercom_spi_master_common.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\spi_master\plib_sercom_spi_master_common.h</file>
          <hash>f28c2694b21a2c5ebad94edb7de6fac0acb2bd5686d78d08289cd2185cdccfbf</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\usart\plib_sercom2_usart.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\usart\plib_sercom2_usart.c</file>
          <hash>211795636b70132ec6690c61fa113a02823dc591da28f4f5b505058b65e606a2</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\usart\plib_sercom2_usart.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\usart\plib_sercom2_usart.h</file>
          <hash>4ab7717726a19aa31b04cb4ea2dea4082167fa6ecc9bc16acf532d7fb171b739</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
          <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\systick\plib_systick.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\systick\plib_systick.c</file>
          <hash>c931829b00aca123898b2dc66feeba5551f99928b9a4fe2256f768d528ef40a4</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\peripheral\systick\plib_systick.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\peripheral\systick\plib_systick.h</file>
          <hash>a1b309a0d3b9639478836d123d6fccafbdbba26c827e7b89049cb34d32bae929</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\pin_configurations.csv</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\pin_configurations.csv</file>
          <hash>df243749d8125de68dd995d74d504a803a9e4ee37530c8bdc13858f73277103f</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\startup_xc32.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\startup_xc32.c</file>
          <hash>f374b97d65f92553f1b75d8c9239b8b0f8581c710f78ea47b02c7f6fa6f74c74</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\stdio\xc32_monitor.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\stdio\xc32_monitor.c</file>
          <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\sys_tasks.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\sys_tasks.h</file>
          <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\cache\sys_cache.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\cache\sys_cache.c</file>
          <hash>da28c09b0da0fdd6fb7064631c15c9197c78df33fcd17d742baef909830a320e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\cache\sys_cache.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\cache\sys_cache.h</file>
          <hash>b4b3a4e7434759c9bbcd3c6a0ab97558eb2a007f083a4eb76dbedcb2e2c3d86b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\src\sys_console.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\src\sys_console.c</file>
          <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\src\sys_console_local.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\src\sys_console_local.h</file>
          <hash>024a0b50ea2fea72b964b8209fb256b5df6693badd320485821e7912c5eebb25</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\src\sys_console_uart.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\src\sys_console_uart.c</file>
          <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\src\sys_console_uart.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\src\sys_console_uart.h</file>
          <hash>690c74d55c9204f3e3d621635257df1de1c89f097671a678c359f5e24461589a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\src\sys_console_uart_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\src\sys_console_uart_definitions.h</file>
          <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\console\sys_console.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\console\sys_console.h</file>
          <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\debug\src\sys_debug.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\debug\src\sys_debug.c</file>
          <hash>474ee981d4285453a2ae9f1e4735c40129281931b89f579c3c413acdff1d8d26</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\debug\src\sys_debug_local.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\debug\src\sys_debug_local.h</file>
          <hash>d14855e54d4929ec6c9c3ea1e9de3fdc1711bb278fc27ab39079e9f16ecc87d5</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\debug\sys_debug.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\debug\sys_debug.h</file>
          <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\dma\sys_dma.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\dma\sys_dma.c</file>
          <hash>b898eb7b174f17cd7dcaff8afef4fa2b878dcbc3b4db44b23810c78af55ffd6b</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\dma\sys_dma.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\dma\sys_dma.h</file>
          <hash>c15762305460aac605f3839deedf888b0b632c871f2a9a5c6b9b55a85a278a10</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\dma\sys_dma_mapping.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\dma\sys_dma_mapping.h</file>
          <hash>ce3b0fb5a381953a0804e467742d198578a5abb4b419c667565553953c4d27c7</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\int\src\sys_int.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\int\src\sys_int.c</file>
          <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\int\sys_int.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\int\sys_int.h</file>
          <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\int\sys_int_mapping.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\int\sys_int_mapping.h</file>
          <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\net\src\sys_wincs_net_service.c</file>
-         <hash>66a57e6384c579fd358d6a5492d34f254ec5c510aa0a00998fb1a5d11d9f4767</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\net\src\sys_wincs_net_service.c</file>
+         <hash>3f7808447433f7f6fcf77e37d5027261b1ba6b91eb64bd9fa4aa195d65a09112</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\net\sys_wincs_net_service.h</file>
-         <hash>2cca93ad938f47cecf408cdca98680ea68c690dc41bce14af5c7fbf31c038340</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\net\sys_wincs_net_service.h</file>
+         <hash>d344acf6e135220d1538bc0c7f72f0bb43b3810500b30ad340ad85c5ce2766cc</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\ports\sys_ports.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\ports\sys_ports.h</file>
          <hash>c099eab3dad845f438f1a140c65b10c30a2aa3bc38aefa098ff1f4d2096a4f20</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\ports\sys_ports_mapping.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\ports\sys_ports_mapping.h</file>
          <hash>8a3e7ed01aa847c87f76796b56665f7f91f591fddfe6cf2e4161a03332608c3e</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\reset\sys_reset.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\reset\sys_reset.c</file>
          <hash>e671888007ee4e0355beae1e361ff894dc2bc4fa0a4614d6975b18c5ce057181</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\reset\sys_reset.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\reset\sys_reset.h</file>
          <hash>962efce739387d25aacb5dc3aa90e90f216a478bcf19b57237540fd72bce2748</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\sys_wincs_system_service.c</file>
-         <hash>855e5b7f44c2880241ec56b39b3d83d243db59e2e90c547960c24935e509b433</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\sys_wincs_system_service.c</file>
+         <hash>e600451019a431c645dc8d47494ad670e358200a234334eb8b5f18726b4f3ab9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\sys_wincs_system_service.h</file>
-         <hash>2396cd355062c063cef713f4abc1dcd782399750417b7b13155db81ef3182622</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\sys_wincs_system_service.h</file>
+         <hash>343c500354e87140fffbf73c518dfedfa5f4d9c56ff69b462388ae91dc23eb3a</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\system.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\system.h</file>
          <hash>2b75f8e370e5cb2c54f70da7351ee149f0d5a7673e700f39b373099716b31b55</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\system_common.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\system_common.h</file>
          <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\system_module.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\system_module.h</file>
          <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\time\src\sys_time.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\time\src\sys_time.c</file>
          <hash>1c9a9a245a9bb59bc036d0e1789149da6c2129a974418436dfca6832d80afc92</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\time\src\sys_time_local.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\time\src\sys_time_local.h</file>
          <hash>b5911e9527666f333c003f69b86f92b9b88712a365d0d5f92c6e816e9f43b4c6</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\time\sys_time.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\time\sys_time.h</file>
          <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\time\sys_time_definitions.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\time\sys_time_definitions.h</file>
          <hash>bff2d3a629283b03b410a8e7cc15085267a8553202fac75c76a9aa3f61c57d78</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\wifi\src\sys_wincs_wifi_service.c</file>
-         <hash>738b1c254a6e3ca5734947f0348e2f0ead81f14eac1d721d0457e7d8279f47e9</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\wifi\src\sys_wincs_wifi_service.c</file>
+         <hash>eae1700b8a15e0758be6606d7f9cca3ef7134ee713a59e14f0fa7fd73c3f29cb</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\wifi\sys_wincs_wifi_service.h</file>
-         <hash>84708d410ef4d211fab11e187fd2d855e2c158a5f967ca1220f444aba126edec</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\wifi\sys_wincs_wifi_service.h</file>
+         <hash>f7166a855f85e40f2498d38ee6283a305b9a5580edea8f520334a53bf9720d60</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\wifiprov\src\sys_wincs_provision_service.c</file>
-         <hash>73deb60de1f4efff6532f9c822a26171317868215ffc87051b3ed4bb4a3067cd</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\wifiprov\src\sys_wincs_provision_service.c</file>
+         <hash>0d092fed97753a13096cea25139c6356081ad16eaffd24c06e09e398449cc0da</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\system\wifiprov\sys_wincs_provision_service.h</file>
-         <hash>f82dd5e0817883e70371f1e15fcf607aea1f79dd20dafacd1ade36f47d483c4c</hash>
+         <file>..\src\config\sam_e54_xpro_wincs02\system\wifiprov\sys_wincs_provision_service.h</file>
+         <hash>c1e38145a561f5f18936f55371ad469daf2ed07794a9838d308045d13ee6a9b1</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\tasks.c</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\tasks.c</file>
          <hash>34a53d0fa8dc7e24ea201ac91c72140499862e4bc746bcb5d71c7b4f6c12ddb7</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\toolchain_specifics.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\toolchain_specifics.h</file>
          <hash>6fc0551b0fa3362678b3d7a227386fafa343140d31e4da3ad4af972e61cd0acb</hash>
       </entry>
       <entry>
-         <file>..\src\config\sam_e54_xpro_wincs\user.h</file>
+         <file>..\src\config\sam_e54_xpro_wincs02\user.h</file>
          <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
       </entry>
       <entry>

@@ -98,6 +98,8 @@ static APP_DATA g_appData;
 /* Variable to check the UART transfer */
 static volatile bool g_isUARTTxComplete = true;
 
+/*Application buffer to store data*/
+static uint8_t g_appBuf[SYS_RNWF_IF_LEN_MAX];
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -115,36 +117,48 @@ static void APP_RNWF_usartDmaChannelHandler ( DMAC_TRANSFER_EVENT event, uintptr
 }
 
 /* Application Wifi Callback Handler function */
-static void SYS_RNWF_WIFI_CallbackHandler ( SYS_RNWF_WIFI_EVENT_t event, uint8_t *p_str)
-{      
+static void SYS_RNWF_WIFI_CallbackHandler ( SYS_RNWF_WIFI_EVENT_t event, SYS_RNWF_WIFI_HANDLE_t wifiHandler)
+{
+    uint8_t *p_str = (uint8_t *)wifiHandler;
     switch(event)
     {   
         /* Wi-Fi connected event code*/
-        case SYS_RNWF_CONNECTED:
+        case SYS_RNWF_WIFI_CONNECTED:
         {
             SYS_CONSOLE_PRINT("Wi-Fi Connected    \r\n");
             break;
         }
         
         /* Wi-Fi disconnected event code*/
-        case SYS_RNWF_DISCONNECTED:
+        case SYS_RNWF_WIFI_DISCONNECTED:
         {
             SYS_CONSOLE_PRINT("Wi-Fi Disconnected\nReconnecting... \r\n");
-            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_STA_CONNECT, NULL);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_STA_CONNECT, NULL);
             break;
         }
         
         /* Wi-Fi DHCP complete event code*/
-        case SYS_RNWF_IPv4_DHCP_DONE:
+        case SYS_RNWF_WIFI_DHCP_IPV4_COMPLETE:
         {
             SYS_CONSOLE_PRINT("IPv4 DHCP Done...%s \r\n",&p_str[2]); 
             break;
         }
         
-        /* Wi-Fi IPv6 DHCP complete event code*/
-        case SYS_RNWF_IPv6_DHCP_DONE:
+        /* Wi-Fi IPv6 Local DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_LOCAL_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("IPv6 DHCP Done...%s \r\n",&p_str[2]); 
+            SYS_CONSOLE_PRINT("IPv6 Local DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Local IPv6 address code*/     
+            break;
+        }
+        
+        /* Wi-Fi IPv6 Global DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_GLOBAL_COMPLETE:
+        {
+            SYS_CONSOLE_PRINT("IPv6 Global DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Global IPv6 address code*/     
             break;
         }
         
@@ -156,8 +170,9 @@ static void SYS_RNWF_WIFI_CallbackHandler ( SYS_RNWF_WIFI_EVENT_t event, uint8_t
 }
 
 /* Application Wifi Provision Callback handler */
-static void SYS_RNWF_WIFIPROV_CallbackHandler ( SYS_RNWF_PROV_EVENT_t event, uint8_t *p_str)
+static void SYS_RNWF_WIFIPROV_CallbackHandler ( SYS_RNWF_PROV_EVENT_t event,SYS_RNWF_WIFI_PROV_HANDLE_t wifiProvHandler)
 {
+    uint8_t *p_str = (uint8_t *)wifiProvHandler;
     switch(event)
     {
         /**<Provisionging complete*/
@@ -212,10 +227,21 @@ void APP_RNWF02_Tasks ( void )
         /* Register the necessary callbacks */
         case APP_STATE_REGISTER_CALLBACK:
         {
-            uint8_t certList[512];
-            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_CERT_LIST, certList);
-            SYS_CONSOLE_PRINT("%s\r\n", certList);
-
+            
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_MAN_ID, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nManufacturer = %s\r\n", g_appBuf);  
+             
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SW_REV, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nSoftware Revision:- %s\r\n", g_appBuf);
+            
+            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RWWF_SYSTEM_GET_WIFI_INFO, g_appBuf);    
+            SYS_CONSOLE_PRINT("\r\nWi-Fi Info:- \r\n%s\r\n", g_appBuf);
+            
+            /* Set Regulatory domain/Country Code */
+            const char *regDomain = SYS_RNWF_COUNTRYCODE;
+            SYS_CONSOLE_PRINT("\r\nSetting regulatory domain : %s\r\n",regDomain);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_REGULATORY_DOMAIN, (void *)regDomain);
+            
             // Enable Provisioning Mode
             SYS_RNWF_PROV_SrvCtrl(SYS_RNWF_PROV_ENABLE, NULL);
             SYS_RNWF_PROV_SrvCtrl(SYS_RNWF_PROV_SET_CALLBACK, (void *)SYS_RNWF_WIFIPROV_CallbackHandler);

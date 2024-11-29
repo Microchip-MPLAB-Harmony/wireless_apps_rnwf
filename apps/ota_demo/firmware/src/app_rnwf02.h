@@ -57,6 +57,17 @@
 #include "configuration.h"
 #include "system/console/sys_console.h"
 
+// ANSI escape codes for terminal text formatting.
+#define TERM_GREEN "\x1B[32m"
+#define TERM_RED   "\x1B[31m"
+#define TERM_YELLOW "\x1B[33m"
+#define TERM_CYAN "\x1B[36m"
+#define TERM_WHITE "\x1B[47m"
+#define TERM_RESET "\x1B[0m"
+#define TERM_BG_RED "\x1B[41m" 
+#define TERM_BOLD "\x1B[1m" 
+#define TERM_UL "\x1B[4m"
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

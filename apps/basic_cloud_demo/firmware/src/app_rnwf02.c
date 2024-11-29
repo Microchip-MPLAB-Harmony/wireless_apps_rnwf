@@ -60,6 +60,11 @@ SYS_RNWF_MQTT_CFG_t mqtt_cfg = {
     .tls_idx = 0,  
 };
 
+
+SYS_RNWF_MQTT_SUB_FRAME_t sub_cfg = {
+    .topic = SYS_RNWF_MQTT_SUB_TOPIC_0,
+    .qos = SYS_RNWF_MQTT_SUB_TOPIC_0_QOS,
+};
 /* Keeps the device IP address */
 //static char g_DevIp[16];
 
@@ -104,22 +109,22 @@ static void usartDmaChannelHandler(DMAC_TRANSFER_EVENT event, uintptr_t contextH
     }
 }
 
-
-SYS_RNWF_RESULT_t APP_MQTT_Callback(SYS_RNWF_MQTT_EVENT_t event, uint8_t *p_str)
+/* Application MQTT Callback Handler function */
+SYS_RNWF_RESULT_t APP_MQTT_Callback(SYS_RNWF_MQTT_EVENT_t event,SYS_RNWF_MQTT_HANDLE_t mqttHandle )
 {
+    uint8_t *p_str = (uint8_t *)mqttHandle;
     switch(event)
     {
         case SYS_RNWF_MQTT_CONNECTED:
         {    
             SYS_CONSOLE_PRINT("MQTT : Connected\r\n");
-            const char sub_topic[] = SYS_RNWF_MQTT_SUB_TOPIC_1;
-            SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_SUBSCRIBE_QOS0, (void *)sub_topic);
+            SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_SUBSCRIBE_QOS, (void *)&sub_cfg);
         }
         break;
         
         case SYS_RNWF_MQTT_SUBCRIBE_ACK:
         {
-//            SYS_CONSOLE_PRINT("RNWF_MQTT_SUBCRIBE_ACK\r\n");
+            SYS_CONSOLE_PRINT("Subscribed to topic %s\r\n\r\n",SYS_RNWF_MQTT_SUB_TOPIC_0);
         }
         break;
         
@@ -142,59 +147,71 @@ SYS_RNWF_RESULT_t APP_MQTT_Callback(SYS_RNWF_MQTT_EVENT_t event, uint8_t *p_str)
     return SYS_RNWF_PASS;
 }
 
-
-void APP_WIFI_Callback(SYS_RNWF_WIFI_EVENT_t event, uint8_t *p_str)
+/* Application Wi-fi Callback Handler function */
+void APP_WIFI_Callback(SYS_RNWF_WIFI_EVENT_t event, SYS_RNWF_WIFI_HANDLE_t wifiHandle)
 {
+    uint8_t *p_str = (uint8_t *)wifiHandle;
             
     switch(event)
     {
-        case SYS_RNWF_SNTP_UP:
+        case SYS_RNWF_WIFI_SNTP_UP:
         {            
-            static int i =1;
-            if(i==1)
+            static uint8_t flag =1;
+            if(flag==1)
             {
                 SYS_CONSOLE_PRINT("SNTP UP:%s\r\n", &p_str[2]);
-                SYS_CONSOLE_PRINT("Connecting to the Cloud\r\n");
+                SYS_CONSOLE_PRINT("Connecting to the MQTT Server\r\n");
                 SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_SET_CALLBACK, APP_MQTT_Callback);
                 SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONFIG, (void *)&mqtt_cfg);
                 SYS_RNWF_MQTT_SrvCtrl(SYS_RNWF_MQTT_CONNECT, NULL);
-                i=0;
+                flag=0;
             }
         }
         break;
         
-        case SYS_RNWF_CONNECTED:
+        case SYS_RNWF_WIFI_CONNECTED:
         {
             SYS_CONSOLE_PRINT("Wi-Fi Connected    \r\n");
         
         }
         break;
         
-        case SYS_RNWF_DISCONNECTED:
+        case SYS_RNWF_WIFI_DISCONNECTED:
         {
            SYS_CONSOLE_PRINT("Wi-Fi Disconnected\nReconnecting... \r\n");
-           SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_STA_CONNECT, NULL); 
+           SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_STA_CONNECT, NULL); 
         }
         break;
             
         /* Wi-Fi DHCP complete event code*/
-        case SYS_RNWF_IPv4_DHCP_DONE:
+        case SYS_RNWF_WIFI_DHCP_IPV4_COMPLETE:
         {
             SYS_CONSOLE_PRINT("DHCP Done...%s \r\n",&p_str[2]);
             break;
         }
         
-        /* Wi-Fi IPv6 DHCP complete event code*/
-        case SYS_RNWF_IPv6_DHCP_DONE:
+        /* Wi-Fi IPv6 Local DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_LOCAL_COMPLETE:
         {
-            SYS_CONSOLE_PRINT("IPv6 DHCP Done...%s \r\n",&p_str[2]); 
+            SYS_CONSOLE_PRINT("IPv6 Local DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Local IPv6 address code*/     
             break;
         }
         
-        case SYS_RNWF_SCAN_INDICATION:
+        /* Wi-Fi IPv6 Global DHCP complete event code*/
+        case SYS_RNWF_WIFI_DHCP_IPV6_GLOBAL_COMPLETE:
+        {
+            SYS_CONSOLE_PRINT("IPv6 Global DHCP Done...%s \r\n",&p_str[2]); 
+            
+            /*Global IPv6 address code*/     
+            break;
+        }
+        
+        case SYS_RNWF_WIFI_SCAN_INDICATION:
             break;
             
-        case SYS_RNWF_SCAN_DONE:
+        case SYS_RNWF_WIFI_SCAN_DONE:
             break;
             
         default:
@@ -250,6 +267,10 @@ void APP_RNWF02_Tasks ( void )
     {
         case APP_STATE_INITIALIZE:
         {
+            SYS_CONSOLE_PRINT("########################################\r\n");
+            SYS_CONSOLE_PRINT("        RNWF02 Basic MQTT demo\r\n");
+            SYS_CONSOLE_PRINT("########################################\r\n");
+            
             DMAC_ChannelCallbackRegister(DMAC_CHANNEL_0, usartDmaChannelHandler, 0);
             SYS_RNWF_IF_Init();
             
@@ -263,23 +284,23 @@ void APP_RNWF02_Tasks ( void )
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RWWF_SYSTEM_GET_WIFI_INFO, app_buf);    
             SYS_CONSOLE_PRINT("Wi-Fi Info:- \r\n%s\r\n\r\n", app_buf);
             
-            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_CERT_LIST, app_buf);    
-            SYS_CONSOLE_PRINT("Certs on RNWF02:- \r\n%s\r\n\r\n", app_buf);
-            
-            SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_GET_KEY_LIST, app_buf);    
-            SYS_CONSOLE_PRINT("Keys on RNWF02:- \r\n%s\r\n\r\n", app_buf);
-            
-            char sntp_url[] =  "129.154.46.154";    
+            char sntp_url[] =  SYS_RNWF_SNTP_ADDRESS;
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SET_SNTP, sntp_url);
             
             SYS_RNWF_SYSTEM_SrvCtrl(SYS_RNWF_SYSTEM_SW_REV, app_buf);    
-            SYS_CONSOLE_PRINT("Software Revisiom:- %s\r\n", app_buf);
+            SYS_CONSOLE_PRINT("Software Revision:- %s\r\n", app_buf);
             
               
             /* RNWF Application Callback register */
             SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_CALLBACK, APP_WIFI_Callback);
           
+            /* Set Regulatory domain/Country Code */
+            const char *regDomain = SYS_RNWF_COUNTRYCODE;
+            SYS_CONSOLE_PRINT("\r\nSetting regulatory domain : %s\r\n",regDomain);
+            SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_WIFI_SET_REGULATORY_DOMAIN, (void *)regDomain);
+            
             /* Wi-Fi Connectivity */
+            SYS_CONSOLE_PRINT("Connecting to : %s\r\n",SYS_RNWF_WIFI_STA_SSID);
             SYS_RNWF_WIFI_PARAM_t wifi_sta_cfg = {SYS_RNWF_WIFI_MODE_STA, SYS_RNWF_WIFI_STA_SSID, SYS_RNWF_WIFI_STA_PWD, SYS_RNWF_STA_SECURITY, SYS_RNWF_WIFI_STA_AUTOCONNECT};        
             SYS_RNWF_WIFI_SrvCtrl(SYS_RNWF_SET_WIFI_PARAMS, &wifi_sta_cfg);
 
