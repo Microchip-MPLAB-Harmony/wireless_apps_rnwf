@@ -4,7 +4,8 @@ import socket
 
 DEFAULT_OTA_SERVER = "192.168.205.75"
 DEFAULT_OTA_PORT   = "8000"
-DEFAULT_OTA_IMAGE  = "fw1_june7.bin"
+DEFAULT_OTA_IMAGE  = "rnwf02_dfu.bootable.bin"
+DEFAULT_SOCKET_SECURITY = "0"
 
 def is_ipv4_ip(address):
     if(address != '127.0.0.1'):
@@ -62,8 +63,8 @@ def check_port(ip_address, port):
                     except:
                         continue      
 
-                print('Device ID = ', hex(int(dev_dict['1'])))
-                print('Num of Images = ', hex(int(dev_dict['14'])))
+             #   print('Device ID = ', hex(int(dev_dict['1'])))
+             #   print('Num of Images = ', hex(int(dev_dict['14'])))
                 # print('Num of Images = ', hex(int(dev_dict['15.0'])))
                 print("\r\n###########################\r\n")  
             
@@ -81,7 +82,14 @@ def check_port(ip_address, port):
                     image = DEFAULT_OTA_IMAGE
                     print(DEFAULT_OTA_IMAGE)
                 
-                s.send(f"firmware:{str(port)}, {server}, {image}".encode('utf-8'))
+                # TLS is not supported 
+                # soc_security = input("Enter the Socket Security (0/1): ")
+                # if not soc_security: 
+                #     soc_security = DEFAULT_SOCKET_SECURITY
+                #     print(DEFAULT_SOCKET_SECURITY)
+                
+                # s.send(f"firmware:{str(port)}, {server}, {image}, {str(soc_security)}".encode('utf-8'))
+                s.send(f"firmware:{str(port)}, {server}, {image}, 0".encode('utf-8'))
                                                 
                 
             # else:
