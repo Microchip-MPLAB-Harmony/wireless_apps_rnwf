@@ -61,6 +61,7 @@ If the M.2 Wi-Fi module was performed the DFU, skip step 1 and step 5.
     2.3 Serial-USB dongle to UART DEBUG J35 header.
 
     2.4 Set J24:M.2  I/F SEL to SPI,
+    
     2.5 USB-A to Micro ​​​​​USB-B cable to J2 Micro ​​​​USB-B port for power.
 
     <p align="center"><img src="docs/images/wireless-kit-wifi-h3.png">

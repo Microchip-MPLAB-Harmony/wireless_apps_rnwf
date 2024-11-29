@@ -3,12 +3,12 @@ This application demonstrates a traditional open TCP client in the Host Companio
 
 ## Building the Application
 
-To build this application, open the project file \(`apps/tcp_client/sam_e54_xpro_rnwf_uart.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
+To build this application, open the project file \(`apps/tcp_client/firmware/tcp_client_sam_e54_xpro_rnwf02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
 
 |Project Name|Description|
 |:-----------|:----------|
-|`sam_e54_xpro_rnwf_uart.X`| -   MPLAB X project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
--   This application demonstrates a traditional open TCP client in Host Companion mode. After establishing a successful TCP server-client connection, the data exchange will take place
+|`tcp_client_sam_e54_xpro_rnwf02.X`| -   MPLAB X project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
+-   This application demonstrates a tutorial to open TCP client in Host Companion mode. After establishing a successful TCP server-client connection, the data exchange will take place
 
 
 ## Running the Application
@@ -20,19 +20,19 @@ To build this application, open the project file \(`apps/tcp_client/sam_e54_xpro
 5.  Configure TCP Server details such as TCP server IP address and port. For more details about the Net Sock settings configuration, See [Figure 1](docs/GUID-834E84DC-609A-4A37-853F-3552166E1009.md#FIG_M55_PXS_SZB).
 6.  Generate the code as illustrated below.
 
-    Figure 6-11. Generating the Code
+    Figure 6-11. Generating the Code
 
     ![](docs/images/GUID-EDD3733E-E395-4AB6-BD2F-046D2C8D165A-low.png)
 
 7.  Build and program the code to the hardware using MPLABX IDE
 
-    Figure 6-12. Programming the Board
+    Figure 6-12. Programming the Board
 
     ![](docs/images/GUID-7B288BCE-2B86-4B4E-A43A-7E862137384C-low.png)
 
 8.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC
 
-9.  Connect to the “EDBG Virtual COM Port" and configure the serial settings as follows:
+9.  Connect to the "EDBG Virtual COM Port" and configure the serial settings as follows:
 
     1.  Baud: 115200
 
@@ -55,5 +55,3 @@ To build this application, open the project file \(`apps/tcp_client/sam_e54_xpro
     Figure 6-14. Mobile App TCP Server Logs
 
     ![](docs/images/GUID-946340A6-82AB-41FD-B5EA-5E0FB6DA0DA8-low.png)
-
-

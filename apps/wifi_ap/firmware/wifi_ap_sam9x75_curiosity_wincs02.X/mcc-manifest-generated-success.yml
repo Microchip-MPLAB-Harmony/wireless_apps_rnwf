@@ -2,14 +2,14 @@
 
 manifest_file_version: 1.0.0
 project: wifi_ap_sam9x75_curiosity_wincs02
-creation_date: 2024-11-28T15:08:32.140+08:00[Asia/Shanghai]
+creation_date: 2024-11-29T16:20:25.722+05:30[Asia/Calcutta]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: SAM9X75D2G
-compiler: XC32 4.40
-mcc_version: 5.5.0
-mcc_core_version: 5.7.0
+compiler: XC32 4.45
+mcc_version: 5.5.1
+mcc_core_version: 5.7.1
 content_manager_version: 5.0.1
 is_mcc_offline: false
 is_using_prerelease_versions: false

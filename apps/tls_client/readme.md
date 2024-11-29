@@ -4,11 +4,11 @@ This RNWF02 application acts as a TLS Client. In this application, the device wi
 
 ## Building the Application
 
-To build this application, open the project file<br /> \(`apps/tls_client/sam_e54_xpro_rnwf_uart.X/`\) in MPLAB X IDE. For<br /> more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project<br /> file.
+To build this application, open the project file \(`tls_client/firmware/tls_client_sam_e54_xpro_rnwf02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
 
 |Project Name|Description|
 |:-----------|:----------|
-|`sam_e54_xpro_rnwf_uart.X`|   MPLAB X project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
+|`tls_client_sam_e54_xpro_rnwf02.X`|   MPLAB X project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
 -   In this application, the device will securely connect with AWS S3 and tries to access/read the document.
 
 ## Running the Application

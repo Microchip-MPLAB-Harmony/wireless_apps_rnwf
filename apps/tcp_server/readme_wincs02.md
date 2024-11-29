@@ -1,19 +1,19 @@
 
 # TCP Server
 
-This WINCS02 application implements a TCP Server. In this application WINCS02 will host a<br /> TCP Server in Wi-Fi STA mode. The user is required to configure the Wi-Fi credentials<br /> for Home-AP and specify the port number at which the TCP server would be listening. By<br /> default application will connect to Home-AP and starts a TCP Server on the board. After<br /> establishing a successful TCP server-client connection, the data exchange will take<br /> place.
+This WINCS02 application implements a TCP Server. In this application WINCS02 will host a TCP Server in Wi-Fi STA mode. The user is required to configure the Wi-Fi credentials for Home-AP and specify the port number at which the TCP server would be listening. By default application will connect to Home-AP and starts a TCP Server on the board. After establishing a successful TCP server-client connection, the data exchange will take place.
 
 
 ## Building the Application
 
-To build this application, open the project file<br /> \(`apps\tcp_server\firmware\tcp_server_sam_e54_xpro_wincs02.X/`\) in MPLAB X<br /> IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table<br /> provides details on the project file.
+To build this application, open the project file \(`apps/tcp_server/firmware/tcp_server_sam_e54_xpro_wincs02.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table provides details on the project file.
 
 |Project Name|Description|
 |------------|-----------|
-|`tcp_server_sam_e54_xpro_wincs02.X`|<br /> -   MPLABX project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
+|`tcp_server_sam_e54_xpro_wincs02.X`| -   MPLABX project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
 -   This application demonstrates a TCP server in Host Companion mode. After establishing a successful TCP server-client connection, the data exchange will take place
 
-<br />|
+
 
 ## Running the Application
 
@@ -29,7 +29,9 @@ To build this application, open the project file<br /> \(`apps\tcp_server\firmwa
 
     <br />
 
-6.  Build and program the code to the hardware using MPLABX IDE.
+6. Update the SYS_WINCS_NET_NO_OF_CLIENT_SOCKETS macro present in sys_WINCS_net_service.h to reflect the number of client sockets the system can manage in server mode. (supports max 5 clients)
+
+7.  Build and program the code to the hardware using MPLABX IDE.
 
     <br />
 
@@ -37,18 +39,15 @@ To build this application, open the project file<br /> \(`apps\tcp_server\firmwa
 
     <br />
 
-7.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC
+8.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC
 
-    Connect to the “EDBG Virtual COM Port�? and configure the serial<br /> settings as follows:
+    Connect to the "EDBG Virtual COM Port" and configure the serial settings as follows:
 
     1.  Baud: 115200
     2.  Data: 8 Bits
     3.  Parity: None
     4.  Stop: 1 Bit
     5.  Flow Control: None
-8.  As the board boots up, it will connect to Home-AP and print the IP address obtained. After establishing a successful TCP server-client connection, the application will continue listening on the socket number configured for incoming messages and then write them back to the client connected.
+9.  As the board boots up, it will connect to Home-AP and print the IP address obtained. After establishing a successful TCP server-client connection, the application will continue listening on the socket number configured for incoming messages and then write them back to the client connected.
 
     ![](docs/images/GUID-080E1E25-B24A-4683-A84B-A3627F5FB163-low.png "TCP Server - Serial Logs")
-
-
-

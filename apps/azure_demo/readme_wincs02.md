@@ -1,20 +1,20 @@
 # Azure Cloud Demo
 
-This application allows the RNWF02 board to act as MQTT client and connect to (and communicate) Azure IoT application. The module comes with the required X.509 certificates that simplify TLS handshake protocol with Microsoft Azure. It only needs secure device certificate on Azure for individual enrollment. Then, using AT+commands, user can connect the RNWF02 to Azure IoT Hub
+This application allows the WINCS02 board to act as MQTT client and connect to (and communicate) Azure IoT application. The module comes with the required X.509 certificates that simplify TLS handshake protocol with Microsoft Azure. It only needs secure device certificate on Azure for individual enrollment. Then, using AT+commands, user can connect the WINCS02 to Azure IoT Hub
 
 
 ## Building the Application
 
-To build this application, open the project file (`apps/azure_demo/firmware/azure_demo_sam_e54_xpro_rnwf02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
+To build this application, open the project file (`apps/azure_demo/firmware/azure_demo_sam_e54_xpro_wincs02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
 
 |Project Name|Description|
 |:-----------|:----------|
-|`azure_demo_sam_e54_xpro_rnwf02.X`|  MPLAB X project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
--   This application demonstrates the Azure Plug and Play connection with the Azure IoT Central. Using this application, most users can connect their Microchip RNWF02 to Azure Cloud/Azure IoT Hub in a few minutes.
+|`azure_demo_sam_e54_xpro_wincs02.X`|  MPLAB X project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
+-   This application demonstrates the Azure Plug and Play connection with the Azure IoT Central. Using this application, most users can connect their Microchip WINCS02 to Azure Cloud/Azure IoT Hub in a few minutes.
 
 ## Running the Application
 
-1.  **Create a Root of Trust Chain for RNWF Devices:**
+1.  **Create a Root of Trust Chain for WINCS Devices:**
 
     The demo application includes a set of tools in `../apps/azure_demo/tools` folder. It enables easy creation of certificate infrastructure and individual device certificates with very minimal user inputs.
 
@@ -143,9 +143,9 @@ Figure . Azure Home Page - Create a Resource
         4.  **Stop:** 1 Bit
         5.  **Flow Control:** None
     19. Press the Reset button on the host board, see [Figure 6-1](../wifi_easy_config/docs/GUID-7BA99DE1-89EB-4DD7-973B-974B175D657A.md#FIG_B4M_3WX_PZB).
-    20. As the board boots up, application will list available certificates and keys on RNWF02 board. The board will connect to Home-AP configured. After this, the demo will attempt to connect to Azure IoT Hub (using link configured it sends telemetry data for button press events and its count to the cloud).To verify the device-to-cloud and cloud-to-device telemetry, use [Azure IoT Explorer application](https://learn.microsoft.com/en-us/azure/iot/howto-use-iot-explorer).
+    20. As the board boots up, application will list available certificates and keys on WINCS02 board. The board will connect to Home-AP configured. After this, the demo will attempt to connect to Azure IoT Hub (using link configured it sends telemetry data for button press events and its count to the cloud).To verify the device-to-cloud and cloud-to-device telemetry, use [Azure IoT Explorer application](https://learn.microsoft.com/en-us/azure/iot/howto-use-iot-explorer).
 
 
-        ![](docs/images/MQTT_Logs.png)
+        ![](docs/images/MQTT_WINCS_Logs.png)
         
         Cloud App Logs ![](docs/images/Cloud%20App%20Logs.png)

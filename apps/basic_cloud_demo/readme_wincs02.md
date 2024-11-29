@@ -6,16 +6,12 @@ This WINCS02 application demonstrates unencrypted connection with Mosquitto MQTT
 
 # Building the Application
 
-To build this application, open the project file<br /> \(`apps\basic_cloud_demo\firmware\basic_cloud_demo_sam_e54_xpro_wincs02.X/`\) in<br /> MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the<br /> [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table<br /> provides details on the project file.
-
-<br />
+To build this application, open the project file \(`apps\basic_cloud_demo\firmware\basic_cloud_demo_sam_e54_xpro_wincs02.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table provides details on the project file.
 
 |Project Name|Description|
 |------------|-----------|
 |`basic_cloud_demo_sam_e54_xpro_wincs02.X`|<br /> -   MPLABX project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
--   This application demonstrates on how user can configure the device with Home-AP credentials
-
-<br />|
+-   This application demonstrates on how user can configure the device with basic MQTT credientioals.
 
 <br />
 
@@ -53,7 +49,3 @@ To build this application, open the project file<br /> \(`apps\basic_cloud_demo\
 11. To demonstrate successful MQTT connection, the board subscribes to topic *mchp/sample/b* and publishes a message on the same topic. The received message is printed in the terminal.
 
     ![](docs/images/GUID-C13DC674-3487-4DA1-8744-EFE4A231EAB9-low.png "Basic MQTT demo Serial logs")
-
-
-
-

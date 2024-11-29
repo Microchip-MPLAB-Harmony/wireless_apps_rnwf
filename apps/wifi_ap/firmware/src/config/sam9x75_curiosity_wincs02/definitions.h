@@ -199,9 +199,9 @@ Remarks:
 typedef struct
 {
     SYS_MODULE_OBJ  drvWifiWinc;
-    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysDebug;
 
+    SYS_MODULE_OBJ  sysTime;
     SYS_MODULE_OBJ  sysConsole0;
 
 

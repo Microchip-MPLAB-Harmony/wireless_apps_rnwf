@@ -1,4 +1,4 @@
-<config configName="default" projectName="wifi_ap_sam9x75_curiosity_wincs02" configVersion="1.1" device="SAM9X75D2G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="wifi_ap_sam9x75_curiosity_wincs02" configVersion="1.1" device="SAM9X75D2G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -9708,7 +9708,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\configuration.h</file>
-         <hash>c06741892e90888d17b8430dc4796057905a69dd4122c760edc5d1b249936ea6</hash>
+         <hash>9977d8413d5b21ff22a210fdeea3d1969b19c8f7cf73c82400dcb8a57cc5548e</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\cstartup.S</file>
@@ -9720,7 +9720,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\definitions.h</file>
-         <hash>1543bc4b879523921ea1b86174f38d3b4f3fe199c57d5e3af74a4fef14393306</hash>
+         <hash>deac14deff9aa2406dac0a7c4c5b220f163d4bf742ab44b69d0c687b121185ba</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\device.h</file>
@@ -10012,7 +10012,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\initialization.c</file>
-         <hash>bf147b2c2ec71995ab78ca171806fc9190b08152b259844ce0b429ade5951108</hash>
+         <hash>8460763b688bfbda807f98a8d1a28459b1d46fc748c81d9b1dbecbc9be508a86</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_9x75_curiosity_wincs02\interrupts.c</file>

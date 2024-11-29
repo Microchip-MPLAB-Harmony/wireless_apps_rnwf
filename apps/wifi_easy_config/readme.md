@@ -4,11 +4,11 @@ This RNWF02 application uses the Wi-Fi ProvisionMode along with Microchip’s Wi
 
 ## Building the Application
 
-To build this application, open the project file (`apps/wifi_easy_config/firmware/sam_e54_xpro_rnwf_uart.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
+To build this application, open the project file (`apps/wifi_easy_config/firmware/wifi_easy_config_sam_e54_xpro_rnwf02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
 
 |Project Name|Description|
 |:-----------|:----------|
-|`sam_e54_xpro_rnwf_uart.X`|  MPLABX project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
+|`wifi_easy_config_sam_e54_xpro_rnwf02.X`|  MPLABX project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
 -   This application demonstrates on how user can configure the device with Home-AP credentials
 <br />
 
@@ -56,5 +56,3 @@ To build this application, open the project file (`apps/wifi_easy_config/firmwar
 12. After successful provisioning, the board will connect to the Home-AP and gets an IP address. This IP address is displayed on the serial console as illustrated below.Figure 6-16. STA Mode Serial Logs
 
     ![](docs/images/GUID-D63C0478-72DA-4DEE-8037-244F5E4C3818-low.png)
-
-

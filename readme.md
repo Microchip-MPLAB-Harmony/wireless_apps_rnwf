@@ -20,7 +20,7 @@ This repository contains the MPLAB® Harmony 3 Wireless application examples for
 -   [MPLAB® Harmony License](Microchip_SLA001.md)
 
 
-To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_rnwf) and then click **Clone** button to clone this repository or download as zip file.<br />This content can also be downloaded using content manager by following these [instructions](https://github.com/Microchip-MPLAB-Harmony/contentmanager/wiki).
+To clone or download these applications from Github, go to the [main page of this repository](https://github.com/Microchip-MPLAB-Harmony/wireless_apps_rnwf) and then click **Clone** button to clone this repository or download as zip file.
 
 ## Contents Summary
 
@@ -54,6 +54,8 @@ The following applications are provided to demonstrate the typical or interestin
 |[TCP Client](apps/tcp_client/readme_wincs02.md)|TCP Client example application|
 |[TCP Server](apps/tcp_server/readme_wincs02.md)|TCP Server example application|
 |[Basic Cloud demo](apps/basic_cloud_demo/readme_wincs02.md)|Basic MQTT example application|
+|[TLS Client](apps/tls_client/readme_wincs02.md)|TLS Client example application|
+|[Azure Cloud demo](apps/azure_demo/readme_wincs02.md)|Azure Cloud example application|
 
 
 

@@ -4,11 +4,11 @@ This RNWF02 application implements a TCP Server. In this application RNWF02 will
 
 ## Building the Application
 
-To build this application, open the project file \(`apps/tcp_server/sam_e54_xpro_rnwf_uart.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
+To build this application, open the project file \(`apps/tcp_server/firmware/tcp_server_sam_e54_xpro_rnwf02.X`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project file](../wifi_easy_config/docs/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.md). The following table provides details on the project file.
 
 |Project Name|Description|
 |:-----------|:----------|
-|`sam_e54_xpro_rnwf_uart.X`|    MPLABX project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
+|`tcp_server_sam_e54_xpro_rnwf02.X`|    MPLABX project for SAM E54 Xplained Pro evaluation kit and RNWF02 Add On Board
 -   This application demonstrates a TCP server in Host Companion mode. After establishing a successful TCP server-client connection, the data exchange will take place.
 
 <br />
@@ -21,17 +21,18 @@ To build this application, open the project file \(`apps/tcp_server/sam_e54_xpro
 4.  Configure Home-AP credentials for STA mode, using the RNWF02 Wi-Fi configuration options. For more details about the Wi-Fi settings configuration, See [Figure  1](../wifi_easy_config/docs/GUID-CE9CEDFD-5FD4-4BC4-AB96-17647C430816.md#GUID-98F61951-56D2-4B91-B509-2A796802408B).
 5.  Generate the code as illustrated below.
 
-    **Figure 6-21**. Generating the Code
+    **Figure 6-21**. Generating the Code
 
     ![](docs/images/GUID-EDD3733E-E395-4AB6-BD2F-046D2C8D165A-low.png)
+6. Update the SYS_RNWF_NET_NO_OF_CLIENT_SOCKETS macro present in sys_rnwf_net_service.h to reflect the number of client sockets the system can manage in server mode. (supports max 5 clients)
 
-6.  Build and program the code to the hardware using MPLABX IDE
+7.  Build and program the code to the hardware using MPLABX IDE
 
-    Figure 6-22. Programming the Board
+    Figure 6-22. Programming the Board
 
     ![](docs/images/GUID-7B288BCE-2B86-4B4E-A43A-7E862137384C-low.png)
 
-7.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC
+8.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC
 
     Connect to the “EDBG Virtual COM Port" and configure the serial settings as follows:
 
@@ -40,7 +41,7 @@ To build this application, open the project file \(`apps/tcp_server/sam_e54_xpro
     3.  Parity: None
     4.  Stop: 1 Bit
     5.  Flow Control: None
-8.  As the board boots up, it will connect to Home-AP and print the IP address obtained. After establishing a successful TCP server-client connection, the application will continue listening on the socket number configured for incoming messages and then write them back to the client connected.
+9.  As the board boots up, it will connect to Home-AP and print the IP address obtained. After establishing a successful TCP server-client connection, the application will continue listening on the socket number configured for incoming messages and then write them back to the client connected.
 
     <br />
 

@@ -1,19 +1,17 @@
 # Wi-Fi Easy Configuration
 
-This WINCS02 application uses the Wi-Fi ProvisionMode along with Microchip’s Wi-Fi<br /> Provisioning mobile application to explain how user can provision the device with<br /> Home-AP credentials. The device will boot-up in ProvisionMode, user will connect to<br /> ProvisionMode SSID via a third party STA \(Mobile phone\). User will then provide Home-AP<br /> credentials to the device using Microchip’s mobile app - Wi-Fi Provisioning. After the<br /> successful provisioning, device mode is set to Wi-Fi StationMode. It will then connect<br /> to Home-AP and gets an IP address.
+This WINCS02 application uses the Wi-Fi ProvisionMode along with Microchip's Wi-Fi Provisioning mobile application to explain how user can provision the device with Home-AP credentials. The device will boot-up in ProvisionMode, user will connect to ProvisionMode SSID via a third party STA \(Mobile phone\). User will then provide Home-AP credentials to the device using Microchip's mobile app - Wi-Fi Provisioning. After the successful provisioning, device mode is set to Wi-Fi StationMode. It will then connect to Home-AP and gets an IP address.
 
 ## Building the Application
 
-To build this application, open the project file<br /> \(`apps\Wi-Fi_easy_config\firmware\wifi_easy_config_sam_e54_xpro_wincs02.X/`\) in<br /> MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the<br /> [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table<br /> provides details on the project file.
+To build this application, open the project file \(`apps/Wi-Fi_easy_config/firmware/wifi_easy_config_sam_e54_xpro_wincs02.X/`\) in MPLAB X IDE. For more details on opening the project file in MPLAB X IDE, refer to the [Opening the Project File](https://onlinedocs.microchip.com/oxy/GUID-92FEB3A1-C10F-47DF-BF88-C06521800526-en-US-1/GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF.html#GUID-671CCA8C-64AE-4EA1-B144-D46A6FEE76FF__SECTION_YRV_2WM_QYB). The following table provides details on the project file.
 
 <br />
 
 |Project Name|Description|
 |------------|-----------|
-|`wifi_easy_config_sam_e54_xpro_wincs02.X`|<br /> -   MPLABX project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
--   This application demonstrates on how user can configure the device with Home-AP credentials
-
-<br />|
+|`wifi_easy_config_sam_e54_xpro_wincs02.X`| -   MPLABX project for SAM E54 Xplained Pro evaluation kit and WINCS02 Add On Board
+-   This application demonstrates on how user can configure the device with Home-AP credentials.
 
 <br />
 
@@ -39,7 +37,7 @@ To build this application, open the project file<br /> \(`apps\Wi-Fi_easy_config
 
     <br />
 
-7.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC'Connect to the “EDBG Virtual COM Port�? and configure the serial settings as follows:
+7.  Open the Terminal application \(for example, Tera Term or PuTTY\) on the PC'Connect to the "EDBG Virtual COM Port" and configure the serial settings as follows:
     1.  **Baud:** 115200
     2.  **Data:** 8 Bits
     3.  **Parity:** None
@@ -60,8 +58,6 @@ To build this application, open the project file<br /> \(`apps\Wi-Fi_easy_config
     <br />
 
     ![](docs/images/GUID-17C9E8AC-690D-42C7-8E8C-C337B441A527-low.png "Connecting to Provisioning Page")
-
-    ![](docs/images/GUID-1BF7C696-1C3A-4917-BB90-2A1DD878102A-low.png)
 
     <br />
 
