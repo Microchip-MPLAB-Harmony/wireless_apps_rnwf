@@ -20,8 +20,8 @@
 * [MPLAB® XC32 C/C++ Compiler v4.45](https://www.microchip.com/mplab/compilers)
 * MPLAB® X IDE plug-ins:
     * MPLAB® Code Configurator (MCC) v5.5.1
-* SAME54 DFP : v3.8.234
-* SAM9X7_DFP : v1.4.151
+* SAME54 DFP  : v3.8.234
+* SAM9X75 DFP : v1.4.151
 
 
 ### Harmony 3 wireless application example for RNWF02 and WINCS02 v2.0.0
