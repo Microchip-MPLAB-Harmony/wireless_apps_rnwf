@@ -9,10 +9,10 @@
  
 - Updated RNWF02 and WINCS02 applications with lastest wireless system rnwf v3.0.0 features.
 - Updated WINCS02 applications with latest wireless wifi v3.12.0 wifi driver.
-- This release includes below applications for SAME54 host with WINCS02 device
+- This release includes below applications for SAM E54 host with WINCS02 device
     - **TLS Client**
     - **Azure cloud demo**
-- This release includes below applications for SAM 9x75 host with WINCS02 device.
+- This release includes below applications for SAM9X75 host with WINCS02 device.
     - **Wi-Fi Soft AP**
     - **Wi-Fi Iperf**
 
@@ -20,7 +20,7 @@
 * [MPLAB® XC32 C/C++ Compiler v4.45](https://www.microchip.com/mplab/compilers)
 * MPLAB® X IDE plug-ins:
     * MPLAB® Code Configurator (MCC) v5.5.1
-* SAME54 DFP  : v3.8.234
+* SAM E54 DFP  : v3.8.234
 * SAM9X75 DFP : v1.4.151
 
 
