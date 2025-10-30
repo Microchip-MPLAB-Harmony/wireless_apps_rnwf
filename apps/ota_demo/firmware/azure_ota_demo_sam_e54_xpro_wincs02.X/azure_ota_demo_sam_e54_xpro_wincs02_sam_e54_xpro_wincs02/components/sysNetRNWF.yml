@@ -1,0 +1,141 @@
+configVersion: 1.0.0
+componentName: sysNetRNWF
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sysNetRNWF
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_system_rnwf
+  type: package
+  version: v3.1.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sysNetRNWF
+          x: '25'
+          y: '440'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SYS_RNWF_NET_DEVICE_CERTIFICATE0:
+      attributes:
+        id: SYS_RNWF_NET_DEVICE_CERTIFICATE0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: mutual-client-cert
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_DEVICE_KEY0:
+      attributes:
+        id: SYS_RNWF_NET_DEVICE_KEY0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: mutual-client
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_ENABLE_TLS0:
+      attributes:
+        id: SYS_RNWF_NET_ENABLE_TLS0
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_NET_MODE0:
+      attributes:
+        id: SYS_RNWF_NET_MODE0
+      children:
+      - children:
+        - attributes:
+            value: SERVER
+          type: User
+        type: Values
+      type: Combo
+    SYS_RNWF_NET_PEER_AUTH0:
+      attributes:
+        id: SYS_RNWF_NET_PEER_AUTH0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_NET_ROOT_CERT0:
+      attributes:
+        id: SYS_RNWF_NET_ROOT_CERT0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: ca-cert
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_SERVER_NAME0:
+      attributes:
+        id: SYS_RNWF_NET_SERVER_NAME0
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 192.168.214.67
+          type: User
+        type: Values
+      type: String
+  userData: {}
