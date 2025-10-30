@@ -87,7 +87,12 @@ typedef enum
             
     /**<Get the available private key list */
     SYS_WINCS_SYSTEM_GET_KEY_LIST, 
+    /**<Get the Wi-FI device MAC address */
+    SYS_WINCS_SYSTEM_GET_WIFI_DEV_MAC_ADDR,
 
+    /**<Request the Wi-FI device MAC address */
+    SYS_WINCS_SYSTEM_REQ_WIFI_DEV_MAC_ADDR,
+	
     /**<Request Driver version */          
     SYS_WINCS_SYSTEM_DRIVER_VER,
             

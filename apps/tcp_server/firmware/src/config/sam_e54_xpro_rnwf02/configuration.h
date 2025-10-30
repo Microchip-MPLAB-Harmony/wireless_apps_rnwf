@@ -147,6 +147,11 @@ extern "C" {
 #define SYS_RNWF_WIFI_CallbackHandler	    APP_WIFI_Callback
 
 
+#define SYS_RNWF_COMM_MODULE                NULL
+#define SYS_RNWF_DEBUG_MODULE               NULL
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Configuration

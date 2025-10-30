@@ -145,6 +145,7 @@ typedef enum
     /* Set SNTP Conf */
     SYS_WINCS_WIFI_SET_SNTP,
 
+
     /**<Configure the Wi-Fi parameters */          
     SYS_WINCS_WIFI_SET_PARAMS, 
 
@@ -153,6 +154,7 @@ typedef enum
 
     /**<Request/Trigger Wi-Fi disconnect */         
     SYS_WINCS_WIFI_STA_DISCONNECT, 
+
 
     /**<Register the callback for async events */
     SYS_WINCS_WIFI_AP_ENABLE,
@@ -183,6 +185,7 @@ typedef enum
 
     /* Get Reg Domain */
     SYS_WINCS_WIFI_GET_REG_DOMAIN,
+    
 
     /**<Register the callback for async events */        
     SYS_WINCS_WIFI_SET_CALLBACK,     
@@ -242,6 +245,12 @@ typedef enum
 
     /* DNS resolved event */
     SYS_WINCS_WIFI_DNS_RESOLVED,
+    
+    /* DNS Error event */
+    SYS_WINCS_WIFI_DNS_ERROR,
+
+    /* DNS Timeout event */
+    SYS_WINCS_WIFI_DNS_TIME_OUT,
 
     /* WIFI Service Error*/
     SYS_WINCS_WIFI_ERROR,

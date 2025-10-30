@@ -421,13 +421,21 @@ static void SYS_WINCS_WIFI_ResolveCallback
 )
 {
     char addrStr[64] = {""};
-    if ((WDRV_WINC_DNS_STATUS_OK != status) || (NULL == pIPAddr))
+    SYS_WINCS_WIFI_CALLBACK_t wifi_cb_func = g_wifiCallBackHandler[1];
+    
+    if(WDRV_WINC_DNS_STATUS_TIME_OUT == status)
     {
-        SYS_WINCS_WIFI_DBG_MSG("DNS resolve failed (%d)\r\n", status);
+        SYS_WINCS_WIFI_DBG_MSG("DNS resolve Time Out (%d)\r\n", status);
+        wifi_cb_func(SYS_WINCS_WIFI_DNS_TIME_OUT, NULL);
         return;
     }
-
-    if (pIPAddr->type == WDRV_WINC_IP_ADDRESS_TYPE_IPV4)
+    else if(WDRV_WINC_DNS_STATUS_ERROR == status)
+    {
+        SYS_WINCS_WIFI_DBG_MSG("DNS resolve Error (%d)\r\n", status);
+        wifi_cb_func(SYS_WINCS_WIFI_DNS_ERROR, NULL);
+        return;
+    }
+    else if (pIPAddr->type == WDRV_WINC_IP_ADDRESS_TYPE_IPV4)
     {
         inet_ntop(AF_INET, &pIPAddr->addr, addrStr, sizeof(addrStr));
     }
@@ -439,8 +447,6 @@ static void SYS_WINCS_WIFI_ResolveCallback
     {
         SYS_WINCS_WIFI_DBG_MSG("DNS resolve type error (%d)\r\n", pIPAddr->type);
     }
-
-    SYS_WINCS_WIFI_CALLBACK_t wifi_cb_func = g_wifiCallBackHandler[1];
     wifi_cb_func(SYS_WINCS_WIFI_DNS_RESOLVED, (void *)addrStr);
 }
 
@@ -482,12 +488,11 @@ static void SYS_WINCS_SYSTEM_TimeGetCurrentCallback
     {
         if ((ptm->tm_year+1900) > 2000)
         {
-            #ifdef SYS_WINCS_WIFI_DEBUG_LOGS
-            SYS_WINCS_WIFI_DBG_MSG("Time UTC : %d\r\n",timeUTC);
-            SYS_WINCS_WIFI_DBG_MSG("Time: %02d:%02d:%02d of %02d/%02d/%02d\r\n",
+            
+            SYS_CONSOLE_PRINT("Time UTC : %d\r\n",timeUTC);
+            SYS_CONSOLE_PRINT("Time: %02d:%02d:%02d of %02d/%02d/%02d\r\n",
                     ptm->tm_hour, ptm->tm_min, ptm->tm_sec,
                     ptm->tm_mday, ptm->tm_mon+1, ptm->tm_year+1900);
-            #endif
             
             SYS_WINCS_WIFI_CALLBACK_t wifi_cb_func = g_wifiCallBackHandler[1];
             wifi_cb_func(SYS_WINCS_WIFI_SNTP_UP, (void *)&timeUTC);
@@ -851,8 +856,8 @@ SYS_WINCS_RESULT_t SYS_WINCS_WIFI_SrvCtrl
     {
         case SYS_WINCS_WIFI_GET_DRV_STATUS:
         {
-            *(int8_t*)wifiHandle = '\0';
-            *(int8_t*)wifiHandle = WDRV_WINC_Status(sysObj.drvWifiWinc);
+            *(int*)wifiHandle = '\0';
+            *(int*)wifiHandle = WDRV_WINC_Status(sysObj.drvWifiWinc);
             return SYS_WINCS_WIFI_GetWincsStatus(WDRV_WINC_STATUS_OK, __FUNCTION__, __LINE__); 
         }
         

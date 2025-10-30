@@ -479,7 +479,6 @@ static size_t SYS_RNWF_IF_CommandSend(uint8_t *p_frame, size_t cmd_len)
         {
             ret = cmd_len;
         }
-
         while (!SERCOM0_USART_TransmitComplete());
     }
     return ret;

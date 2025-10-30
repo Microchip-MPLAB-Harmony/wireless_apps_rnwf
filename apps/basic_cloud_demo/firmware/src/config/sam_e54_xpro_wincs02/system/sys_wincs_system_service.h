@@ -82,7 +82,12 @@ typedef enum
     /**<Request Software Revision */            
     SYS_WINCS_SYSTEM_DEV_INFO,  
 
+    /**<Get the Wi-FI device MAC address */
+    SYS_WINCS_SYSTEM_GET_WIFI_DEV_MAC_ADDR,
 
+    /**<Request the Wi-FI device MAC address */
+    SYS_WINCS_SYSTEM_REQ_WIFI_DEV_MAC_ADDR,
+	
     /**<Request Driver version */          
     SYS_WINCS_SYSTEM_DRIVER_VER,
             

@@ -117,6 +117,9 @@ typedef enum
     /**< Get TLS context handle */
     SYS_WINCS_NET_GET_TLS_CTX_HANDLE,
 
+    /**< Close TLS context */
+    SYS_WINCS_NET_CLOSE_TLS_CTX,
+    
 } SYS_WINCS_NET_SOCK_SERVICE_t;
 
 

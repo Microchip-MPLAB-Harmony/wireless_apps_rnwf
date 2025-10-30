@@ -58,6 +58,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // Variable to track the completion status of the WINC system task
 static bool wincsSysTaskCompleted = false;
 
+static uint8_t wincsMacAddr[7]; 
 /* ************************************************************************** */
 /* ************************************************************************** */
 // Section: Local Functions                                                   */
@@ -75,6 +76,43 @@ bool SYS_WINCS_SYSTEM_setTaskStatus(bool taskStatus)
 {
     wincsSysTaskCompleted = taskStatus;
     return true;
+}
+
+
+static void SYS_WINCS_SYSTEM_Get_MacAddr
+(
+    DRV_HANDLE handle,
+    WDRV_WINC_NETIF_IDX ifIdx,
+    WDRV_WINC_NETIF_INFO_TYPE infoType,
+    void *pInfo,
+    WDRV_WINC_STATUS status)
+{
+    if (NULL == pInfo)
+    {
+        if (WDRV_WINC_STATUS_OK == status)
+        {
+            SYS_WINCS_SYS_DBG_MSG("---------MAC Address NOT Programmed---------\r\n\r\n");
+            wincsSysTaskCompleted = true;
+        }
+        return;
+    }
+    
+    if (WDRV_WINC_NETIF_INFO_MAC_ADDR == infoType)
+    {
+        memcpy(wincsMacAddr, pInfo, 6);
+        wincsMacAddr[6] = '\0';
+        
+        SYS_WINCS_SYS_DBG_MSG("Wi-Fi Network Interface MAC Address: %02X:%02X:%02X:%02X:%02X:%02X \n", wincsMacAddr[0], wincsMacAddr[1], wincsMacAddr[2], wincsMacAddr[3], wincsMacAddr[4], wincsMacAddr[5]);
+    }
+    
+    else if (WDRV_WINC_NETIF_INFO_INVALID == infoType)
+    {
+        SYS_WINCS_SYS_DBG_MSG("------Invalid Info------\r\n");
+    }
+    else
+    {
+        SYS_WINCS_SYS_DBG_MSG("Unknown: %s\r\n", pInfo);
+    }
 }
 
 // *****************************************************************************
@@ -235,6 +273,22 @@ SYS_WINCS_RESULT_t SYS_WINCS_SYSTEM_SrvCtrl
             return SYS_WINCS_WIFI_GetWincsStatus(status, __FUNCTION__, __LINE__);
         }
     
+
+        /* WINCS Get Wi-Fi Device MAC Address*/
+        case SYS_WINCS_SYSTEM_GET_WIFI_DEV_MAC_ADDR:
+        {
+            memcpy(systemHandle, wincsMacAddr, 7);
+            return SYS_WINCS_WIFI_GetWincsStatus(status, __FUNCTION__, __LINE__);
+        }
+        
+        /* WINCS Request Wi-Fi Device MAC Address*/
+        case SYS_WINCS_SYSTEM_REQ_WIFI_DEV_MAC_ADDR:
+        {
+            wincsSysTaskCompleted = false;
+            
+            status = WDRV_WINC_NetIfMACAddrGet(wdrvHandle, WDRV_WINC_NETIF_IDX_DEFAULT, SYS_WINCS_SYSTEM_Get_MacAddr);
+            return SYS_WINCS_WIFI_GetWincsStatus(status, __FUNCTION__, __LINE__);
+        }
 
 		//Registers a system event callback to be notified of system events.
         case SYS_WINCS_SYSTEM_SET_SYS_EVENT_CALLBACK:

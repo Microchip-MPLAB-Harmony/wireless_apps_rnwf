@@ -309,7 +309,7 @@ static void SYS_WINCS_NET_SocketEventCallback
     
     if (NULL == pConnID)
     {
-        /* SYS_WINCS_NET_DBG_MSG("ERROR : Net Callback NULL"); */
+        SYS_WINCS_NET_DBG_MSG("ERROR : Net Callback NULL");
         return;
     }
     
@@ -976,6 +976,13 @@ SYS_WINCS_RESULT_t SYS_WINCS_NET_SockSrvCtrl
             return SYS_WINCS_WIFI_GetWincsStatus(WDRV_WINC_STATUS_OK, __FUNCTION__, __LINE__); 
         }
         
+        /**< Close TLS context */
+        case SYS_WINCS_NET_CLOSE_TLS_CTX:
+        {
+            WDRV_WINC_TLSCtxClose(wdrvHandle, g_tlsHandle);
+            return SYS_WINCS_WIFI_GetWincsStatus(WDRV_WINC_STATUS_OK, __FUNCTION__, __LINE__); 
+        }
+
         /**<Use the TLS configurations */
         case SYS_WINCS_NET_TLS_CONFIG:
         {

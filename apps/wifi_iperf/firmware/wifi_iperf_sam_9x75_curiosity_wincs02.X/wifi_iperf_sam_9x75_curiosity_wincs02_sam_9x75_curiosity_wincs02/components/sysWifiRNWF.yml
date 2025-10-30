@@ -1,0 +1,88 @@
+configVersion: 1.0.0
+componentName: sysWifiRNWF
+coreVersion: 5.8.2
+device: SAM9X75D2G
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sysWifiRNWF
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_system_rnwf
+  type: package
+  version: v3.1.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sysWifiRNWF
+          x: '680'
+          y: '20'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SYS_RNWF_HOST:
+      attributes:
+        id: SYS_RNWF_HOST
+      children:
+      - children:
+        - attributes:
+            value: SAM9X75
+          type: User
+        type: Values
+      type: Combo
+    SYS_RNWF_INTERFACE_MODE:
+      attributes:
+        id: SYS_RNWF_INTERFACE_MODE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: sysWifiRNWF
+            value: SPI
+          type: Dynamic
+        type: Values
+      type: Combo
+    SYS_RNWF_NET_SER_ENABLE:
+      attributes:
+        id: SYS_RNWF_NET_SER_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_SAM_9x75_WIFI_DEVICE:
+      attributes:
+        id: SYS_RNWF_SAM_9x75_WIFI_DEVICE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: WINCS02
+          type: User
+        type: Values
+      type: Combo
+  userData: {}

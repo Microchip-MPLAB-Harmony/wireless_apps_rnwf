@@ -132,6 +132,7 @@ extern "C" {
 #define WDRV_WINC_EIC_SOURCE
 #define WDRV_WINC_DEVICE_USE_SYS_DEBUG
 #define WDRV_WINC_DEV_RX_BUFF_SZ            2048
+#define WINC_SOCK_SLAB_ALLOC_MODE           1
 #define WDRV_WINC_DEV_SOCK_SLAB_NUM         50
 #define WDRV_WINC_DEV_SOCK_SLAB_SZ          1472
 #define WINC_SOCK_NUM_SOCKETS               10
@@ -139,6 +140,7 @@ extern "C" {
 #define WINC_SOCK_BUF_TX_SZ                 4416
 #define WINC_SOCK_BUF_RX_PKT_BUF_NUM        5
 #define WINC_SOCK_BUF_TX_PKT_BUF_NUM        5
+#define WDRV_WINC_MOD_DISABLE_SYSLOG
 
 
 

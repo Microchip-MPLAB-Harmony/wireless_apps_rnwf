@@ -1,0 +1,61 @@
+configVersion: 1.0.0
+componentName: sysMqttRNWF
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sysMqttRNWF
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_system_rnwf
+  type: package
+  version: v3.1.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sysMqttRNWF
+          x: '801'
+          y: '19'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SYS_RNWF_MQTT_KEEP_ALIVE:
+      attributes:
+        id: SYS_RNWF_MQTT_KEEP_ALIVE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_MQTT_SUBSCRIBE:
+      attributes:
+        id: SYS_RNWF_MQTT_SUBSCRIBE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_MQTT_SUB_TOPIC0:
+      attributes:
+        id: SYS_RNWF_MQTT_SUB_TOPIC0
+      children:
+      - children:
+        - attributes:
+            value: $MCHP/Wireless/device02
+          type: User
+        type: Values
+      type: String
+  userData: {}

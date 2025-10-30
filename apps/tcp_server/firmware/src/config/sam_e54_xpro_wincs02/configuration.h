@@ -88,18 +88,18 @@ extern "C" {
 #define SYS_WINCS_NET_SOCK_PORT0                6666
 #define SYS_WINCS_TLS_ENABLE0                   0
 /*----------------------------------------------------------------------------*/
-/* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                            (0)
-#define SYS_TIME_MAX_TIMERS                         (5)
-#define SYS_TIME_HW_COUNTER_WIDTH                   (24)
-#define SYS_TIME_TICK_FREQ_IN_HZ                    (1000)
-
 
 #define SYS_DEBUG_ENABLE
 #define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_INFO
 #define SYS_DEBUG_BUFFER_DMA_READY
 #define SYS_DEBUG_USE_CONSOLE
 
+
+/* TIME System Service Configuration Options */
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (24)
+#define SYS_TIME_TICK_FREQ_IN_HZ                    (1000)
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
@@ -123,6 +123,7 @@ extern "C" {
 #define WDRV_WINC_EIC_SOURCE
 #define WDRV_WINC_DEVICE_USE_SYS_DEBUG
 #define WDRV_WINC_DEV_RX_BUFF_SZ            2048
+#define WINC_SOCK_SLAB_ALLOC_MODE           1
 #define WDRV_WINC_DEV_SOCK_SLAB_NUM         50
 #define WDRV_WINC_DEV_SOCK_SLAB_SZ          1472
 #define WINC_SOCK_NUM_SOCKETS               10
@@ -130,6 +131,7 @@ extern "C" {
 #define WINC_SOCK_BUF_TX_SZ                 4416
 #define WINC_SOCK_BUF_RX_PKT_BUF_NUM        5
 #define WINC_SOCK_BUF_TX_PKT_BUF_NUM        5
+#define WDRV_WINC_MOD_DISABLE_SYSLOG
 
 
 

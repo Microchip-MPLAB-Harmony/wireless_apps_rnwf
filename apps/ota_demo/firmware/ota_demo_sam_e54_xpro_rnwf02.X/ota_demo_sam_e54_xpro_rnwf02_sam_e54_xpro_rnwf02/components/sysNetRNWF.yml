@@ -1,0 +1,189 @@
+configVersion: 1.0.0
+componentName: sysNetRNWF
+coreVersion: 5.8.2
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: sysNetRNWF
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: wireless_system_rnwf
+  type: package
+  version: v3.1.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: sysNetRNWF
+          x: '870'
+          y: '159'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SYS_RNWF_NET_DEVICE_CERTIFICATE1:
+      attributes:
+        id: SYS_RNWF_NET_DEVICE_CERTIFICATE1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: dasd
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_DEVICE_KEY1:
+      attributes:
+        id: SYS_RNWF_NET_DEVICE_KEY1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: dsaf
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_DOMAIN_NAME1:
+      attributes:
+        id: SYS_RNWF_NET_DOMAIN_NAME1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: faefaf
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_DOMAIN_NAME_VERIFY1:
+      attributes:
+        id: SYS_RNWF_NET_DOMAIN_NAME_VERIFY1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_NET_ENABLE_TLS1:
+      attributes:
+        id: SYS_RNWF_NET_ENABLE_TLS1
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_NET_MODE0:
+      attributes:
+        id: SYS_RNWF_NET_MODE0
+      children:
+      - children:
+        - attributes:
+            value: SERVER
+          type: User
+        type: Values
+      type: Combo
+    SYS_RNWF_NET_NO_OF_SOCKS:
+      attributes:
+        id: SYS_RNWF_NET_NO_OF_SOCKS
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: Integer
+    SYS_RNWF_NET_PEER_AUTH1:
+      attributes:
+        id: SYS_RNWF_NET_PEER_AUTH1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    SYS_RNWF_NET_SERVER_NAME1:
+      attributes:
+        id: SYS_RNWF_NET_SERVER_NAME1
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: fefa
+          type: User
+        type: Values
+      type: String
+    SYS_RNWF_NET_SOCK_PORT0:
+      attributes:
+        id: SYS_RNWF_NET_SOCK_PORT0
+      children:
+      - children:
+        - attributes:
+            value: '6666'
+          type: User
+        type: Values
+      type: Integer
+    SYS_RNWF_NET_SOCK_PORT1:
+      attributes:
+        id: SYS_RNWF_NET_SOCK_PORT1
+      children:
+      - children:
+        - attributes:
+            value: '8000'
+          type: User
+        type: Values
+      type: Integer
+  userData: {}
