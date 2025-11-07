@@ -80,7 +80,7 @@ data:
       children:
       - children:
         - attributes:
-            value: rnwf02_device_07
+            value: wincs02_device3_1
           type: User
         type: Values
       type: String
@@ -110,7 +110,7 @@ data:
       children:
       - children:
         - attributes:
-            value: WIFI-SYS-APPS.azure-devices.net/rnwf02_device_07/?api-version=2021-04-12
+            value: WIFI-SYS-APPS.azure-devices.net/wincs02_device3_1/?api-version=2021-04-12
           type: User
         type: Values
       type: String
@@ -128,7 +128,7 @@ data:
         type: Attributes
       - children:
         - attributes:
-            value: rnwf02_device_07
+            value: wincs02_device3_1
           type: User
         type: Values
       type: String
@@ -146,7 +146,7 @@ data:
         type: Attributes
       - children:
         - attributes:
-            value: rnwf02_device_07
+            value: wincs02_device3_1
           type: User
         type: Values
       type: String
@@ -184,7 +184,7 @@ data:
         type: Attributes
       - children:
         - attributes:
-            value: devices/rnwf02_device_07/messages/events/
+            value: devices/wincs02_device3_1/messages/events/
           type: User
         type: Values
       type: String
@@ -288,7 +288,7 @@ data:
             value: ''
           type: Dynamic
         - attributes:
-            value: devices/rnwf02_device_07/messages/devicebound/#
+            value: devices/wincs02_device3_1/messages/devicebound/#
           type: User
         type: Values
       type: String

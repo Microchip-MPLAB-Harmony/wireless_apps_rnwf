@@ -92,7 +92,7 @@ data:
         type: Attributes
       - children:
         - attributes:
-            value: 129.154.46.154
+            value: 0.in.pool.ntp.org
           type: User
         type: Values
       type: String

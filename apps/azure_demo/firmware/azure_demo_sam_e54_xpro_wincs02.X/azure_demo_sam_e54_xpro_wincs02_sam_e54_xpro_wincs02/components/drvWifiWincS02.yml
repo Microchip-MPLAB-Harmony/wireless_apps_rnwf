@@ -56,8 +56,8 @@ data:
     - children:
       - attributes:
           id: drvWifiWincS02
-          x: '330'
-          y: '160'
+          x: '256'
+          y: '284'
         type: ElementPosition
       type: ElementPositions
     type: ComponentGraph
@@ -359,6 +359,42 @@ data:
             id: drvWifiWincS02
             value: 'true'
           type: Dynamic
+        type: Values
+      type: Boolean
+    WDRV_WINC_OTA_H:
+      attributes:
+        id: WDRV_WINC_OTA_H
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'false'
+          type: Boolean
+        type: Attributes
+      type: File
+    WDRV_WINC_OTA_C:
+      attributes:
+        id: WDRV_WINC_OTA_C
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'false'
+          type: Boolean
+        type: Attributes
+      type: File
+    DRV_WIFI_WINC_MODULE_OTA_EN:
+      attributes:
+        id: DRV_WIFI_WINC_MODULE_OTA_EN
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
         type: Values
       type: Boolean
   userData: {}

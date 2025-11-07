@@ -96,8 +96,8 @@ extern "C" {
 
 #define SYS_WINCS_MQTT_CLOUD_URL                 "WIFI-SYS-APPS.azure-devices.net"
 #define SYS_WINCS_MQTT_CLOUD_PORT                8883
-#define SYS_WINCS_MQTT_CLIENT_ID                 "rnwf02_device_07"
-#define SYS_WINCS_MQTT_CLOUD_USER_NAME           "WIFI-SYS-APPS.azure-devices.net/rnwf02_device_07/?api-version=2021-04-12"
+#define SYS_WINCS_MQTT_CLIENT_ID                 "wincs02_device3_1"
+#define SYS_WINCS_MQTT_CLOUD_USER_NAME           "WIFI-SYS-APPS.azure-devices.net/wincs02_device3_1/?api-version=2021-04-12"
 #define SYS_WINCS_MQTT_PASSWORD                  ""
 #define SYS_WINCS_MQTT_CLEAN_SESSION             true
 #define SYS_WINCS_MQTT_KEEP_ALIVE_TIME           60
@@ -107,19 +107,19 @@ extern "C" {
 #define SYS_WINCS_MQTT_SUB_TOPIC_1_QOS           SYS_WINCS_MQTT_QOS0
 #define SYS_WINCS_MQTT_SUB_TOPIC_2               "$iothub/twin/PATCH/properties/desired/#"
 #define SYS_WINCS_MQTT_SUB_TOPIC_2_QOS           SYS_WINCS_MQTT_QOS0
-#define SYS_WINCS_MQTT_SUB_TOPIC_3               "devices/rnwf02_device_07/messages/devicebound/#"
+#define SYS_WINCS_MQTT_SUB_TOPIC_3               "devices/wincs02_device3_1/messages/devicebound/#"
 #define SYS_WINCS_MQTT_SUB_TOPIC_3_QOS           SYS_WINCS_MQTT_QOS0
 
 
-#define SYS_WINCS_MQTT_PUB_TOPIC_NAME            "devices/rnwf02_device_07/messages/events/"
+#define SYS_WINCS_MQTT_PUB_TOPIC_NAME            "devices/wincs02_device3_1/messages/events/"
 #define SYS_WINCS_MQTT_PUB_MSG                   "Hi. It's MCHP Wireless Device"
 #define SYS_WINCS_MQTT_PUB_MSG_QOS_TYPE          SYS_WINCS_MQTT_QOS0
 #define SYS_WINCS_MQTT_PUB_MSG_RETAIN            false
 #define SYS_WINCS_MQTT_TLS_ENABLE                true
 #define SYS_WINCS_MQTT_PEER_AUTH_ENABLE          true
 #define SYS_WINCS_MQTT_SERVER_CERT               "DigiCertGlobalRootG2"
-#define SYS_WINCS_MQTT_DEVICE_CERT               "rnwf02_device_07"
-#define SYS_WINCS_MQTT_DEVICE_KEY                "rnwf02_device_07"
+#define SYS_WINCS_MQTT_DEVICE_CERT               "wincs02_device3_1"
+#define SYS_WINCS_MQTT_DEVICE_KEY                "wincs02_device3_1"
 #define SYS_WINCS_MQTT_DEVICE_KEY_PSK            ""
 #define SYS_WINCS_MQTT_TLS_SERVER_NAME           ""
 #define SYS_WINCS_MQTT_TLS_DOMAIN_NAME_VERIFY    true
@@ -129,18 +129,18 @@ extern "C" {
 
 /*----------------------------------------------------------------------------*/
 
+/* TIME System Service Configuration Options */
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (24)
+#define SYS_TIME_TICK_FREQ_IN_HZ                    (1000)
+
 
 #define SYS_DEBUG_ENABLE
 #define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_INFO
 #define SYS_DEBUG_BUFFER_DMA_READY
 #define SYS_DEBUG_USE_CONSOLE
 
-
-/* TIME System Service Configuration Options */
-#define SYS_TIME_INDEX_0                            (0)
-#define SYS_TIME_MAX_TIMERS                         (5)
-#define SYS_TIME_HW_COUNTER_WIDTH                   (24)
-#define SYS_TIME_TICK_FREQ_IN_HZ                    (1000)
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(1U)
@@ -172,6 +172,7 @@ extern "C" {
 #define WINC_SOCK_BUF_TX_SZ                 4416
 #define WINC_SOCK_BUF_RX_PKT_BUF_NUM        5
 #define WINC_SOCK_BUF_TX_PKT_BUF_NUM        5
+#define WDRV_WINC_MOD_DISABLE_OTA
 #define WDRV_WINC_MOD_DISABLE_SYSLOG
 
 
@@ -192,7 +193,7 @@ extern "C" {
 
 
 #define SYS_WINCS_WIFI_COUNTRYCODE          "GEN"
-#define SYS_WINCS_WIFI_SNTP_ADDRESS          "129.154.46.154"
+#define SYS_WINCS_WIFI_SNTP_ADDRESS          "0.in.pool.ntp.org"
 
 
 #define SYS_WINCS_WIFI_CallbackHandler	     APP_WIFI_Callback

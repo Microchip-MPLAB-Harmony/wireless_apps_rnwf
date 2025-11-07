@@ -1553,23 +1553,13 @@ data:
           type: User
         type: Values
       type: String
-    PIN_122_DIR:
-      attributes:
-        id: PIN_122_DIR
-      children:
-      - children:
-        - attributes:
-            value: ''
-          type: User
-        type: Values
-      type: String
     PIN_122_PERIPHERAL_FUNCTION:
       attributes:
         id: PIN_122_PERIPHERAL_FUNCTION
       children:
       - children:
         - attributes:
-            value: SWITCH_AL
+            value: A
           type: User
         type: Values
       type: String
@@ -2044,7 +2034,7 @@ data:
       - children:
         - attributes:
             id: core
-            value: '0x6'
+            value: '0x5'
           type: Dynamic
         type: Values
       type: String
@@ -2927,6 +2917,130 @@ data:
           type: Boolean
         type: Attributes
       type: File
+    PIN_122_FUNCTION_NAME:
+      attributes:
+        id: PIN_122_FUNCTION_NAME
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_122_FUNCTION_TYPE:
+      attributes:
+        id: PIN_122_FUNCTION_TYPE
+      children:
+      - children:
+        - attributes:
+            value: EIC_EXTINT15
+          type: User
+        type: Values
+      type: String
+    PIN_122_DIR:
+      attributes:
+        id: PIN_122_DIR
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_122_LAT:
+      attributes:
+        id: PIN_122_LAT
+      children:
+      - children:
+        - attributes:
+            value: High
+          type: User
+        type: Values
+      type: String
+    PIN_122_PULLEN:
+      attributes:
+        id: PIN_122_PULLEN
+      children:
+      - children:
+        - attributes:
+            value: 'True'
+          type: User
+        type: Values
+      type: String
+    PIN_122_INEN:
+      attributes:
+        id: PIN_122_INEN
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PORT_GROUP_0_PINCFG2:
+      attributes:
+        id: PORT_GROUP_0_PINCFG2
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x0'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_0_PIN_2_USED:
+      attributes:
+        id: PORT_GROUP_0_PIN_2_USED
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: 'false'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORT_GROUP_0_PMUX1:
+      attributes:
+        id: PORT_GROUP_0_PMUX1
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: '0x0'
+          type: Dynamic
+        type: Values
+      type: String
+    PORT_GROUP_0_PAD_2:
+      attributes:
+        id: PORT_GROUP_0_PAD_2
+      children:
+      - children:
+        - attributes:
+            id: core
+            value: PA02
+          type: Dynamic
+        type: Values
+      type: String
+    PIN_9_PERIPHERAL_FUNCTION:
+      attributes:
+        id: PIN_9_PERIPHERAL_FUNCTION
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
+    PIN_122_MODE:
+      attributes:
+        id: PIN_122_MODE
+      children:
+      - children:
+        - attributes:
+            value: ''
+          type: User
+        type: Values
+      type: String
   userData:
     children:
     - attributes:

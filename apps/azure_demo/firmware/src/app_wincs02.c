@@ -630,6 +630,13 @@ void SYS_WINCS_WIFI_CallbackHandler
             break;
         }
         
+       case SYS_WINCS_WIFI_CONNECT_FAILED:
+        {
+            SYS_CONSOLE_PRINT("[APP] : Wi-Fi Connection Failed\nRetrying\r\n");
+            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_STA_CONNECT, NULL);
+            break;
+        } 
+        
         default:
         {
             break;
@@ -792,19 +799,37 @@ void APP_WINCS02_Tasks ( void )
 
         case APP_STATE_WINCS_SET_REG_DOMAIN:
         {
-            
+            static bool flag = false;
             // Set the callback handler for Wi-Fi events
             SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_CALLBACK, SYS_WINCS_WIFI_CallbackHandler);
-
-            SYS_CONSOLE_PRINT(TERM_YELLOW"[APP] : Setting REG domain to " TERM_UL "%s\r\n"TERM_RESET ,SYS_WINCS_WIFI_COUNTRYCODE);
+            
+            if(false == flag)
+            {
+                SYS_CONSOLE_PRINT(TERM_YELLOW"[APP] : Setting REG domain to " TERM_UL "%s\r\n"TERM_RESET ,SYS_WINCS_WIFI_COUNTRYCODE);
+                flag = true;
+            }
             // Set the regulatory domain
-            if (SYS_WINCS_FAIL == SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_REG_DOMAIN, SYS_WINCS_WIFI_COUNTRYCODE))
+            SYS_WINCS_RESULT_t status = SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_SET_REG_DOMAIN, SYS_WINCS_WIFI_COUNTRYCODE);
+            if (SYS_WINCS_FAIL == status)
             {
                 g_appData.state = APP_STATE_WINCS_ERROR;
                 break;
             }
-            g_appData.state = APP_STATE_WINCS_SERVICE_TASKS;
-            break;
+            else if(SYS_WINCS_BUSY == status)
+            {
+                g_appData.state = APP_STATE_WINCS_SET_REG_DOMAIN;
+                break;
+            }
+            else
+            {
+                
+                if(g_appData.state != APP_STATE_WINCS_PRINT_CERTS_KEYS)
+                {
+                    g_appData.state = APP_STATE_WINCS_PRINT_CERTS_KEYS;
+                    break;
+                }
+            }
+                break;
         }
         
         case APP_STATE_WINCS_PRINT_CERTS_KEYS:

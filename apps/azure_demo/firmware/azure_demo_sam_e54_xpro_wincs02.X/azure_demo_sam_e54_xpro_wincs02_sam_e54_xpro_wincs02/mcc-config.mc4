@@ -36,9 +36,9 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\bsp\bsp.h
   hash: a6b69e63930b0e9055cabc214f6dc36482155153f971209a8ee7dd70f53e6484
 - file: ..\src\config\sam_e54_xpro_wincs02\configuration.h
-  hash: aef9b428294e48fab06f94453a07fd0af1d432dfaaa2e2c7af5e65f4b672c438
+  hash: 6027388498b40af64b6bc678d048b346e0aeee486ebb27ea1919612aeeaf6a5f
 - file: ..\src\config\sam_e54_xpro_wincs02\definitions.h
-  hash: 6d0d7face0f44d2fabcb6350682b05e98948a1cafc2043678e55886a05b9470e
+  hash: 48b829c1b04792ced139eb9ed1e0fbab3277da639aa16f632819cee962c36654
 - file: ..\src\config\sam_e54_xpro_wincs02\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro_wincs02\device_cache.h
@@ -107,8 +107,6 @@ generatedFileHashHistoryMap:
   hash: 9f6fa4cb48fb13aa32decbe51bdd0e8d903209647c2efa966a0e8c97e9dda7d1
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_nvm.h
   hash: 4857c5e4ca18170c3750526151fed1e52164a1df4c7e5b1f134738c92602d451
-- file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_ota.h
-  hash: 8c716bf878cd02a9bd0dde968689c7f64043a673f9111e1b2b8313a521993932
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_pps.h
   hash: 3a4a1c3376dacbbc7c620435f7cfd90ab25d99365f1187d2f43a8025dbaa4183
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\include\wdrv_winc_prov.h
@@ -165,8 +163,6 @@ generatedFileHashHistoryMap:
   hash: 855436959c6399c886d46813abc864f4313ee4bd7052c4c62df98204d77cdcf1
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_nvm.c
   hash: 903c22669f6bc82cca5014f7962fa2b601758267945bebae69d463486600018c
-- file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_ota.c
-  hash: 1765ef4cee2d8af21cc13ba8efa1f2f9ca8b28e85cbd42b4a834d7153e3f3a40
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_pps.c
   hash: bca63cb5fd2321ffd633a3498950f07b1f8fea167ac51913272bcc9a9a196a28
 - file: ..\src\config\sam_e54_xpro_wincs02\driver\wifi\wincs02\wdrv_winc_prov.c
@@ -190,7 +186,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\exceptions.c
   hash: a565e8d25d218b3e1069267ae9cc317161d062683a27c64e3cb454757bb82fd9
 - file: ..\src\config\sam_e54_xpro_wincs02\initialization.c
-  hash: b046cd00bf8ae242b7aa8fa2f600b0441de6fa84511e094042d5cd4584e6c7aa
+  hash: 93d37c573b5fd965a69427f3e1125d7af004e844d8998d3465c9972f9a319aab
 - file: ..\src\config\sam_e54_xpro_wincs02\interrupts.c
   hash: dfb620b5ae52bea2daf43321f7c6bb3c2ad1483c8721d82ffdc6601e1a670f62
 - file: ..\src\config\sam_e54_xpro_wincs02\interrupts.h

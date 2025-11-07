@@ -37,11 +37,11 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\bsp\bsp.c
   hash: 5cb21f9aaac63012c30d9eb9e34ab1e613e4c9f515cd7516cedbc9701ff6a16d
 - file: ..\src\config\sam_e54_xpro_wincs02\bsp\bsp.h
-  hash: 0f53b638b719dc36a805157b33d769d0232834a4a9a4efd223ffd14d2095469e
+  hash: a6b69e63930b0e9055cabc214f6dc36482155153f971209a8ee7dd70f53e6484
 - file: ..\src\config\sam_e54_xpro_wincs02\configuration.h
-  hash: 66c695181ba7abee6f0414274e2a63504f1d2eabfa92863a7e49e1047397fd34
+  hash: 96a4c3414d6cb004de6db89609d864af09a7d6cb3bd3b2fbd95865399e1f14e6
 - file: ..\src\config\sam_e54_xpro_wincs02\definitions.h
-  hash: 364c9533520ff68b8b220e8f024ab872387324599b1ef581ddb6eae20c9eeafb
+  hash: 4238d692fbc40503d2902a68a678cd75904b86d9e3526fc2cf234e6d31434821
 - file: ..\src\config\sam_e54_xpro_wincs02\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro_wincs02\device_cache.h
@@ -235,7 +235,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\peripheral\nvmctrl\plib_nvmctrl.h
   hash: fd7749dc74a885efd7c593394454abc74afc7cf184123f0315425a3600c26ac5
 - file: ..\src\config\sam_e54_xpro_wincs02\peripheral\port\plib_port.c
-  hash: fe8582ebe01657af71557b7a9331abe4280e137989bda6b6cda313f44212c620
+  hash: 508465f2af2602fc1ff60fbf202c920b39dc93d6a958030ea4576c669fbdf1fa
 - file: ..\src\config\sam_e54_xpro_wincs02\peripheral\port\plib_port.h
   hash: 8c93937cf2dd737d7f69dd0a279268739c05c6b09eb2a541b8d53aba6602bd44
 - file: ..\src\config\sam_e54_xpro_wincs02\peripheral\sercom\spi_master\plib_sercom4_spi_master.c
@@ -255,7 +255,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\peripheral\systick\plib_systick.h
   hash: a1b309a0d3b9639478836d123d6fccafbdbba26c827e7b89049cb34d32bae929
 - file: ..\src\config\sam_e54_xpro_wincs02\pin_configurations.csv
-  hash: df243749d8125de68dd995d74d504a803a9e4ee37530c8bdc13858f73277103f
+  hash: 8ec415cd448c41ee0a2f66a1cb01d6c47c8a742281d8bfb1a1fe0ebb9f917c2d
 - file: ..\src\config\sam_e54_xpro_wincs02\startup_xc32.c
   hash: f374b97d65f92553f1b75d8c9239b8b0f8581c710f78ea47b02c7f6fa6f74c74
 - file: ..\src\config\sam_e54_xpro_wincs02\stdio\xc32_monitor.c

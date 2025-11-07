@@ -92,7 +92,7 @@ extern "C" {
 #define SYS_WINCS_NET_DEVICE_CERTIFICATE0       "mutual-client-cert"
 #define SYS_WINCS_NET_DEVICE_KEY0               "mutual-client"
 #define SYS_WINCS_NET_DEVICE_KEY_PWD0           NULL
-#define SYS_WINCS_NET_SERVER_NAME0              "192.168.214.67"
+#define SYS_WINCS_NET_SERVER_NAME0              "192.168.99.67"
 #define SYS_WINCS_NET_DOMAIN_NAME_VERIFY0       0
 #define SYS_WINCS_NET_DOMAIN_NAME0              ""
 /*----------------------------------------------------------------------------*/

@@ -101,7 +101,7 @@ extern "C" {
 #define SYS_WINCS_MQTT_PASSWORD                  ""
 #define SYS_WINCS_MQTT_CLEAN_SESSION             true
 #define SYS_WINCS_MQTT_KEEP_ALIVE_TIME           60
-#define SYS_WINCS_MQTT_SUB_TOPIC_0               "$MCHP/Wireless/device02"
+#define SYS_WINCS_MQTT_SUB_TOPIC_0               "MCHP_Device"
 #define SYS_WINCS_MQTT_SUB_TOPIC_0_QOS           SYS_WINCS_MQTT_QOS0
 
 
@@ -174,7 +174,7 @@ extern "C" {
 
 
 #define SYS_WINCS_WIFI_COUNTRYCODE          "GEN"
-#define SYS_WINCS_WIFI_SNTP_ADDRESS          "129.154.46.154"
+#define SYS_WINCS_WIFI_SNTP_ADDRESS          "0.in.pool.ntp.org"
 
 
 #define SYS_WINCS_WIFI_CallbackHandler	     APP_WIFI_Callback

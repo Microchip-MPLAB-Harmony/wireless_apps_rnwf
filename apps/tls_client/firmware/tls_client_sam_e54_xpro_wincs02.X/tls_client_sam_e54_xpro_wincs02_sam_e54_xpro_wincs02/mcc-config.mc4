@@ -35,9 +35,9 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\bsp\bsp.h
   hash: 0f53b638b719dc36a805157b33d769d0232834a4a9a4efd223ffd14d2095469e
 - file: ..\src\config\sam_e54_xpro_wincs02\configuration.h
-  hash: 596d6205a88fd272352d765bf7afa7ad516b73d27d234746b1ac5046e7f59af3
+  hash: 29da68fcc639b52d69bc375603e95aa84f94d799e52afd3c57a34cd155f22edd
 - file: ..\src\config\sam_e54_xpro_wincs02\definitions.h
-  hash: 60dcc6f2055db757574f42f385d95c64f986178f1d3260c82dc658cc33a3dbcc
+  hash: 03716cabc3be09868f7d94198a5d2d7ae441c112725ebebed874d78c38d52457
 - file: ..\src\config\sam_e54_xpro_wincs02\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro_wincs02\device_cache.h
@@ -189,7 +189,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_wincs02\exceptions.c
   hash: a565e8d25d218b3e1069267ae9cc317161d062683a27c64e3cb454757bb82fd9
 - file: ..\src\config\sam_e54_xpro_wincs02\initialization.c
-  hash: b046cd00bf8ae242b7aa8fa2f600b0441de6fa84511e094042d5cd4584e6c7aa
+  hash: 93d37c573b5fd965a69427f3e1125d7af004e844d8998d3465c9972f9a319aab
 - file: ..\src\config\sam_e54_xpro_wincs02\interrupts.c
   hash: 56c4c69b207677d96fafda073120de1338f4e32f8a4c74b7950e0b30cf8efa29
 - file: ..\src\config\sam_e54_xpro_wincs02\interrupts.h

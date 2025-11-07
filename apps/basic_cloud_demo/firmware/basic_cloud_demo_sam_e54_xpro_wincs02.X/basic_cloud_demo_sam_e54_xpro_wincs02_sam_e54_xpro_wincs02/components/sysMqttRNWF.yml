@@ -54,7 +54,7 @@ data:
       children:
       - children:
         - attributes:
-            value: $MCHP/Wireless/device02
+            value: MCHP_Device
           type: User
         type: Values
       type: String

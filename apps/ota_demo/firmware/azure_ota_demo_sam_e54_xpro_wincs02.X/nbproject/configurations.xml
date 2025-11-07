@@ -322,26 +322,26 @@
                      displayName="azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02"
                      projectFiles="true">
         <logicalFolder name="components" displayName="components" projectFiles="true">
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysNetRNWF.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/core.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/evsys.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysOtaRNWF.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sercom4.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysMqttRNWF.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/HarmonyCore.yml</itemPath>
           <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysWifiProvRNWF.yml</itemPath>
           <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sercom2.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_console.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/eic.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/cmsis.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/dfp.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/drvWifiWincS02.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_command.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_console_0.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/nvmctrl.yml</itemPath>
-          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_debug.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sercom4.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysOtaRNWF.yml</itemPath>
           <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysWifiRNWF.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/drvWifiWincS02.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/eic.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/BSP_SAM_E54_Xplained_Pro.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_console.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/evsys.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysNetRNWF.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_debug.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sysMqttRNWF.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_command.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/nvmctrl.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/dfp.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/HarmonyCore.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/cmsis.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/core.yml</itemPath>
+          <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_console_0.yml</itemPath>
           <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/components/sys_time.yml</itemPath>
         </logicalFolder>
         <itemPath>azure_ota_demo_sam_e54_xpro_wincs02_sam_e54_xpro_wincs02/mcc-config.mc4</itemPath>
