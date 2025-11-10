@@ -27,5 +27,33 @@ data:
         type: ElementPosition
       type: ElementPositions
     type: ComponentGraph
-  symbols: {}
+  symbols:
+    SYS_RN_NC_OTA_DEVICE:
+      attributes:
+        id: SYS_RN_NC_OTA_DEVICE
+      children:
+      - children:
+        - attributes:
+            value: RNWF02
+          type: User
+        type: Values
+      type: Combo
+    SYS_RNWF_OTA_DFU_ENABLE:
+      attributes:
+        id: SYS_RNWF_OTA_DFU_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
   userData: {}

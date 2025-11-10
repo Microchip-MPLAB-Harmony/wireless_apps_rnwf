@@ -26,13 +26,13 @@ generatedFileHashHistoryMap:
 - file: ..\src\app_wincs02.h
   hash: d5d6ce02e7014d2b23bcb2b619fdf7e3f038e74408b94ef6caa70b1b25c2ca0a
 - file: ..\src\config\sam_9x75_curiosity_wincs02\configuration.h
-  hash: f5e47d1c56a3d09328c3613c56524f6858a6148909ec3cce7ae689fe68896b85
+  hash: 1ea81f26e6bc7adf640f93cd3be9bfc80093bfe6e158d44581429c64d276cadb
 - file: ..\src\config\sam_9x75_curiosity_wincs02\cstartup.S
   hash: bab52b245ee3ee78ff26156c06ac67761ea78039030859fa772ece111fd5dab3
 - file: ..\src\config\sam_9x75_curiosity_wincs02\ddram.ld
   hash: 6726b057f4693885faf7e71c8cfe44e210a9ae72e9af402661357fdf82e47276
 - file: ..\src\config\sam_9x75_curiosity_wincs02\definitions.h
-  hash: 156d84576cd19bf62eefb9fb5a28f6f3ed4a0dbd0819c312444363a87839d75c
+  hash: c308c90b0b33b7a2a8fd3ee79eac408c7704043a5474b3fbf61255477bc2d7dc
 - file: ..\src\config\sam_9x75_curiosity_wincs02\device.h
   hash: a6942ec56b364ca7ce59259450eb2b74fca133605592dabe382afeb005ef56b8
 - file: ..\src\config\sam_9x75_curiosity_wincs02\device_cache.h
@@ -182,7 +182,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_9x75_curiosity_wincs02\fault_handlers.c
   hash: 931e951cf7431d3d70d6ab81bcd265ff0ac8b3f473b73cd7a541f59d49786b7c
 - file: ..\src\config\sam_9x75_curiosity_wincs02\initialization.c
-  hash: 10840316fffeeea2bd8b3fa634a4da1a332a441131028f6da664cfd3a9890287
+  hash: 92e176a7bf4336567d28ada1567a01b7e32d7e1e3946c9797ac3954e2aebfcdd
 - file: ..\src\config\sam_9x75_curiosity_wincs02\interrupts.c
   hash: 3f257c1c617c901d65c7a959e95e16fa3baaacb7c3667d18059a321a4dbab6bf
 - file: ..\src\config\sam_9x75_curiosity_wincs02\interrupts.h

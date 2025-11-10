@@ -37,9 +37,9 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_rnwf02\bsp\bsp.h
   hash: 0f53b638b719dc36a805157b33d769d0232834a4a9a4efd223ffd14d2095469e
 - file: ..\src\config\sam_e54_xpro_rnwf02\configuration.h
-  hash: 7df3bb4c25c0bcc1b1b7756c0e7b3aee7127207ca4e2d78dbd4513e611d01fe0
+  hash: 84c7ba7233c72190f9205058e6308255eea8dda85fd5079e838daae783980937
 - file: ..\src\config\sam_e54_xpro_rnwf02\definitions.h
-  hash: bb9489d4de0cd47e1fa1a5cadefb5ab6bcdb83ae97b655977a512dedd36f865f
+  hash: da49a6b476d2f5b350fb487901eafe578b489bb65a063a615d185d25af7ff641
 - file: ..\src\config\sam_e54_xpro_rnwf02\device.h
   hash: b8fdcc4ed83daa65a6f38614a689c97d414774be19ae106e6da07556c50a2c82
 - file: ..\src\config\sam_e54_xpro_rnwf02\device_cache.h
@@ -65,7 +65,7 @@ generatedFileHashHistoryMap:
 - file: ..\src\config\sam_e54_xpro_rnwf02\exceptions.c
   hash: a565e8d25d218b3e1069267ae9cc317161d062683a27c64e3cb454757bb82fd9
 - file: ..\src\config\sam_e54_xpro_rnwf02\initialization.c
-  hash: c71757ca50a9404b7fe15c04a25bc79715c1f90a217b2708e7136ba0dbdd9f66
+  hash: 97ee56e6be4fc2daf8ee115b2f97ad965bbde31484166ad7a83bce23b2fbf171
 - file: ..\src\config\sam_e54_xpro_rnwf02\interrupts.c
   hash: 5dc5ab76a380367d24f9ebb88c4b13b1c33f343f7a0aaf3eab38fd73b0aa5a73
 - file: ..\src\config\sam_e54_xpro_rnwf02\interrupts.h

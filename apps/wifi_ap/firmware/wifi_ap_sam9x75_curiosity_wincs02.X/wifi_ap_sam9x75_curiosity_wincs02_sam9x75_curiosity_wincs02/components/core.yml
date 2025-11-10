@@ -1135,7 +1135,7 @@ data:
             value: '300000'
           type: Dynamic
         - attributes:
-            value: '65536'
+            value: '120000'
           type: User
         type: Values
       type: Integer
