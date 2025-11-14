@@ -102,7 +102,6 @@ void SYS_WINCS_WIFI_CallbackHandler(SYS_WINCS_WIFI_EVENT_t event, uint8_t *p_str
             SYS_CONSOLE_PRINT("[APP] : SNTP UP \r\n"); 
             break;
         }
-        break;
 
         /* Wi-Fi connected event code*/
         case SYS_WINCS_WIFI_CONNECTED:
@@ -140,6 +139,12 @@ void SYS_WINCS_WIFI_CallbackHandler(SYS_WINCS_WIFI_EVENT_t event, uint8_t *p_str
             break;
         }
         
+        case SYS_WINCS_WIFI_CONNECT_FAILED:
+        {
+            SYS_CONSOLE_PRINT("[APP] : Wi-Fi Connection Failed\nRetrying\r\n");
+            SYS_WINCS_WIFI_SrvCtrl(SYS_WINCS_WIFI_STA_CONNECT, NULL);
+            break;
+        }
         
         default:
         {
