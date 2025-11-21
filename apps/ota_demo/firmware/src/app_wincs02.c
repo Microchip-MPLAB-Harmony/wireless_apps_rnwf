@@ -478,7 +478,7 @@ void APP_WINCS02_Tasks ( void )
         case APP_STATE_WINCS_PRINT:
         {
             SYS_CONSOLE_PRINT(TERM_YELLOW"########################################\r\n"TERM_RESET);
-            SYS_CONSOLE_PRINT(TERM_CYAN"  WINCS02 RED CS Certification Application\r\n"TERM_RESET);
+            SYS_CONSOLE_PRINT(TERM_CYAN"  WINCS02 OTA Demo Application\r\n"TERM_RESET);
             SYS_CONSOLE_PRINT(TERM_YELLOW"########################################\r\n"TERM_RESET);
             
             g_appWincsCtx.state = APP_STATE_WINCS_INIT;
